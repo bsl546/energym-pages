@@ -1,0 +1,203 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Getting Started &#8212; energym 2020.02.19 documentation</title>
+    <link rel="stylesheet" href="../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/graphviz.css" />
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Minimal Installation" href="install_min.html" />
+    <link rel="prev" title="SwissHouseRad notebook example" href="notebooks/SwissHouseRad.html" />
+   
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  <div class="document">
+    
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../index.html">energym</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="base.html">Buildings</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Getting Started</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#installation">Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#setting-up-an-environment">Setting up an Environment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#interacting-with-the-environment">Interacting with the Environment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#getting-forecasts">Getting forecasts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#evaluating-control-performance">Evaluating Control Performance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#using-wrappers">Using Wrappers</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="install_min.html">Minimal Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="install_full.html">Full Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="add_model.html">Contributing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Examples.html">Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="apiref.html">API Reference</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="notebooks/SwissHouseRad.html" title="previous chapter">SwissHouseRad notebook example</a></li>
+      <li>Next: <a href="install_min.html" title="next chapter">Minimal Installation</a></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="getting-started">
+<span id="start"></span><h1>Getting Started<a class="headerlink" href="#getting-started" title="Permalink to this headline">¶</a></h1>
+<p>Energym provides simulation environments for building control, without assuming any familiarity with the underlying simulation frameworks. The application of control strategies and their performance evaluation is made simple.</p>
+<p>This document provides an introduction to Energym and its functionalities. For more sophisticated examples, see <a class="reference internal" href="Examples.html#examples"><span class="std std-ref">Examples</span></a>.</p>
+<div class="section" id="installation">
+<span id="my-installation"></span><h2>Installation<a class="headerlink" href="#installation" title="Permalink to this headline">¶</a></h2>
+<p>Energym can be installed in two ways:</p>
+<ul class="simple">
+<li><p>via a <strong>minimal installation</strong>, that can be used to run Energym models, benchmark controllers, but not compile new or existing models; See <a class="reference internal" href="install_min.html#install-min"><span class="std std-ref">Minimal Installation</span></a>.</p></li>
+<li><p>via a <strong>full installation</strong>, that requires to install all dependencies to compile new models. This installation mode should only be used by users willing to contribute to Energym models library; See <a class="reference internal" href="install_full.html#install-full"><span class="std std-ref">Full Installation</span></a>.</p></li>
+</ul>
+<p>To ease both installation cases, three dockerfiles are provided to the users:</p>
+<ul class="simple">
+<li><p>the standard dockerfile (called Dockerfile) will proceed to a minimal installation within a Ubuntu 20.04 container.</p></li>
+<li><p>the JModelica dockerfile (called JModelica) will proceed to a full installation within a Ubuntu 18.04 container. It uses the latest freely available version of JModelica (provided in the code as a zip file), as well as Python2.7. Unfortunately, JModelica and Python2.7 are not (freely) maintained anymore, and hence this dockerfile will be deprecated in future versions, replaced by the OpenModelica one (see below).</p></li>
+<li><p>the Openmodelica dockerfile (called OpenModelica) will proceed to a full installation within a Ubuntu 20.04 container with Python3. The compatibility with the modelica buildings library is however still not fully guaranteed.</p></li>
+</ul>
+<p>For more details, see <a class="reference internal" href="install_full.html#install-full"><span class="std std-ref">Full Installation</span></a>.</p>
+</div>
+<div class="section" id="setting-up-an-environment">
+<h2>Setting up an Environment<a class="headerlink" href="#setting-up-an-environment" title="Permalink to this headline">¶</a></h2>
+<p>To use Energym, it has to be imported like any other Python module using the command:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">energym</span>
+</pre></div>
+</div>
+<p>A simulation environment can then be created using the <code class="docutils literal notranslate"><span class="pre">make</span></code> command. Here we demonstrate the usage for the model <a class="reference internal" href="ap2g.html#apartments2grid"><span class="std std-ref">Apartments2Grid-v0</span></a>.:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">envName</span> <span class="o">=</span> <span class="s2">&quot;Apartments2Grid-v0&quot;</span>
+<span class="n">env</span> <span class="o">=</span> <span class="n">energym</span><span class="o">.</span><span class="n">make</span><span class="p">(</span><span class="n">envName</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>To create a simulation environment with a different model, substitute <code class="docutils literal notranslate"><span class="pre">envName</span></code> with a string containing the name of one of the available models (see e.g. here <a class="reference internal" href="../index.html#envs"><span class="std std-ref">Available environments</span></a>).</p>
+</div>
+<div class="section" id="interacting-with-the-environment">
+<h2>Interacting with the Environment<a class="headerlink" href="#interacting-with-the-environment" title="Permalink to this headline">¶</a></h2>
+<p>Once the environment has been created, control actions can be passed to it via the <code class="docutils literal notranslate"><span class="pre">step</span></code> method. The control actions are provided as a dictionary with pairs of input variable names and values. After performing the simulation step an observation dictionary is returned, containing output value names and their corresponding values. The inputs that have to be provided and the outputs are different for every model, their value references can be seen in their individual documentations under <a class="reference internal" href="base.html#buildings"><span class="std std-ref">Buildings</span></a>.
+In code, this looks as follows:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">inputs</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;P1_T_Thermostat_sp&#39;</span><span class="p">:[</span><span class="mi">21</span><span class="p">],</span> <span class="s1">&#39;P2_T_Thermostat_sp&#39;</span><span class="p">:[</span><span class="mi">21</span><span class="p">],</span> <span class="s1">&#39;P3_T_Thermostat_sp&#39;</span><span class="p">:[</span><span class="mi">21</span><span class="p">],</span> <span class="s1">&#39;P4_T_Thermostat_sp&#39;</span><span class="p">:[</span><span class="mi">21</span><span class="p">],</span> <span class="s1">&#39;Bd_Pw_Bat_sp&#39;</span><span class="p">:[</span><span class="mi">0</span><span class="p">],</span> <span class="s1">&#39;Bd_Ch_EV1Bat_sp&#39;</span><span class="p">:[</span><span class="mi">0</span><span class="p">],</span> <span class="s1">&#39;Bd_Ch_EV2Bat_sp&#39;</span><span class="p">:[</span><span class="mi">0</span><span class="p">]}</span>
+<span class="n">outputs</span> <span class="o">=</span> <span class="n">env</span><span class="o">.</span><span class="n">step</span><span class="p">(</span><span class="n">inputs</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="getting-forecasts">
+<h2>Getting forecasts<a class="headerlink" href="#getting-forecasts" title="Permalink to this headline">¶</a></h2>
+<p>Each environment has a get_forecast() method, with which the user can retrieve meteorological and (depending on the environment) other stochastic forecasts. To get the current forecasts,</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">forecast</span> <span class="o">=</span> <span class="n">env</span><span class="o">.</span><span class="n">get_forecast</span><span class="p">(</span><span class="n">forecast_length</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>is used. It outputs a dictionary with the forecasted keys over the horizon forecast_length.</p>
+</div>
+<div class="section" id="evaluating-control-performance">
+<h2>Evaluating Control Performance<a class="headerlink" href="#evaluating-control-performance" title="Permalink to this headline">¶</a></h2>
+<p>Each environment has a <a class="reference internal" href="apiref.html#kpi-doc"><span class="std std-ref">KPI</span></a> object, which keeps track of the evaluation metrics. Which evaluation metrics get tracked is determined by the <code class="docutils literal notranslate"><span class="pre">kpi_options</span></code> parameter for each model (see the <a class="reference internal" href="apiref.html#model-doc"><span class="std std-ref">model documentations</span></a> or the <a class="reference internal" href="apiref.html#kpi-doc"><span class="std std-ref">KPI documentation</span></a>). To get the current KPIs, the command</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">kpi_results</span> <span class="o">=</span> <span class="n">env</span><span class="o">.</span><span class="n">get_kpi</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>is used. For a detailed example of the KPI use, see <a class="reference internal" href="Examples.html#kpi-ex"><span class="std std-ref">here</span></a>.</p>
+</div>
+<div class="section" id="using-wrappers">
+<h2>Using Wrappers<a class="headerlink" href="#using-wrappers" title="Permalink to this headline">¶</a></h2>
+<p>For control, it may be useful to rescale automatically outputs and inputs, or to downsample the interactions with the simulation. This possibility is offered thanks to the implementation of wrappers
+around the main Env class.  We provide an example  of iterative application of wrappers below. It leads to a rescaled, downsampled and RL-type step environment ( at the latest wrapper stage, the step method is transformed to
+gives the same outputs as the  gym step method, i.e. outputs, reward, done, info = step (..).</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">energym</span>
+<span class="kn">from</span> <span class="nn">energym.wrappers.downsample_outputs</span> <span class="kn">import</span> <span class="n">DownsampleOutputs</span>
+<span class="kn">from</span> <span class="nn">energym.wrappers.rescale_outputs</span> <span class="kn">import</span> <span class="n">RescaleOutputs</span>
+<span class="kn">from</span> <span class="nn">energym.wrappers.rl_wrapper</span> <span class="kn">import</span> <span class="n">RLWrapper</span>
+
+<span class="n">weather</span> <span class="o">=</span> <span class="s2">&quot;ESP_CT_Barcelona&quot;</span>
+<span class="n">env</span> <span class="o">=</span> <span class="n">energym</span><span class="o">.</span><span class="n">make</span><span class="p">(</span><span class="s2">&quot;Apartments2Thermal-v0&quot;</span><span class="p">,</span> <span class="n">weather</span><span class="o">=</span><span class="n">weather</span><span class="p">,</span> <span class="n">simulation_days</span><span class="o">=</span><span class="mi">300</span><span class="p">)</span>
+
+<span class="n">downsampling_dic</span> <span class="o">=</span> <span class="o">...</span>  <span class="c1">#define how keys are downsampled (e.g. {key1: np.mean, key2: ... }</span>
+<span class="n">lower_bound</span> <span class="o">=</span>  <span class="o">...</span> <span class="c1">#define how keys are rescaled (lower and upper bounds) (e.g. lower_bound = {key1: 0.0, ...}, upper_bound ={key1:20.0,...}</span>
+<span class="k">def</span> <span class="nf">reward</span> <span class="o">=</span> <span class="o">...</span> <span class="c1">#define the reward function</span>
+
+
+<span class="n">env_down</span> <span class="o">=</span> <span class="n">DownsampleOutputs</span><span class="p">(</span><span class="n">env</span><span class="p">,</span> <span class="n">steps</span><span class="p">,</span> <span class="n">downsampling_dic</span><span class="p">)</span>
+<span class="n">env_down_res</span> <span class="o">=</span> <span class="n">RescaleOutputs</span><span class="p">(</span><span class="n">env_down</span><span class="p">,</span><span class="n">lower_bound</span><span class="p">,</span><span class="n">upper_bound</span><span class="p">)</span>
+<span class="n">env_down_RL</span> <span class="o">=</span> <span class="n">RLWrapper</span><span class="p">(</span><span class="n">env_down_res</span><span class="p">,</span> <span class="n">reward</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Forecasts are automatically adapted to match the chosen rescaling and downsampling.</p>
+</div>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+    <div class="clearer"></div>
+  </div>
+    <div class="footer">
+      &copy;2020, psh, bsl, tgi.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 3.2.1</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="../_sources/sources/start.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

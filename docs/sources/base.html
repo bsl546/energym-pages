@@ -1,0 +1,145 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Buildings &#8212; energym 2020.02.19 documentation</title>
+    <link rel="stylesheet" href="../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/graphviz.css" />
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="ApartmentsThermal" href="apt.html" />
+    <link rel="prev" title="Energym" href="../index.html" />
+   
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  <div class="document">
+    
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../index.html">energym</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Buildings</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="apt.html">ApartmentsThermal</a></li>
+<li class="toctree-l2"><a class="reference internal" href="apg.html">ApartmentsGrid</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ap2t.html">Apartments2Thermal</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ap2g.html">Apartments2Grid</a></li>
+<li class="toctree-l2"><a class="reference internal" href="offices.html">Offices</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mixeduse.html">MixedUse</a></li>
+<li class="toctree-l2"><a class="reference internal" href="seminart.html">SeminarcenterThermostat</a></li>
+<li class="toctree-l2"><a class="reference internal" href="seminarf.html">SeminarcenterFull</a></li>
+<li class="toctree-l2"><a class="reference internal" href="houserad.html">SimpleHouseRad</a></li>
+<li class="toctree-l2"><a class="reference internal" href="houseslab.html">SimpleHouseSlab</a></li>
+<li class="toctree-l2"><a class="reference internal" href="suurr.html">SwissHouseRad</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="start.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="install_min.html">Minimal Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="install_full.html">Full Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="add_model.html">Contributing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Examples.html">Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="apiref.html">API Reference</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="../index.html" title="previous chapter">Energym</a></li>
+      <li>Next: <a href="apt.html" title="next chapter">ApartmentsThermal</a></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="buildings">
+<span id="id1"></span><h1>Buildings<a class="headerlink" href="#buildings" title="Permalink to this headline">¶</a></h1>
+<p>A description of the different buildings can be found here. The models <code class="docutils literal notranslate"><span class="pre">Apartments2Thermal-v0</span></code> and <code class="docutils literal notranslate"><span class="pre">Apartments2Grid-v0</span></code>, <code class="docutils literal notranslate"><span class="pre">ApartmentsThermal-v0</span></code> and <code class="docutils literal notranslate"><span class="pre">ApartmentsGrid-v0</span></code>, and <code class="docutils literal notranslate"><span class="pre">SeminarcenterThermostat-v0</span></code> and <code class="docutils literal notranslate"><span class="pre">SeminarcenterFull-v0</span></code> are based on the same buildings respectively, but differ in the controllability.</p>
+<p>For each model we define an evaluation scenario that includes the tracked KPIs, the evaluation weather file and the evaluation interval. These fixed scenarios should be used to evaluate the control performance on a specific building model.</p>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="apt.html">ApartmentsThermal</a></li>
+<li class="toctree-l1"><a class="reference internal" href="apg.html">ApartmentsGrid</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ap2t.html">Apartments2Thermal</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ap2g.html">Apartments2Grid</a></li>
+<li class="toctree-l1"><a class="reference internal" href="offices.html">Offices</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mixeduse.html">MixedUse</a></li>
+<li class="toctree-l1"><a class="reference internal" href="seminart.html">SeminarcenterThermostat</a></li>
+<li class="toctree-l1"><a class="reference internal" href="seminarf.html">SeminarcenterFull</a></li>
+<li class="toctree-l1"><a class="reference internal" href="houserad.html">SimpleHouseRad</a></li>
+<li class="toctree-l1"><a class="reference internal" href="houseslab.html">SimpleHouseSlab</a></li>
+<li class="toctree-l1"><a class="reference internal" href="suurr.html">SwissHouseRad</a></li>
+</ul>
+</div>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+    <div class="clearer"></div>
+  </div>
+    <div class="footer">
+      &copy;2020, psh, bsl, tgi.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 3.2.1</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="../_sources/sources/base.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>
