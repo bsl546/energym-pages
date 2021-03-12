@@ -1,0 +1,514 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SimpleHouseRad &#8212; energym 2020.02.19 documentation</title>
+    
+  <link href="../_static/css/theme.css" rel="stylesheet" />
+  <link href="../_static/css/index.101715efdecc9b59cb6e1ddfa685c31f.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/graphviz.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.d8bbf5861d671d414e1a.js">
+
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="SimpleHouseRad notebook example" href="notebooks/SimpleHouseRad.html" />
+    <link rel="prev" title="SeminarcenterFull notebook example" href="notebooks/SeminarcenterFull.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <nav class="navbar navbar-light navbar-expand-lg bg-light fixed-top bd-navbar" id="navbar-main"><div class="container-xl">
+
+
+    
+    <a class="navbar-brand" href="../index.html">
+      <p class="title">energym</p>
+    </a>
+    
+
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-menu" aria-controls="navbar-menu" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    
+    <div id="navbar-menu" class="col-lg-9 collapse navbar-collapse">
+      <ul id="navbar-main-elements" class="navbar-nav mr-auto">
+        <li class="toctree-l1 current active nav-item">
+ <a class="reference internal nav-link" href="base.html">
+  Buildings
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="install_min.html">
+  Minimal Installation
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="start.html">
+  Getting Started
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="Examples.html">
+  Examples
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="install_full.html">
+  Full Installation
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="add_model.html">
+  Contributing
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="apiref.html">
+  API Reference
+ </a>
+</li>
+
+        
+      </ul>
+
+      <ul id="navbar-icon-links" class="navbar-nav" aria-label="Icon Links">
+      </ul>
+    </div>
+</div>
+    </nav>
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+            
+            <!-- Only show if we have sidebars configured, else just a small margin  -->
+            <div class="col-12 col-md-3 bd-sidebar"><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
+</form>
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+  <div class="bd-toc-item active">
+    <ul class="current nav bd-sidenav">
+ <li class="toctree-l2">
+  <a class="reference internal" href="apt.html">
+   ApartmentsThermal
+  </a>
+ </li>
+ <li class="toctree-l2">
+  <a class="reference internal" href="apg.html">
+   ApartmentsGrid
+  </a>
+ </li>
+ <li class="toctree-l2">
+  <a class="reference internal" href="ap2t.html">
+   Apartments2Thermal
+  </a>
+ </li>
+ <li class="toctree-l2">
+  <a class="reference internal" href="ap2g.html">
+   Apartments2Grid
+  </a>
+ </li>
+ <li class="toctree-l2">
+  <a class="reference internal" href="offices.html">
+   Offices
+  </a>
+ </li>
+ <li class="toctree-l2">
+  <a class="reference internal" href="mixeduse.html">
+   MixedUse
+  </a>
+ </li>
+ <li class="toctree-l2">
+  <a class="reference internal" href="seminart.html">
+   SeminarcenterThermostat
+  </a>
+ </li>
+ <li class="toctree-l2">
+  <a class="reference internal" href="seminarf.html">
+   SeminarcenterFull
+  </a>
+ </li>
+ <li class="toctree-l2 current active">
+  <a class="current reference internal" href="#">
+   SimpleHouseRad
+  </a>
+  <ul>
+   <li class="toctree-l3">
+    <a class="reference internal" href="notebooks/SimpleHouseRad.html">
+     SimpleHouseRad notebook example
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l2">
+  <a class="reference internal" href="houseslab.html">
+   SimpleHouseSlab
+  </a>
+ </li>
+ <li class="toctree-l2">
+  <a class="reference internal" href="suurr.html">
+   SwissHouseRad
+  </a>
+ </li>
+</ul>
+  </div>
+</nav>
+            </div>
+            
+          
+
+          
+          <div class="d-none d-xl-block col-xl-2 bd-toc">
+              
+<div class="tocsection onthispage pt-5 pb-3">
+    <i class="fas fa-list"></i> On this page
+</div>
+
+<nav id="bd-toc-nav">
+    <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#building-and-thermal-zones">
+   Building and thermal zones
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#thermal-systems">
+   Thermal systems
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#electrical-systems">
+   Electrical systems
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#controllable-components">
+   Controllable components
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#hp-control">
+     HP control
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#simulation-inputs">
+   Simulation inputs
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#simulation-outputs">
+   Simulation outputs
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#evaluation-scenario">
+   Evaluation scenario
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#notebook-example">
+   Notebook example
+  </a>
+ </li>
+</ul>
+
+</nav>
+
+
+              
+          </div>
+          
+
+          
+          
+            
+          
+          <main class="col-12 col-md-9 col-xl-7 py-md-5 pl-md-5 pr-md-4 bd-content" role="main">
+              
+              <div>
+                
+  <div class="section" id="simplehouserad">
+<span id="id1"></span><h1>SimpleHouseRad<a class="headerlink" href="#simplehouserad" title="Permalink to this headline">¶</a></h1>
+<p>The simple house is a one-zone residential buildings located in Zurich Canton, Switzerland</p>
+<div class="section" id="building-and-thermal-zones">
+<h2>Building and thermal zones<a class="headerlink" href="#building-and-thermal-zones" title="Permalink to this headline">¶</a></h2>
+<p>The entire house is modeled with a single thermal zone.</p>
+</div>
+<div class="section" id="thermal-systems">
+<h2>Thermal systems<a class="headerlink" href="#thermal-systems" title="Permalink to this headline">¶</a></h2>
+<p>A Heat pump with Carnot HX connected to a simple room model with radiator. A schematic picture of the equipment is given in the following image:</p>
+<a class="reference internal image-reference" href="../_images/HP_u_Rad_1_RC_Sun.png"><img alt="../_images/HP_u_Rad_1_RC_Sun.png" class="align-center" src="../_images/HP_u_Rad_1_RC_Sun.png" style="width: 600px;" /></a>
+</div>
+<div class="section" id="electrical-systems">
+<h2>Electrical systems<a class="headerlink" href="#electrical-systems" title="Permalink to this headline">¶</a></h2>
+<p>The site incorporates a photovoltaic installation.</p>
+</div>
+<div class="section" id="controllable-components">
+<h2>Controllable components<a class="headerlink" href="#controllable-components" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="hp-control">
+<h3>HP control<a class="headerlink" href="#hp-control" title="Permalink to this headline">¶</a></h3>
+<p>The heat pump normalized power is controllable.</p>
+</div>
+</div>
+<div class="section" id="simulation-inputs">
+<h2>Simulation inputs<a class="headerlink" href="#simulation-inputs" title="Permalink to this headline">¶</a></h2>
+<p>For more detail, please check the documentation <a class="reference internal" href="apiref.html#simplehouse-doc"><span class="std std-ref">energym.envs.simple_house.simple_house</span></a> or the source code in <a class="reference internal" href="apiref.html#energym.envs.simple_house.simple_house.SimpleHouse" title="energym.envs.simple_house.simple_house.SimpleHouse"><code class="xref py py-class docutils literal notranslate"><span class="pre">energym.envs.simple_house.simple_house.SimpleHouse</span></code></a>.</p>
+<table class="table">
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Variable Name</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Lower Bound</p></th>
+<th class="head"><p>Upper Bound</p></th>
+<th class="head"><p># States</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>u</p></td>
+<td><p>scalar</p></td>
+<td><p>0</p></td>
+<td><p>1</p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="simulation-outputs">
+<h2>Simulation outputs<a class="headerlink" href="#simulation-outputs" title="Permalink to this headline">¶</a></h2>
+<table class="table">
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Variable Name</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Lower Bound</p></th>
+<th class="head"><p>Upper Bound</p></th>
+<th class="head"><p># States</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>weaBus.HDifHor</p></td>
+<td><p>scalar</p></td>
+<td><p>0</p></td>
+<td><p>1000</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>weaBus.HDirNor</p></td>
+<td><p>scalar</p></td>
+<td><p>0</p></td>
+<td><p>1000</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>weaBus.HGloHor</p></td>
+<td><p>scalar</p></td>
+<td><p>0</p></td>
+<td><p>1000</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>weaBus.HHorIR</p></td>
+<td><p>scalar</p></td>
+<td><p>0</p></td>
+<td><p>1000</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>sunRad.y</p></td>
+<td><p>scalar</p></td>
+<td><p>0</p></td>
+<td><p>1000</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>sunHea.Q_flow</p></td>
+<td><p>scalar</p></td>
+<td><p>0</p></td>
+<td><p>100</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>preHea.Q_flow</p></td>
+<td><p>scalar</p></td>
+<td><p>0</p></td>
+<td><p>100</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>heaPum.P</p></td>
+<td><p>scalar</p></td>
+<td><p>0</p></td>
+<td><p>100</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>heaPum.QCon_flow</p></td>
+<td><p>scalar</p></td>
+<td><p>0</p></td>
+<td><p>100</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>heaPum.QEva_flow</p></td>
+<td><p>scalar</p></td>
+<td><p>0</p></td>
+<td><p>100</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>heaPum.COP</p></td>
+<td><p>scalar</p></td>
+<td><p>0</p></td>
+<td><p>20</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>heaPum.COPCar</p></td>
+<td><p>scalar</p></td>
+<td><p>0</p></td>
+<td><p>20</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>heaPum.TConAct</p></td>
+<td><p>scalar</p></td>
+<td><p>0</p></td>
+<td><p>70</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>heaPum.TEvaAct</p></td>
+<td><p>scalar</p></td>
+<td><p>0</p></td>
+<td><p>70</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>rad.Q_flow</p></td>
+<td><p>scalar</p></td>
+<td><p>0</p></td>
+<td><p>100</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>rad.m_flow</p></td>
+<td><p>scalar</p></td>
+<td><p>0</p></td>
+<td><p>10</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>temRet.T</p></td>
+<td><p>scalar</p></td>
+<td><p>273.15</p></td>
+<td><p>353.15</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>temSup.T</p></td>
+<td><p>scalar</p></td>
+<td><p>273.15</p></td>
+<td><p>353.15</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>TOut.T</p></td>
+<td><p>scalar</p></td>
+<td><p>253.15</p></td>
+<td><p>343.15</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>temRoo.T</p></td>
+<td><p>scalar</p></td>
+<td><p>263.15</p></td>
+<td><p>343.15</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>y</p></td>
+<td><p>scalar</p></td>
+<td><p>-10</p></td>
+<td><p>70</p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="evaluation-scenario">
+<h2>Evaluation scenario<a class="headerlink" href="#evaluation-scenario" title="Permalink to this headline">¶</a></h2>
+<p>The evaluation scenario for the <cite>SimpleHouseRad-v0</cite> model consists of a control from January to April with the objective of minimizing the power demand, while keeping the zone temperatures between 19 and 24°C.
+For this goal, the tracked KPIs are the average power demand, and the average temperature deviation and total temperature violations with respect to the interval [19, 24].</p>
+</div>
+<div class="section" id="notebook-example">
+<h2>Notebook example<a class="headerlink" href="#notebook-example" title="Permalink to this headline">¶</a></h2>
+<div class="toctree-wrapper compound">
+<p class="caption"><span class="caption-text">Here is a notebook example:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="notebooks/SimpleHouseRad.html">SimpleHouseRad notebook example</a></li>
+</ul>
+</div>
+</div>
+</div>
+
+
+              </div>
+              
+              
+              <div class='prev-next-bottom'>
+                
+    <a class='left-prev' id="prev-link" href="notebooks/SeminarcenterFull.html" title="previous page">SeminarcenterFull notebook example</a>
+    <a class='right-next' id="next-link" href="notebooks/SimpleHouseRad.html" title="next page">SimpleHouseRad notebook example</a>
+
+              </div>
+              
+          </main>
+          
+
+      </div>
+    </div>
+
+    
+  <script src="../_static/js/index.d8bbf5861d671d414e1a.js"></script>
+
+
+    <footer class="footer mt-5 mt-md-0">
+  <div class="container">
+    <p>
+          &copy; Copyright 2020, psh, bsl, tgi.<br/>
+        Created using <a href="http://sphinx-doc.org/">Sphinx</a> 3.2.1.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>
