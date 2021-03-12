@@ -65,14 +65,20 @@
 </li>
 
 <li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="sources/install_min.html">
+  Minimal Installation
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
  <a class="reference internal nav-link" href="sources/start.html">
   Getting Started
  </a>
 </li>
 
 <li class="toctree-l1 nav-item">
- <a class="reference internal nav-link" href="sources/install_min.html">
-  Minimal Installation
+ <a class="reference internal nav-link" href="sources/Examples.html">
+  Examples
  </a>
 </li>
 
@@ -85,12 +91,6 @@
 <li class="toctree-l1 nav-item">
  <a class="reference internal nav-link" href="sources/add_model.html">
   Contributing
- </a>
-</li>
-
-<li class="toctree-l1 nav-item">
- <a class="reference internal nav-link" href="sources/Examples.html">
-  Examples
  </a>
 </li>
 
@@ -213,13 +213,10 @@
                 
   <div class="toctree-wrapper compound">
 </div>
-<div class="figure align-default">
-<a class="reference internal image-reference" href="_images/Energym2.PNG"><img alt="_images/Energym2.PNG" src="_images/Energym2.PNG" style="height: 320px;" /></a>
-</div>
 <div class="section" id="energym">
 <h1>Energym<a class="headerlink" href="#energym" title="Permalink to this headline">¶</a></h1>
 <p>Energym is an open source building simulation library designed for the control community to test  climate control and energy mangement strategies on buildings in a systematic and reproducible way. Energym includes a number of building models that are calibrated on site data and defines standard metrics, quantifying the objective to be reached and allowing a standardized comparison between different controllers and publications.</p>
-<p>The  library offers an intuitive interface to a variety of building models, similar to the one popularized by the <a class="reference external" href="https://gym.openai.com/">Gym</a> used in the robotic control community. Energym relies on the <a class="reference external" href="https://fmi-standard.org/">functional mockup interface (FMI)</a> standard in order to support models generated in multiple modelling languages easily. It currently includes seven models developed in <a class="reference external" href="https://www.modelica.org/">Modelica</a> and <a class="reference external" href="https://energyplus.net/">EnergyPlus</a>  as well as specific classes for simulating weather forecasts and appliances consumption figures.</p>
+<p>The  library offers an intuitive interface to a variety of building models, similar to the one popularized by the <a class="reference external" href="https://gym.openai.com/">Gym</a> used in the robotic control community. Energym relies on the <a class="reference external" href="https://fmi-standard.org/">functional mockup interface (FMI)</a> standard in order to support models generated in multiple modelling languages easily. It incorporates models developed in  <a class="reference external" href="https://www.modelica.org/">Modelica</a> and <a class="reference external" href="https://energyplus.net/">EnergyPlus</a>  as well as specific classes for simulating weather forecasts and appliances consumption figures.</p>
 <p>Energym has to date 11 models integrated and  offers the possibility to benchmark controllers on buildings models that are representative of real-world HVAC systems. They cover different buildings typologies (institutional building, office building, etc.) and configuration of the HVAC where control can be performed at different levels (control of energy generation, control of final demand through setpoints, etc.).</p>
 <p>New models and new control capabilities are under development und will be added to the library in due course.</p>
 <p>The library is compatible both for windows 10 and linux os and provides precompiled fmu files for both operating systems.
@@ -385,7 +382,7 @@ Buildings</p></th>
 <div class="section" id="philosophy">
 <h2>Philosophy<a class="headerlink" href="#philosophy" title="Permalink to this headline">¶</a></h2>
 <p>Energym  has been designed such that you are entirely free in your controller strategy and design.</p>
-<p>In particular, if you use Model Predictive Control or Reinforcement Learning strategies, a set of meteo files at different locations close to the real location is provided to carry out system identification/ RL training.</p>
+<p>In particular, if you use Model Predictive Control or Reinforcement Learning strategies, a set of weather files at different locations close to the real location is provided to carry out system identification/ RL training.</p>
 <p>When a controller/model has been trained, it can be finally evaluated on the predefined period of time under the predefined meto condition and KPIs.</p>
 <p>Furthermore, models can be launched in parallels, making Energym models also usable for flexibility control strategies at multi-building level.</p>
 </div>
