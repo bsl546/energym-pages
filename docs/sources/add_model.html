@@ -201,12 +201,12 @@ The folder must have following structure:</p>
 <div class="section" id="energyplus">
 <h3>Energyplus<a class="headerlink" href="#energyplus" title="Permalink to this headline">¶</a></h3>
 <p>We provide in the directory scripts a Python script <em>create_eplus_env.py</em>. Edit this file putting your Energyplus path and the EnergyplusToFMU path. You may also
-edit the pythoncom variable depending on your platform and wether you rendered E+toFMU python3 compatible or not.</p>
+edit the pythoncom variable depending on your platform.</p>
 <p>Then, in a command line, type:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python</span> <span class="n">create_eplus_env</span><span class="o">.</span><span class="n">py</span> <span class="o">-</span><span class="n">src</span> <span class="o">&lt;</span><span class="n">folder_name</span><span class="o">&gt;</span>
 </pre></div>
 </div>
-<p>You may want to provide a weather file with the option -wf. By default, all weather files from the wf folder of your model are considered and a fmu is created to each.</p>
+<p>You may want to provide a weather file with the option -wf. By default, you must have at least a weather wile called weather.epw in the weather folder.</p>
 <p>If the compilation is successful, models are added to the fmus folder of your model.</p>
 </div>
 <div class="section" id="modelica">
@@ -221,7 +221,7 @@ edit the pythoncom variable depending on your platform and wether you rendered E
 </div>
 <div class="section" id="test-your-model">
 <h2>Test your model<a class="headerlink" href="#test-your-model" title="Permalink to this headline">¶</a></h2>
-<p>In principle, testing and documentation updates will be done by our integration Team to ensure that your model is working properly within our framework.</p>
+<p>In principle, testing and documentation updates will be done by our Team to ensure that your model is working properly within our framework.</p>
 <p>However, you can already propose a pre-implemented Energym version by:</p>
 <blockquote>
 <div><ul class="simple">

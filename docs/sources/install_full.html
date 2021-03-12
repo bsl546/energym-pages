@@ -173,34 +173,17 @@
   <div class="section" id="full-installation">
 <span id="install-full"></span><h1>Full Installation<a class="headerlink" href="#full-installation" title="Permalink to this headline">¶</a></h1>
 <p>The full installation should be used only by contributors willing to add and develop new buildings models.</p>
-<p>Two containers are provided, one with OpenModelica, one with the latest opensource version of JModelica (2.14). Supported platforms are Linux (Ubuntu) and Windows 10.</p>
-<p><strong>Important note</strong>: Users willing only to compile Energyplus files can skip the installation steps 1 and 4. Users willing only to compile Modelica files can skip steps 2,3,5,6.</p>
-<p><strong>Warning</strong>: The Modelica buildings library is still not fully supported by OpenModelica.</p>
+<p>A docker image with the latest opensource version of JModelica (2.14) is stored on dockerhub for users willing to compile with dockers.</p>
 <div class="section" id="windows-10">
 <h2>Windows 10<a class="headerlink" href="#windows-10" title="Permalink to this headline">¶</a></h2>
-<p><strong>Note</strong>: The steps 5 and 6 are only needed if you use OpenModelica and Python&gt;=3. JModelica requires a running version of Python 2.7, and 5-6 have to be skipped.</p>
 <ol class="arabic">
-<li><p>Download and install <a class="reference external" href="https://www.openmodelica.org/">OpenModelica</a> or download JModelica <a class="reference external" href="https://disq.us/url?url=https%3A%2F%2Fdownloads.modelon.com%2Fdownload%2F%3Fa%3DJMODELICA%3A_xx_BYR7Ndv4fd3-M3M3XSHiyjY&amp;cuid=2163236/">binaries</a>.</p></li>
+<li><p>Download and install JModelica <a class="reference external" href="https://disq.us/url?url=https%3A%2F%2Fdownloads.modelon.com%2Fdownload%2F%3Fa%3DJMODELICA%3A_xx_BYR7Ndv4fd3-M3M3XSHiyjY&amp;cuid=2163236/">binaries</a>.</p></li>
 <li><p>Install Energyplus 9.4; see <a class="reference internal" href="install_min.html#install-min"><span class="std std-ref">Minimal Installation</span></a>.</p></li>
 <li><p>Install a  C/C++ compiler (e.g. Visual Studio)</p></li>
 <li><p>Clone the following libraries to your favorite folder:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">clone</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">lbl</span><span class="o">-</span><span class="n">srg</span><span class="o">/</span><span class="n">modelica</span><span class="o">-</span><span class="n">buildings</span><span class="o">.</span><span class="n">git</span>
 <span class="n">git</span> <span class="n">clone</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">ibpsa</span><span class="o">/</span><span class="n">modelica</span><span class="o">-</span><span class="n">ibpsa</span><span class="o">.</span><span class="n">git</span>
 <span class="n">git</span> <span class="n">clone</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">lbl</span><span class="o">-</span><span class="n">srg</span><span class="o">/</span><span class="n">EnergyPlusToFMU</span>
-</pre></div>
-</div>
-</li>
-<li><p>Install 2to3 python package:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="mi">2</span><span class="n">to3</span>
-</pre></div>
-</div>
-</li>
-<li><p>Convert EnergyPlusToFMU to python3:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="o">/&lt;</span><span class="n">favorite_path</span><span class="o">&gt;/</span><span class="n">EnergyPlusToFMU</span>
-<span class="mi">2</span><span class="n">to3</span> <span class="o">.</span> <span class="o">-</span><span class="n">w</span>
-<span class="mi">2</span><span class="n">to3</span> <span class="o">.</span> <span class="o">-</span><span class="n">w</span>
-<span class="c1">#Two times to ensure all python2.7 blocks get converted</span>
-<span class="n">On</span> <span class="n">windows</span><span class="p">,</span> <span class="n">you</span> <span class="n">may</span> <span class="n">need</span> <span class="n">to</span> <span class="n">change</span> <span class="n">the</span> <span class="n">default</span> <span class="n">compiler</span> <span class="n">address</span> <span class="ow">in</span> <span class="n">the</span> <span class="o">.</span><span class="n">bat</span> <span class="n">files</span> <span class="ow">in</span> <span class="n">EnergyplustoFMU</span><span class="o">/</span><span class="n">scripts</span><span class="o">/</span><span class="n">win</span> <span class="n">to</span> <span class="n">your</span> <span class="n">current</span> <span class="n">C</span> <span class="n">compiler</span> <span class="n">address</span><span class="o">.</span>
 </pre></div>
 </div>
 </li>
@@ -215,10 +198,8 @@
 </div>
 <div class="section" id="linux-ubuntu">
 <h2>Linux (Ubuntu)<a class="headerlink" href="#linux-ubuntu" title="Permalink to this headline">¶</a></h2>
-<p><strong>Note</strong>: The steps 5 and 6 are only needed if you use OpenModelica and Python&gt;=3. JModelica requires a running version of Python 2.7, and 5-6 have to be skipped.</p>
 <ol class="arabic">
-<li><p>Follow Openmodelica installation <a class="reference external" href="https://www.openmodelica.org/download/download-linux">instructions</a> or used the provided JModelica zip file in <em>dependencies</em> folder.
-The process to install JModelica is given in the dockerfile JModelica.dockerfile.</p></li>
+<li><p>Download and install the latest free JModelica version (requires python 2.7)</p></li>
 <li><p>Install Energyplus 9.4; see <a class="reference internal" href="install_min.html#install-min"><span class="std std-ref">Minimal Installation</span></a>.</p></li>
 <li><p>Install the following librairies:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">update</span> <span class="o">&amp;&amp;</span> <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">upgrade</span> <span class="o">-</span><span class="n">y</span> \
@@ -234,19 +215,6 @@ The process to install JModelica is given in the dockerfile JModelica.dockerfile
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">clone</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">lbl</span><span class="o">-</span><span class="n">srg</span><span class="o">/</span><span class="n">modelica</span><span class="o">-</span><span class="n">buildings</span><span class="o">.</span><span class="n">git</span>
 <span class="n">git</span> <span class="n">clone</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">ibpsa</span><span class="o">/</span><span class="n">modelica</span><span class="o">-</span><span class="n">ibpsa</span><span class="o">.</span><span class="n">git</span>
 <span class="n">git</span> <span class="n">clone</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">lbl</span><span class="o">-</span><span class="n">srg</span><span class="o">/</span><span class="n">EnergyPlusToFMU</span>
-</pre></div>
-</div>
-</li>
-<li><p>Install 2to3 python package:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="mi">2</span><span class="n">to3</span>
-</pre></div>
-</div>
-</li>
-<li><p>Convert EnergyPlusToFMU to python3:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="o">/&lt;</span><span class="n">favorite_path</span><span class="o">&gt;/</span><span class="n">EnergyPlusToFMU</span>
-<span class="mi">2</span><span class="n">to3</span> <span class="o">.</span> <span class="o">-</span><span class="n">w</span>
-<span class="mi">2</span><span class="n">to3</span> <span class="o">.</span> <span class="o">-</span><span class="n">w</span>
-<span class="c1">#Two times to ensure all python2.7 blocks get converted</span>
 </pre></div>
 </div>
 </li>
@@ -287,12 +255,11 @@ The process to install JModelica is given in the dockerfile JModelica.dockerfile
 </pre></div>
 </div>
 </li>
-<li><p>On Linux. Use the dockerlauncher in the main repository. Replace the name ‘DockerfileFullInstall3.dockerfile’ by ‘JModelica.dockerfile’/’OpenModelica.dockerfile’ and execute the launcher:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">./</span><span class="n">dockerlauncher</span>
+<li><p>On Linux. Use the launcherJmod in the main repository:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">./</span><span class="n">launcherJmod</span>
 </pre></div>
 </div>
 </li>
-<li><p>On Mac (TBD)</p></li>
 </ul>
 </div></blockquote>
 </li>

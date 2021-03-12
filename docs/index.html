@@ -158,6 +158,11 @@
     </a>
    </li>
    <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#philosophy">
+     Philosophy
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
     <a class="reference internal nav-link" href="#contribute">
      Contribute
     </a>
@@ -213,17 +218,18 @@
 </div>
 <div class="section" id="energym">
 <h1>Energym<a class="headerlink" href="#energym" title="Permalink to this headline">¶</a></h1>
-<p>Energym is a calibrated open source building simulation library designed for the control community to test climate control and energy mangement strategies on buildings in a systematic and reproducible way. Energym includes a number of building models that are calibrated on site data and defines standard metrics, quantifying the objective to be reached and allowing a standardized comparison between different controllers and publications.</p>
+<p>Energym is an open source building simulation library designed for the control community to test  climate control and energy mangement strategies on buildings in a systematic and reproducible way. Energym includes a number of building models that are calibrated on site data and defines standard metrics, quantifying the objective to be reached and allowing a standardized comparison between different controllers and publications.</p>
 <p>The  library offers an intuitive interface to a variety of building models, similar to the one popularized by the <a class="reference external" href="https://gym.openai.com/">Gym</a> used in the robotic control community. Energym relies on the <a class="reference external" href="https://fmi-standard.org/">functional mockup interface (FMI)</a> standard in order to support models generated in multiple modelling languages easily. It currently includes seven models developed in <a class="reference external" href="https://www.modelica.org/">Modelica</a> and <a class="reference external" href="https://energyplus.net/">EnergyPlus</a>  as well as specific classes for simulating weather forecasts and appliances consumption figures.</p>
-<p>With the models already incorporated, Energym offers the possibility to benchmark controllers on buildings models that are representative of real-world HVAC systems. They cover different buildings typologies (institutional building, office building, etc.) and configuration of the HVAC where control can be performed at different levels (control of energy generation, control of final demand through setpoints, etc.). In summary, the models already incorporated are representative of cases that can be encountered in real-world control deployment.</p>
+<p>Energym has to date 11 models integrated and  offers the possibility to benchmark controllers on buildings models that are representative of real-world HVAC systems. They cover different buildings typologies (institutional building, office building, etc.) and configuration of the HVAC where control can be performed at different levels (control of energy generation, control of final demand through setpoints, etc.).</p>
+<p>New models and new control capabilities are under development und will be added to the library in due course.</p>
 <p>The library is compatible both for windows 10 and linux os and provides precompiled fmu files for both operating systems.
-A docker container file is also provided for users wanting to build the library within a container.</p>
-<style> .red {color:#aa0060; font-weight:bold; font-size:16px} </style>
+Two docker files (one for running current models, one for compiling new models) that download dockerhub pre-built images are also at user disposal to speed up use and testing.</p>
+<style> .red {color:#DC143C; font-weight:bold; font-size:16px} </style>
 <style> .gre {color:#32cd32; font-weight:bold; font-size:16px} </style>
-<style> .yel {color:#f9ee44; font-weight:bold; font-size:16px} </style><div class="section" id="features">
+<style> .yel {color:#E6E6FA; font-weight:bold; font-size:16px} </style><div class="section" id="features">
 <h2>Features<a class="headerlink" href="#features" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li><p>Works directly (pre-compiled buildings .fmu files)</p></li>
+<li><p>Works directly on Windows and Linux (pre-compiled buildings .fmu files)</p></li>
 <li><p>Works with E+ and Modelica</p></li>
 <li><p>Works with Python 3.*</p></li>
 </ul>
@@ -361,7 +367,7 @@ Buildings</p></th>
 </div>
 <div class="section" id="example">
 <h2>Example<a class="headerlink" href="#example" title="Permalink to this headline">¶</a></h2>
-<p>The usage of Energym is straight forward, as in this simplified code example, assuming the implementation of a <code class="docutils literal notranslate"><span class="pre">get_input()</span></code> function:</p>
+<p>The usage of Energym is straight forward, as in this simplified code example, assuming the implementation of a <code class="docutils literal notranslate"><span class="pre">get_input()</span></code> function made by the user:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">energym</span>
 
 <span class="n">envName</span> <span class="o">=</span> <span class="s2">&quot;Apartments2Grid-v0&quot;</span>
@@ -376,24 +382,30 @@ Buildings</p></th>
 </div>
 <p>For an introduction to Energym see <a class="reference internal" href="sources/start.html#start"><span class="std std-ref">Getting Started</span></a> and for more in depth control examples see <a class="reference internal" href="sources/Examples.html#examples"><span class="std std-ref">Examples</span></a>.</p>
 </div>
+<div class="section" id="philosophy">
+<h2>Philosophy<a class="headerlink" href="#philosophy" title="Permalink to this headline">¶</a></h2>
+<p>Energym  has been designed such that you are entirely free in your controller strategy and design.</p>
+<p>In particular, if you use Model Predictive Control or Reinforcement Learning strategies, a set of meteo files at different locations close to the real location is provided to carry out system identification/ RL training.</p>
+<p>When a controller/model has been trained, it can be finally evaluated on the predefined period of time under the predefined meto condition and KPIs.</p>
+<p>Furthermore, models can be launched in parallels, making Energym models also usable for flexibility control strategies at multi-building level.</p>
+</div>
 <div class="section" id="contribute">
 <h2>Contribute<a class="headerlink" href="#contribute" title="Permalink to this headline">¶</a></h2>
-<p>Users are encouraged to upload any new environment that present an interest for building or energy system control.</p>
+<p>Users are encouraged to upload new environments that present an interest for building or energy system control.</p>
 <p>To do so, follow the full installation steps described  in <a class="reference internal" href="sources/install_full.html#install-full"><span class="std std-ref">Full Installation</span></a>.</p>
 <p>To create a new model, please  follow the steps described in <a class="reference internal" href="sources/add_model.html#add-model"><span class="std std-ref">Contributing</span></a>. Then contact the authors (see Support) if you want your model to be incorporated in Energym.</p>
 </div>
 <div class="section" id="cite">
 <h2>Cite<a class="headerlink" href="#cite" title="Permalink to this headline">¶</a></h2>
-<p>If you use our library for your publication, please cite our paper.</p>
+<p>If you use our library for your publication, please cite our github address.</p>
 </div>
 <div class="section" id="support">
 <h2>Support<a class="headerlink" href="#support" title="Permalink to this headline">¶</a></h2>
-<p>If you are having issues, please let us know. We are happy to let Energym grow and help you in a reasonable amount of time.
-Plese contact the maintainers &lt;<a class="reference external" href="mailto:psh&#37;&#52;&#48;csem&#46;ch">psh<span>&#64;</span>csem<span>&#46;</span>ch</a>&gt; and &lt;<a class="reference external" href="mailto:bsl&#37;&#52;&#48;csem&#46;ch">bsl<span>&#64;</span>csem<span>&#46;</span>ch</a>&gt;.</p>
+<p>If you are having issues, please let us know and open an issue on github. We are happy to let Energym grow and help you in a reasonable amount of time.</p>
 </div>
 <div class="section" id="license">
 <h2>License<a class="headerlink" href="#license" title="Permalink to this headline">¶</a></h2>
-<p>The project except all files in “dependencies” is licensed under the BSD license. For dependencies licenses, please refer to the dependencies folder.</p>
+<p>The project  is licensed under the BSD license.</p>
 </div>
 <div class="section" id="thanks">
 <h2>Thanks<a class="headerlink" href="#thanks" title="Permalink to this headline">¶</a></h2>

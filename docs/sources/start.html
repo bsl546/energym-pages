@@ -196,11 +196,10 @@
 <li><p>via a <strong>minimal installation</strong>, that can be used to run Energym models, benchmark controllers, but not compile new or existing models; See <a class="reference internal" href="install_min.html#install-min"><span class="std std-ref">Minimal Installation</span></a>.</p></li>
 <li><p>via a <strong>full installation</strong>, that requires to install all dependencies to compile new models. This installation mode should only be used by users willing to contribute to Energym models library; See <a class="reference internal" href="install_full.html#install-full"><span class="std std-ref">Full Installation</span></a>.</p></li>
 </ul>
-<p>To ease both installation cases, three dockerfiles are provided to the users:</p>
+<p>To ease  installation on shared machines/cloud or run the library on Mac OS, two dockerfiles are provided:</p>
 <ul class="simple">
-<li><p>the standard dockerfile (called Dockerfile) will proceed to a minimal installation within a Ubuntu 20.04 container.</p></li>
-<li><p>the JModelica dockerfile (called JModelica) will proceed to a full installation within a Ubuntu 18.04 container. It uses the latest freely available version of JModelica (provided in the code as a zip file), as well as Python2.7. Unfortunately, JModelica and Python2.7 are not (freely) maintained anymore, and hence this dockerfile will be deprecated in future versions, replaced by the OpenModelica one (see below).</p></li>
-<li><p>the Openmodelica dockerfile (called OpenModelica) will proceed to a full installation within a Ubuntu 20.04 container with Python3. The compatibility with the modelica buildings library is however still not fully guaranteed.</p></li>
+<li><p>a standard dockerfile (called Dockerfile)  that downloads a pre-built image from Dockerhub with Ubuntu 20.04 and installs the library.</p></li>
+<li><p>a JModelica dockerfile (called JModelica)  that downloads a pre-built image from Dockerhub with Ubuntu 18.04, JModelica and EnergyplustoFMU. It uses the latest freely available version of JModelica as well as Python2.7.</p></li>
 </ul>
 <p>For more details, see <a class="reference internal" href="install_full.html#install-full"><span class="std std-ref">Full Installation</span></a>.</p>
 </div>
@@ -256,7 +255,7 @@ gives the same outputs as the  gym step method, i.e. outputs, reward, done, info
 <span class="n">env</span> <span class="o">=</span> <span class="n">energym</span><span class="o">.</span><span class="n">make</span><span class="p">(</span><span class="s2">&quot;Apartments2Thermal-v0&quot;</span><span class="p">,</span> <span class="n">weather</span><span class="o">=</span><span class="n">weather</span><span class="p">,</span> <span class="n">simulation_days</span><span class="o">=</span><span class="mi">300</span><span class="p">)</span>
 
 <span class="n">downsampling_dic</span> <span class="o">=</span> <span class="o">...</span>  <span class="c1">#define how keys are downsampled (e.g. {key1: np.mean, key2: ... }</span>
-<span class="n">lower_bound</span> <span class="o">=</span>  <span class="o">...</span> <span class="c1">#define how keys are rescaled (lower and upper bounds) (e.g. lower_bound = {key1: 0.0, ...}, upper_bound ={key1:20.0,...}</span>
+<span class="n">lower_bound</span> <span class="o">=</span>  <span class="o">...</span> <span class="c1">#define how keys are rescaled (lower and upper bounds) (e.g. lower_bound = {key1: 0.0, ...})</span>
 <span class="k">def</span> <span class="nf">reward</span> <span class="o">=</span> <span class="o">...</span> <span class="c1">#define the reward function</span>
 
 
