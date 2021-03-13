@@ -317,7 +317,7 @@ As for the fan coils, storage tanks launch a binary signal to the HP based on th
 </div>
 <div class="section" id="heat-pump-control">
 <h3>Heat pump control<a class="headerlink" href="#heat-pump-control" title="Permalink to this headline">¶</a></h3>
-<p>The user has the possibility to control the water return temperature of the pump and the on/off mode of the pump.</p>
+<p>The user has the possibility to control the water supply temperature of the pump and the on/off mode of the pump.</p>
 <a class="reference internal image-reference" href="../_images/pump_seilab.PNG"><img alt="../_images/pump_seilab.PNG" class="align-center" src="../_images/pump_seilab.PNG" style="width: 600px;" /></a>
 <p>No active cooling system is implemented, a free cooling strategy is applied during summer season. This strategy is modelled with an enhanced air infiltration rate from June to September.
 Summer season in Spain can reach high temperature such as 35°C. This strategy allows maintaining rooms’ temperature into an acceptable range.</p>
@@ -479,367 +479,373 @@ Summer season in Spain can reach high temperature such as 35°C. This strategy a
 <td><p>55</p></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p>P3_T_Thermostat_sp_out</p></td>
+<tr class="row-odd"><td><p>Bd_T_HP_sp_out</p></td>
+<td><p>scalar</p></td>
+<td><p>35</p></td>
+<td><p>55</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>P3_T_Thermostat_sp_out</p></td>
 <td><p>scalar</p></td>
 <td><p>16</p></td>
 <td><p>26</p></td>
 <td></td>
 </tr>
-<tr class="row-even"><td><p>P4_T_Thermostat_sp_out</p></td>
+<tr class="row-odd"><td><p>P4_T_Thermostat_sp_out</p></td>
 <td><p>scalar</p></td>
 <td><p>16</p></td>
 <td><p>26</p></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p>P2_T_Thermostat_sp_out</p></td>
+<tr class="row-even"><td><p>P2_T_Thermostat_sp_out</p></td>
 <td><p>scalar</p></td>
 <td><p>16</p></td>
 <td><p>26</p></td>
 <td></td>
 </tr>
-<tr class="row-even"><td><p>P1_T_Thermostat_sp_out</p></td>
+<tr class="row-odd"><td><p>P1_T_Thermostat_sp_out</p></td>
 <td><p>scalar</p></td>
 <td><p>16</p></td>
 <td><p>26</p></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p>P1_T_Tank_sp_out</p></td>
+<tr class="row-even"><td><p>P1_T_Tank_sp_out</p></td>
 <td><p>scalar</p></td>
 <td><p>30</p></td>
 <td><p>70</p></td>
 <td></td>
 </tr>
-<tr class="row-even"><td><p>P2_T_Tank_sp_out</p></td>
+<tr class="row-odd"><td><p>P2_T_Tank_sp_out</p></td>
 <td><p>scalar</p></td>
 <td><p>30</p></td>
 <td><p>70</p></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p>P3_T_Tank_sp_out</p></td>
+<tr class="row-even"><td><p>P3_T_Tank_sp_out</p></td>
 <td><p>scalar</p></td>
 <td><p>30</p></td>
 <td><p>70</p></td>
 <td></td>
 </tr>
-<tr class="row-even"><td><p>P4_T_Tank_sp_out</p></td>
+<tr class="row-odd"><td><p>P4_T_Tank_sp_out</p></td>
 <td><p>scalar</p></td>
 <td><p>30</p></td>
 <td><p>70</p></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p>Bd_Pw_Bat_sp_out</p></td>
+<tr class="row-even"><td><p>Bd_Pw_Bat_sp_out</p></td>
 <td><p>scalar</p></td>
 <td><p>-1</p></td>
 <td><p>1</p></td>
 <td></td>
 </tr>
-<tr class="row-even"><td><p>Bd_Ch_EVBat_sp_out</p></td>
+<tr class="row-odd"><td><p>Bd_Ch_EVBat_sp_out</p></td>
 <td><p>scalar</p></td>
 <td><p>0</p></td>
 <td><p>1</p></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p>Bd_DisCh_EVBat</p></td>
+<tr class="row-even"><td><p>Bd_DisCh_EVBat</p></td>
 <td><p>scalar</p></td>
 <td><p>0</p></td>
 <td><p>1</p></td>
 <td></td>
 </tr>
-<tr class="row-even"><td><p>Bd_Frac_Vent_sp_out</p></td>
+<tr class="row-odd"><td><p>Bd_Frac_Vent_sp_out</p></td>
 <td><p>scalar</p></td>
 <td><p>0</p></td>
 <td><p>1</p></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p>Z01_E_Appl</p></td>
+<tr class="row-even"><td><p>Z01_E_Appl</p></td>
 <td><p>scalar</p></td>
 <td><p>0</p></td>
 <td><p>1000</p></td>
 <td></td>
 </tr>
-<tr class="row-even"><td><p>Z02_E_Appl</p></td>
+<tr class="row-odd"><td><p>Z02_E_Appl</p></td>
 <td><p>scalar</p></td>
 <td><p>0</p></td>
 <td><p>1000</p></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p>Z03_E_Appl</p></td>
+<tr class="row-even"><td><p>Z03_E_Appl</p></td>
 <td><p>scalar</p></td>
 <td><p>0</p></td>
 <td><p>1000</p></td>
 <td></td>
 </tr>
-<tr class="row-even"><td><p>Z04_E_Appl</p></td>
+<tr class="row-odd"><td><p>Z04_E_Appl</p></td>
 <td><p>scalar</p></td>
 <td><p>0</p></td>
 <td><p>1000</p></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p>Z05_E_Appl</p></td>
+<tr class="row-even"><td><p>Z05_E_Appl</p></td>
 <td><p>scalar</p></td>
 <td><p>0</p></td>
 <td><p>1000</p></td>
 <td></td>
 </tr>
-<tr class="row-even"><td><p>Z06_E_Appl</p></td>
+<tr class="row-odd"><td><p>Z06_E_Appl</p></td>
 <td><p>scalar</p></td>
 <td><p>0</p></td>
 <td><p>1000</p></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p>Z07_E_Appl</p></td>
+<tr class="row-even"><td><p>Z07_E_Appl</p></td>
 <td><p>scalar</p></td>
 <td><p>0</p></td>
 <td><p>1000</p></td>
 <td></td>
 </tr>
-<tr class="row-even"><td><p>Z08_E_Appl</p></td>
+<tr class="row-odd"><td><p>Z08_E_Appl</p></td>
 <td><p>scalar</p></td>
 <td><p>0</p></td>
 <td><p>1000</p></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p>P1_FlFrac_HW</p></td>
+<tr class="row-even"><td><p>P1_FlFrac_HW</p></td>
 <td><p>scalar</p></td>
 <td><p>0</p></td>
 <td><p>1</p></td>
 <td></td>
 </tr>
-<tr class="row-even"><td><p>P2_FlFrac_HW</p></td>
+<tr class="row-odd"><td><p>P2_FlFrac_HW</p></td>
 <td><p>scalar</p></td>
 <td><p>0</p></td>
 <td><p>1</p></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p>P3_FlFrac_HW</p></td>
+<tr class="row-even"><td><p>P3_FlFrac_HW</p></td>
 <td><p>scalar</p></td>
 <td><p>0</p></td>
 <td><p>1</p></td>
 <td></td>
 </tr>
-<tr class="row-even"><td><p>P4_FlFrac_HW</p></td>
+<tr class="row-odd"><td><p>P4_FlFrac_HW</p></td>
 <td><p>scalar</p></td>
 <td><p>0</p></td>
 <td><p>1</p></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p>Z01_T</p></td>
+<tr class="row-even"><td><p>Z01_T</p></td>
 <td><p>scalar</p></td>
 <td><p>10</p></td>
 <td><p>40</p></td>
 <td></td>
 </tr>
-<tr class="row-even"><td><p>Z01_RH</p></td>
+<tr class="row-odd"><td><p>Z01_RH</p></td>
 <td><p>scalar</p></td>
 <td><p>0</p></td>
 <td><p>100</p></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p>Z02_T</p></td>
+<tr class="row-even"><td><p>Z02_T</p></td>
 <td><p>scalar</p></td>
 <td><p>10</p></td>
 <td><p>40</p></td>
 <td></td>
 </tr>
-<tr class="row-even"><td><p>Z02_RH</p></td>
+<tr class="row-odd"><td><p>Z02_RH</p></td>
 <td><p>scalar</p></td>
 <td><p>0</p></td>
 <td><p>100</p></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p>Z03_T</p></td>
+<tr class="row-even"><td><p>Z03_T</p></td>
 <td><p>scalar</p></td>
 <td><p>10</p></td>
 <td><p>40</p></td>
 <td></td>
 </tr>
-<tr class="row-even"><td><p>Z03_RH</p></td>
+<tr class="row-odd"><td><p>Z03_RH</p></td>
 <td><p>scalar</p></td>
 <td><p>0</p></td>
 <td><p>100</p></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p>Z04_T</p></td>
+<tr class="row-even"><td><p>Z04_T</p></td>
 <td><p>scalar</p></td>
 <td><p>10</p></td>
 <td><p>40</p></td>
 <td></td>
 </tr>
-<tr class="row-even"><td><p>Z04_RH</p></td>
+<tr class="row-odd"><td><p>Z04_RH</p></td>
 <td><p>scalar</p></td>
 <td><p>0</p></td>
 <td><p>100</p></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p>Z05_T</p></td>
+<tr class="row-even"><td><p>Z05_T</p></td>
 <td><p>scalar</p></td>
 <td><p>10</p></td>
 <td><p>40</p></td>
 <td></td>
 </tr>
-<tr class="row-even"><td><p>Z05_RH</p></td>
+<tr class="row-odd"><td><p>Z05_RH</p></td>
 <td><p>scalar</p></td>
 <td><p>0</p></td>
 <td><p>100</p></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p>Z06_T</p></td>
+<tr class="row-even"><td><p>Z06_T</p></td>
 <td><p>scalar</p></td>
 <td><p>10</p></td>
 <td><p>40</p></td>
 <td></td>
 </tr>
-<tr class="row-even"><td><p>Z06_RH</p></td>
+<tr class="row-odd"><td><p>Z06_RH</p></td>
 <td><p>scalar</p></td>
 <td><p>0</p></td>
 <td><p>100</p></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p>Z07_T</p></td>
+<tr class="row-even"><td><p>Z07_T</p></td>
 <td><p>scalar</p></td>
 <td><p>10</p></td>
 <td><p>40</p></td>
 <td></td>
 </tr>
-<tr class="row-even"><td><p>Z07_RH</p></td>
+<tr class="row-odd"><td><p>Z07_RH</p></td>
 <td><p>scalar</p></td>
 <td><p>0</p></td>
 <td><p>100</p></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p>Z08_T</p></td>
+<tr class="row-even"><td><p>Z08_T</p></td>
 <td><p>scalar</p></td>
 <td><p>10</p></td>
 <td><p>40</p></td>
 <td></td>
 </tr>
-<tr class="row-even"><td><p>Z08_RH</p></td>
+<tr class="row-odd"><td><p>Z08_RH</p></td>
 <td><p>scalar</p></td>
 <td><p>0</p></td>
 <td><p>100</p></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p>Fa_Stat_EV</p></td>
+<tr class="row-even"><td><p>Fa_Stat_EV</p></td>
 <td><p>scalar</p></td>
 <td><p>0</p></td>
 <td><p>1</p></td>
 <td></td>
 </tr>
-<tr class="row-even"><td><p>Fa_ECh_EVBat</p></td>
+<tr class="row-odd"><td><p>Fa_ECh_EVBat</p></td>
 <td><p>scalar</p></td>
 <td><p>0</p></td>
 <td><p>4000.0</p></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p>Fa_EDCh_EVBat</p></td>
+<tr class="row-even"><td><p>Fa_EDCh_EVBat</p></td>
 <td><p>scalar</p></td>
 <td><p>0</p></td>
 <td><p>4000.0</p></td>
 <td></td>
 </tr>
-<tr class="row-even"><td><p>Fa_ECh_Bat</p></td>
+<tr class="row-odd"><td><p>Fa_ECh_Bat</p></td>
 <td><p>scalar</p></td>
 <td><p>0</p></td>
 <td><p>4000.0</p></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p>Fa_EDCh_Bat</p></td>
+<tr class="row-even"><td><p>Fa_EDCh_Bat</p></td>
 <td><p>scalar</p></td>
 <td><p>0</p></td>
 <td><p>4000.0</p></td>
 <td></td>
 </tr>
-<tr class="row-even"><td><p>Bd_FracCh_EVBat</p></td>
+<tr class="row-odd"><td><p>Bd_FracCh_EVBat</p></td>
 <td><p>scalar</p></td>
 <td><p>0</p></td>
 <td><p>1</p></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p>Bd_FracCh_Bat</p></td>
+<tr class="row-even"><td><p>Bd_FracCh_Bat</p></td>
 <td><p>scalar</p></td>
 <td><p>0</p></td>
 <td><p>1</p></td>
 <td></td>
 </tr>
-<tr class="row-even"><td><p>P4_T_Tank</p></td>
+<tr class="row-odd"><td><p>P4_T_Tank</p></td>
 <td><p>scalar</p></td>
 <td><p>30</p></td>
 <td><p>70</p></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p>P2_T_Tank</p></td>
+<tr class="row-even"><td><p>P2_T_Tank</p></td>
 <td><p>scalar</p></td>
 <td><p>30</p></td>
 <td><p>70</p></td>
 <td></td>
 </tr>
-<tr class="row-even"><td><p>P1_T_Tank</p></td>
+<tr class="row-odd"><td><p>P1_T_Tank</p></td>
 <td><p>scalar</p></td>
 <td><p>30</p></td>
 <td><p>70</p></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p>P3_T_Tank</p></td>
+<tr class="row-even"><td><p>P3_T_Tank</p></td>
 <td><p>scalar</p></td>
 <td><p>30</p></td>
 <td><p>70</p></td>
 <td></td>
 </tr>
-<tr class="row-even"><td><p>HVAC_Pw_HP</p></td>
+<tr class="row-odd"><td><p>HVAC_Pw_HP</p></td>
 <td><p>scalar</p></td>
 <td><p>0</p></td>
 <td><p>120000.0</p></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p>HVAC_onoff_HP_sp_out</p></td>
+<tr class="row-even"><td><p>HVAC_onoff_HP_sp_out</p></td>
 <td><p>scalar</p></td>
 <td><p>0</p></td>
 <td><p>1</p></td>
 <td></td>
 </tr>
-<tr class="row-even"><td><p>Bd_E_HW</p></td>
+<tr class="row-odd"><td><p>Bd_E_HW</p></td>
 <td><p>scalar</p></td>
 <td><p>-3000.0</p></td>
 <td><p>3000.0</p></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p>Fa_Pw_All</p></td>
+<tr class="row-even"><td><p>Fa_Pw_All</p></td>
 <td><p>scalar</p></td>
 <td><p>0</p></td>
 <td><p>30000.0</p></td>
 <td></td>
 </tr>
-<tr class="row-even"><td><p>Fa_Pw_Prod</p></td>
+<tr class="row-odd"><td><p>Fa_Pw_Prod</p></td>
 <td><p>scalar</p></td>
 <td><p>0</p></td>
 <td><p>10000.0</p></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p>Fa_E_self</p></td>
+<tr class="row-even"><td><p>Fa_E_self</p></td>
 <td><p>scalar</p></td>
 <td><p>-2000.0</p></td>
 <td><p>2000.0</p></td>
 <td></td>
 </tr>
-<tr class="row-even"><td><p>Fa_Pw_HVAC</p></td>
+<tr class="row-odd"><td><p>Fa_Pw_HVAC</p></td>
 <td><p>scalar</p></td>
 <td><p>0</p></td>
 <td><p>2000.0</p></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p>Fa_E_All</p></td>
+<tr class="row-even"><td><p>Fa_E_All</p></td>
 <td><p>scalar</p></td>
 <td><p>0</p></td>
 <td><p>2000.0</p></td>
 <td></td>
 </tr>
-<tr class="row-even"><td><p>Fa_E_Light</p></td>
+<tr class="row-odd"><td><p>Fa_E_Light</p></td>
 <td><p>scalar</p></td>
 <td><p>0</p></td>
 <td><p>100</p></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p>Fa_E_Appl</p></td>
+<tr class="row-even"><td><p>Fa_E_Appl</p></td>
 <td><p>scalar</p></td>
 <td><p>0</p></td>
 <td><p>500.0</p></td>
