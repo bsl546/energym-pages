@@ -160,309 +160,484 @@
         <span class="s2">&quot;lower_bound&quot;</span><span class="p">:</span> <span class="mi">16</span><span class="p">,</span>
         <span class="s2">&quot;upper_bound&quot;</span><span class="p">:</span> <span class="mi">26</span><span class="p">,</span>
         <span class="s2">&quot;default&quot;</span><span class="p">:</span> <span class="mi">20</span><span class="p">,</span>
+        <span class="s2">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;Floor 1 thermostat setpoint.&quot;</span><span class="p">,</span>
     <span class="p">},</span>
     <span class="s2">&quot;P2_T_Thermostat_sp&quot;</span><span class="p">:</span> <span class="p">{</span>
         <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;scalar&quot;</span><span class="p">,</span>
         <span class="s2">&quot;lower_bound&quot;</span><span class="p">:</span> <span class="mi">16</span><span class="p">,</span>
         <span class="s2">&quot;upper_bound&quot;</span><span class="p">:</span> <span class="mi">26</span><span class="p">,</span>
         <span class="s2">&quot;default&quot;</span><span class="p">:</span> <span class="mi">20</span><span class="p">,</span>
+        <span class="s2">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;Floor 2 thermostat setpoint.&quot;</span><span class="p">,</span>
     <span class="p">},</span>
     <span class="s2">&quot;P3_T_Thermostat_sp&quot;</span><span class="p">:</span> <span class="p">{</span>
         <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;scalar&quot;</span><span class="p">,</span>
         <span class="s2">&quot;lower_bound&quot;</span><span class="p">:</span> <span class="mi">16</span><span class="p">,</span>
         <span class="s2">&quot;upper_bound&quot;</span><span class="p">:</span> <span class="mi">26</span><span class="p">,</span>
         <span class="s2">&quot;default&quot;</span><span class="p">:</span> <span class="mi">20</span><span class="p">,</span>
+        <span class="s2">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;Floor 3 thermostat setpoint.&quot;</span><span class="p">,</span>
     <span class="p">},</span>
     <span class="s2">&quot;P4_T_Thermostat_sp&quot;</span><span class="p">:</span> <span class="p">{</span>
         <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;scalar&quot;</span><span class="p">,</span>
         <span class="s2">&quot;lower_bound&quot;</span><span class="p">:</span> <span class="mi">16</span><span class="p">,</span>
         <span class="s2">&quot;upper_bound&quot;</span><span class="p">:</span> <span class="mi">26</span><span class="p">,</span>
         <span class="s2">&quot;default&quot;</span><span class="p">:</span> <span class="mi">20</span><span class="p">,</span>
+        <span class="s2">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;Floor 4 thermostat setpoint.&quot;</span><span class="p">,</span>
     <span class="p">},</span>
-    <span class="s2">&quot;P1_onoff_HP_sp&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;discrete&quot;</span><span class="p">,</span> <span class="s2">&quot;size&quot;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="s2">&quot;default&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">},</span>
-    <span class="s2">&quot;P2_onoff_HP_sp&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;discrete&quot;</span><span class="p">,</span> <span class="s2">&quot;size&quot;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="s2">&quot;default&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">},</span>
-    <span class="s2">&quot;P3_onoff_HP_sp&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;discrete&quot;</span><span class="p">,</span> <span class="s2">&quot;size&quot;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="s2">&quot;default&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">},</span>
-    <span class="s2">&quot;P4_onoff_HP_sp&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;discrete&quot;</span><span class="p">,</span> <span class="s2">&quot;size&quot;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="s2">&quot;default&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">},</span>
+    <span class="s2">&quot;P1_onoff_HP_sp&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;discrete&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;size&quot;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
+        <span class="s2">&quot;default&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+        <span class="s2">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;Heat pump 1 on/off setpoint.&quot;</span><span class="p">,</span>
+    <span class="p">},</span>
+    <span class="s2">&quot;P2_onoff_HP_sp&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;discrete&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;size&quot;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
+        <span class="s2">&quot;default&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+        <span class="s2">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;Heat pump 2 on/off setpoint.&quot;</span><span class="p">,</span>
+    <span class="p">},</span>
+    <span class="s2">&quot;P3_onoff_HP_sp&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;discrete&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;size&quot;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
+        <span class="s2">&quot;default&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+        <span class="s2">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;Heat pump 3 on/off setpoint.&quot;</span><span class="p">,</span>
+    <span class="p">},</span>
+    <span class="s2">&quot;P4_onoff_HP_sp&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;discrete&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;size&quot;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
+        <span class="s2">&quot;default&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+        <span class="s2">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;Heat pump 4 on/off setpoint.&quot;</span><span class="p">,</span>
+    <span class="p">},</span>
     <span class="s2">&quot;Bd_Pw_Bat_sp&quot;</span><span class="p">:</span> <span class="p">{</span>
         <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;scalar&quot;</span><span class="p">,</span>
         <span class="s2">&quot;lower_bound&quot;</span><span class="p">:</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span>
         <span class="s2">&quot;upper_bound&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
         <span class="s2">&quot;default&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+        <span class="s2">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;Battery charging/discharging setpoint.&quot;</span><span class="p">,</span>
     <span class="p">},</span>
     <span class="s2">&quot;Bd_Ch_EV1Bat_sp&quot;</span><span class="p">:</span> <span class="p">{</span>
         <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;scalar&quot;</span><span class="p">,</span>
         <span class="s2">&quot;lower_bound&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
         <span class="s2">&quot;upper_bound&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
         <span class="s2">&quot;default&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+        <span class="s2">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;EV 1 charging setpoint.&quot;</span><span class="p">,</span>
     <span class="p">},</span>
     <span class="s2">&quot;Bd_Ch_EV2Bat_sp&quot;</span><span class="p">:</span> <span class="p">{</span>
         <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;scalar&quot;</span><span class="p">,</span>
         <span class="s2">&quot;lower_bound&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
         <span class="s2">&quot;upper_bound&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
         <span class="s2">&quot;default&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+        <span class="s2">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;EV 2 charging setpoint.&quot;</span><span class="p">,</span>
     <span class="p">},</span>
 <span class="p">}</span>
 
 <span class="n">OUTPUTS_SPECS</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="s2">&quot;Ext_T&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;scalar&quot;</span><span class="p">,</span> <span class="s2">&quot;lower_bound&quot;</span><span class="p">:</span> <span class="o">-</span><span class="mi">10</span><span class="p">,</span> <span class="s2">&quot;upper_bound&quot;</span><span class="p">:</span> <span class="mi">40</span><span class="p">},</span>
-    <span class="s2">&quot;Ext_RH&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;scalar&quot;</span><span class="p">,</span> <span class="s2">&quot;lower_bound&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="s2">&quot;upper_bound&quot;</span><span class="p">:</span> <span class="mi">100</span><span class="p">},</span>
-    <span class="s2">&quot;Ext_Irr&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;scalar&quot;</span><span class="p">,</span> <span class="s2">&quot;lower_bound&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="s2">&quot;upper_bound&quot;</span><span class="p">:</span> <span class="mi">1000</span><span class="p">},</span>
+    <span class="s2">&quot;Ext_T&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;scalar&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;lower_bound&quot;</span><span class="p">:</span> <span class="o">-</span><span class="mi">10</span><span class="p">,</span>
+        <span class="s2">&quot;upper_bound&quot;</span><span class="p">:</span> <span class="mi">40</span><span class="p">,</span>
+        <span class="s2">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;Outdoor temperature.&quot;</span><span class="p">,</span>
+    <span class="p">},</span>
+    <span class="s2">&quot;Ext_RH&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;scalar&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;lower_bound&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+        <span class="s2">&quot;upper_bound&quot;</span><span class="p">:</span> <span class="mi">100</span><span class="p">,</span>
+        <span class="s2">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;Outdoor relative humidity.&quot;</span><span class="p">,</span>
+    <span class="p">},</span>
+    <span class="s2">&quot;Ext_Irr&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;scalar&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;lower_bound&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+        <span class="s2">&quot;upper_bound&quot;</span><span class="p">:</span> <span class="mi">1000</span><span class="p">,</span>
+        <span class="s2">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;Direct normal radiation.&quot;</span><span class="p">,</span>
+    <span class="p">},</span>
     <span class="s2">&quot;Ext_P&quot;</span><span class="p">:</span> <span class="p">{</span>
         <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;scalar&quot;</span><span class="p">,</span>
         <span class="s2">&quot;lower_bound&quot;</span><span class="p">:</span> <span class="mf">8e4</span><span class="p">,</span>
         <span class="s2">&quot;upper_bound&quot;</span><span class="p">:</span> <span class="mf">1.30e5</span><span class="p">,</span>
+        <span class="s2">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;Outdoor air pressure.&quot;</span><span class="p">,</span>
     <span class="p">},</span>
     <span class="s2">&quot;P3_T_Thermostat_sp_out&quot;</span><span class="p">:</span> <span class="p">{</span>
         <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;scalar&quot;</span><span class="p">,</span>
         <span class="s2">&quot;lower_bound&quot;</span><span class="p">:</span> <span class="mi">16</span><span class="p">,</span>
         <span class="s2">&quot;upper_bound&quot;</span><span class="p">:</span> <span class="mi">26</span><span class="p">,</span>
+        <span class="s2">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;Floor 3 thermostat setpoint.&quot;</span><span class="p">,</span>
     <span class="p">},</span>
     <span class="s2">&quot;P4_T_Thermostat_sp_out&quot;</span><span class="p">:</span> <span class="p">{</span>
         <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;scalar&quot;</span><span class="p">,</span>
         <span class="s2">&quot;lower_bound&quot;</span><span class="p">:</span> <span class="mi">16</span><span class="p">,</span>
         <span class="s2">&quot;upper_bound&quot;</span><span class="p">:</span> <span class="mi">26</span><span class="p">,</span>
+        <span class="s2">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;Floor 4 thermostat setpoint.&quot;</span><span class="p">,</span>
     <span class="p">},</span>
     <span class="s2">&quot;P2_T_Thermostat_sp_out&quot;</span><span class="p">:</span> <span class="p">{</span>
         <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;scalar&quot;</span><span class="p">,</span>
         <span class="s2">&quot;lower_bound&quot;</span><span class="p">:</span> <span class="mi">16</span><span class="p">,</span>
         <span class="s2">&quot;upper_bound&quot;</span><span class="p">:</span> <span class="mi">26</span><span class="p">,</span>
+        <span class="s2">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;Floor 2 thermostat setpoint.&quot;</span><span class="p">,</span>
     <span class="p">},</span>
     <span class="s2">&quot;P1_T_Thermostat_sp_out&quot;</span><span class="p">:</span> <span class="p">{</span>
         <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;scalar&quot;</span><span class="p">,</span>
         <span class="s2">&quot;lower_bound&quot;</span><span class="p">:</span> <span class="mi">16</span><span class="p">,</span>
         <span class="s2">&quot;upper_bound&quot;</span><span class="p">:</span> <span class="mi">26</span><span class="p">,</span>
+        <span class="s2">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;Floor 1 thermostat setpoint.&quot;</span><span class="p">,</span>
     <span class="p">},</span>
     <span class="s2">&quot;Bd_Pw_Bat_sp_out&quot;</span><span class="p">:</span> <span class="p">{</span>
         <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;scalar&quot;</span><span class="p">,</span>
         <span class="s2">&quot;lower_bound&quot;</span><span class="p">:</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span>
         <span class="s2">&quot;upper_bound&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+        <span class="s2">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;Battery charging/discharging setpoint.&quot;</span><span class="p">,</span>
     <span class="p">},</span>
     <span class="s2">&quot;Bd_Ch_EV1Bat_sp_out&quot;</span><span class="p">:</span> <span class="p">{</span>
         <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;scalar&quot;</span><span class="p">,</span>
         <span class="s2">&quot;lower_bound&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
         <span class="s2">&quot;upper_bound&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+        <span class="s2">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;EV 1 battery charging setpoint.&quot;</span><span class="p">,</span>
     <span class="p">},</span>
     <span class="s2">&quot;Bd_Ch_EV2Bat_sp_out&quot;</span><span class="p">:</span> <span class="p">{</span>
         <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;scalar&quot;</span><span class="p">,</span>
         <span class="s2">&quot;lower_bound&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
         <span class="s2">&quot;upper_bound&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+        <span class="s2">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;EV 2 battery charging setpoint.&quot;</span><span class="p">,</span>
     <span class="p">},</span>
     <span class="s2">&quot;Bd_DisCh_EV1Bat&quot;</span><span class="p">:</span> <span class="p">{</span>
         <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;scalar&quot;</span><span class="p">,</span>
         <span class="s2">&quot;lower_bound&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
         <span class="s2">&quot;upper_bound&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+        <span class="s2">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;EV 1 battery discharging?&quot;</span><span class="p">,</span>
     <span class="p">},</span>
     <span class="s2">&quot;Bd_DisCh_EV2Bat&quot;</span><span class="p">:</span> <span class="p">{</span>
         <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;scalar&quot;</span><span class="p">,</span>
         <span class="s2">&quot;lower_bound&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
         <span class="s2">&quot;upper_bound&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+        <span class="s2">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;EV 2 battery discharging?&quot;</span><span class="p">,</span>
     <span class="p">},</span>
     <span class="s2">&quot;Bd_Frac_Vent_sp_out&quot;</span><span class="p">:</span> <span class="p">{</span>
         <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;scalar&quot;</span><span class="p">,</span>
         <span class="s2">&quot;lower_bound&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
         <span class="s2">&quot;upper_bound&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+        <span class="s2">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;?&quot;</span><span class="p">,</span>
     <span class="p">},</span>
     <span class="s2">&quot;Z01_E_Appl&quot;</span><span class="p">:</span> <span class="p">{</span>
         <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;scalar&quot;</span><span class="p">,</span>
         <span class="s2">&quot;lower_bound&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
         <span class="s2">&quot;upper_bound&quot;</span><span class="p">:</span> <span class="mi">1000</span><span class="p">,</span>
+        <span class="s2">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;Zone 1 appliances energy.&quot;</span><span class="p">,</span>
     <span class="p">},</span>
     <span class="s2">&quot;Z02_E_Appl&quot;</span><span class="p">:</span> <span class="p">{</span>
         <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;scalar&quot;</span><span class="p">,</span>
         <span class="s2">&quot;lower_bound&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
         <span class="s2">&quot;upper_bound&quot;</span><span class="p">:</span> <span class="mi">1000</span><span class="p">,</span>
+        <span class="s2">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;Zone 2 appliances energy.&quot;</span><span class="p">,</span>
     <span class="p">},</span>
     <span class="s2">&quot;Z03_E_Appl&quot;</span><span class="p">:</span> <span class="p">{</span>
         <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;scalar&quot;</span><span class="p">,</span>
         <span class="s2">&quot;lower_bound&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
         <span class="s2">&quot;upper_bound&quot;</span><span class="p">:</span> <span class="mi">1000</span><span class="p">,</span>
+        <span class="s2">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;Zone 3 appliances energy.&quot;</span><span class="p">,</span>
     <span class="p">},</span>
     <span class="s2">&quot;Z04_E_Appl&quot;</span><span class="p">:</span> <span class="p">{</span>
         <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;scalar&quot;</span><span class="p">,</span>
         <span class="s2">&quot;lower_bound&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
         <span class="s2">&quot;upper_bound&quot;</span><span class="p">:</span> <span class="mi">1000</span><span class="p">,</span>
+        <span class="s2">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;Zone 4 appliances energy.&quot;</span><span class="p">,</span>
     <span class="p">},</span>
     <span class="s2">&quot;Z05_E_Appl&quot;</span><span class="p">:</span> <span class="p">{</span>
         <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;scalar&quot;</span><span class="p">,</span>
         <span class="s2">&quot;lower_bound&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
         <span class="s2">&quot;upper_bound&quot;</span><span class="p">:</span> <span class="mi">1000</span><span class="p">,</span>
+        <span class="s2">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;Zone 5 appliances energy.&quot;</span><span class="p">,</span>
     <span class="p">},</span>
     <span class="s2">&quot;Z06_E_Appl&quot;</span><span class="p">:</span> <span class="p">{</span>
         <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;scalar&quot;</span><span class="p">,</span>
         <span class="s2">&quot;lower_bound&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
         <span class="s2">&quot;upper_bound&quot;</span><span class="p">:</span> <span class="mi">1000</span><span class="p">,</span>
+        <span class="s2">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;Zone 6 appliances energy.&quot;</span><span class="p">,</span>
     <span class="p">},</span>
     <span class="s2">&quot;Z07_E_Appl&quot;</span><span class="p">:</span> <span class="p">{</span>
         <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;scalar&quot;</span><span class="p">,</span>
         <span class="s2">&quot;lower_bound&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
         <span class="s2">&quot;upper_bound&quot;</span><span class="p">:</span> <span class="mi">1000</span><span class="p">,</span>
+        <span class="s2">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;Zone 7 appliances energy.&quot;</span><span class="p">,</span>
     <span class="p">},</span>
     <span class="s2">&quot;Z08_E_Appl&quot;</span><span class="p">:</span> <span class="p">{</span>
         <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;scalar&quot;</span><span class="p">,</span>
         <span class="s2">&quot;lower_bound&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
         <span class="s2">&quot;upper_bound&quot;</span><span class="p">:</span> <span class="mi">1000</span><span class="p">,</span>
+        <span class="s2">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;Zone 8 appliances energy.&quot;</span><span class="p">,</span>
     <span class="p">},</span>
     <span class="s2">&quot;P1_FlFrac_HW&quot;</span><span class="p">:</span> <span class="p">{</span>
         <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;scalar&quot;</span><span class="p">,</span>
         <span class="s2">&quot;lower_bound&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
         <span class="s2">&quot;upper_bound&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+        <span class="s2">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;Floor 1 hot water flow fraction.&quot;</span><span class="p">,</span>
     <span class="p">},</span>
     <span class="s2">&quot;P2_FlFrac_HW&quot;</span><span class="p">:</span> <span class="p">{</span>
         <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;scalar&quot;</span><span class="p">,</span>
         <span class="s2">&quot;lower_bound&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
         <span class="s2">&quot;upper_bound&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+        <span class="s2">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;Floor 2 hot water flow fraction.&quot;</span><span class="p">,</span>
     <span class="p">},</span>
     <span class="s2">&quot;P3_FlFrac_HW&quot;</span><span class="p">:</span> <span class="p">{</span>
         <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;scalar&quot;</span><span class="p">,</span>
         <span class="s2">&quot;lower_bound&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
         <span class="s2">&quot;upper_bound&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+        <span class="s2">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;Floor 3 hot water flow fraction.&quot;</span><span class="p">,</span>
     <span class="p">},</span>
     <span class="s2">&quot;P4_FlFrac_HW&quot;</span><span class="p">:</span> <span class="p">{</span>
         <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;scalar&quot;</span><span class="p">,</span>
         <span class="s2">&quot;lower_bound&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
         <span class="s2">&quot;upper_bound&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+        <span class="s2">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;Floor 4 hot water flow fraction.&quot;</span><span class="p">,</span>
     <span class="p">},</span>
-    <span class="s2">&quot;Z01_T&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;scalar&quot;</span><span class="p">,</span> <span class="s2">&quot;lower_bound&quot;</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span> <span class="s2">&quot;upper_bound&quot;</span><span class="p">:</span> <span class="mi">40</span><span class="p">},</span>
-    <span class="s2">&quot;Z01_RH&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;scalar&quot;</span><span class="p">,</span> <span class="s2">&quot;lower_bound&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="s2">&quot;upper_bound&quot;</span><span class="p">:</span> <span class="mi">100</span><span class="p">},</span>
-    <span class="s2">&quot;Z02_T&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;scalar&quot;</span><span class="p">,</span> <span class="s2">&quot;lower_bound&quot;</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span> <span class="s2">&quot;upper_bound&quot;</span><span class="p">:</span> <span class="mi">40</span><span class="p">},</span>
-    <span class="s2">&quot;Z02_RH&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;scalar&quot;</span><span class="p">,</span> <span class="s2">&quot;lower_bound&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="s2">&quot;upper_bound&quot;</span><span class="p">:</span> <span class="mi">100</span><span class="p">},</span>
-    <span class="s2">&quot;Z03_T&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;scalar&quot;</span><span class="p">,</span> <span class="s2">&quot;lower_bound&quot;</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span> <span class="s2">&quot;upper_bound&quot;</span><span class="p">:</span> <span class="mi">40</span><span class="p">},</span>
-    <span class="s2">&quot;Z03_RH&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;scalar&quot;</span><span class="p">,</span> <span class="s2">&quot;lower_bound&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="s2">&quot;upper_bound&quot;</span><span class="p">:</span> <span class="mi">100</span><span class="p">},</span>
-    <span class="s2">&quot;Z04_T&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;scalar&quot;</span><span class="p">,</span> <span class="s2">&quot;lower_bound&quot;</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span> <span class="s2">&quot;upper_bound&quot;</span><span class="p">:</span> <span class="mi">40</span><span class="p">},</span>
-    <span class="s2">&quot;Z04_RH&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;scalar&quot;</span><span class="p">,</span> <span class="s2">&quot;lower_bound&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="s2">&quot;upper_bound&quot;</span><span class="p">:</span> <span class="mi">100</span><span class="p">},</span>
-    <span class="s2">&quot;Z05_T&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;scalar&quot;</span><span class="p">,</span> <span class="s2">&quot;lower_bound&quot;</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span> <span class="s2">&quot;upper_bound&quot;</span><span class="p">:</span> <span class="mi">40</span><span class="p">},</span>
-    <span class="s2">&quot;Z05_RH&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;scalar&quot;</span><span class="p">,</span> <span class="s2">&quot;lower_bound&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="s2">&quot;upper_bound&quot;</span><span class="p">:</span> <span class="mi">100</span><span class="p">},</span>
-    <span class="s2">&quot;Z06_T&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;scalar&quot;</span><span class="p">,</span> <span class="s2">&quot;lower_bound&quot;</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span> <span class="s2">&quot;upper_bound&quot;</span><span class="p">:</span> <span class="mi">40</span><span class="p">},</span>
-    <span class="s2">&quot;Z06_RH&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;scalar&quot;</span><span class="p">,</span> <span class="s2">&quot;lower_bound&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="s2">&quot;upper_bound&quot;</span><span class="p">:</span> <span class="mi">100</span><span class="p">},</span>
-    <span class="s2">&quot;Z07_T&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;scalar&quot;</span><span class="p">,</span> <span class="s2">&quot;lower_bound&quot;</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span> <span class="s2">&quot;upper_bound&quot;</span><span class="p">:</span> <span class="mi">40</span><span class="p">},</span>
-    <span class="s2">&quot;Z07_RH&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;scalar&quot;</span><span class="p">,</span> <span class="s2">&quot;lower_bound&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="s2">&quot;upper_bound&quot;</span><span class="p">:</span> <span class="mi">100</span><span class="p">},</span>
-    <span class="s2">&quot;Z08_T&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;scalar&quot;</span><span class="p">,</span> <span class="s2">&quot;lower_bound&quot;</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span> <span class="s2">&quot;upper_bound&quot;</span><span class="p">:</span> <span class="mi">40</span><span class="p">},</span>
-    <span class="s2">&quot;Z08_RH&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;scalar&quot;</span><span class="p">,</span> <span class="s2">&quot;lower_bound&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="s2">&quot;upper_bound&quot;</span><span class="p">:</span> <span class="mi">100</span><span class="p">},</span>
+    <span class="s2">&quot;Z01_T&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;scalar&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;lower_bound&quot;</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span>
+        <span class="s2">&quot;upper_bound&quot;</span><span class="p">:</span> <span class="mi">40</span><span class="p">,</span>
+        <span class="s2">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;Zone 1 temperature.&quot;</span><span class="p">,</span>
+    <span class="p">},</span>
+    <span class="s2">&quot;Z01_RH&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;scalar&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;lower_bound&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+        <span class="s2">&quot;upper_bound&quot;</span><span class="p">:</span> <span class="mi">100</span><span class="p">,</span>
+        <span class="s2">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;Zone 1 relative humidity.&quot;</span><span class="p">,</span>
+    <span class="p">},</span>
+    <span class="s2">&quot;Z02_T&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;scalar&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;lower_bound&quot;</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span>
+        <span class="s2">&quot;upper_bound&quot;</span><span class="p">:</span> <span class="mi">40</span><span class="p">,</span>
+        <span class="s2">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;Zone 2 temperature.&quot;</span><span class="p">,</span>
+    <span class="p">},</span>
+    <span class="s2">&quot;Z02_RH&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;scalar&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;lower_bound&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+        <span class="s2">&quot;upper_bound&quot;</span><span class="p">:</span> <span class="mi">100</span><span class="p">,</span>
+        <span class="s2">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;Zone 2 relative humidity.&quot;</span><span class="p">,</span>
+    <span class="p">},</span>
+    <span class="s2">&quot;Z03_T&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;scalar&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;lower_bound&quot;</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span>
+        <span class="s2">&quot;upper_bound&quot;</span><span class="p">:</span> <span class="mi">40</span><span class="p">,</span>
+        <span class="s2">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;Zone 3 temperature.&quot;</span><span class="p">,</span>
+    <span class="p">},</span>
+    <span class="s2">&quot;Z03_RH&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;scalar&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;lower_bound&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+        <span class="s2">&quot;upper_bound&quot;</span><span class="p">:</span> <span class="mi">100</span><span class="p">,</span>
+        <span class="s2">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;Zone 3 relative humidity.&quot;</span><span class="p">,</span>
+    <span class="p">},</span>
+    <span class="s2">&quot;Z04_T&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;scalar&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;lower_bound&quot;</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span>
+        <span class="s2">&quot;upper_bound&quot;</span><span class="p">:</span> <span class="mi">40</span><span class="p">,</span>
+        <span class="s2">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;Zone 4 temperature.&quot;</span><span class="p">,</span>
+    <span class="p">},</span>
+    <span class="s2">&quot;Z04_RH&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;scalar&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;lower_bound&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+        <span class="s2">&quot;upper_bound&quot;</span><span class="p">:</span> <span class="mi">100</span><span class="p">,</span>
+        <span class="s2">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;Zone 4 relative humidity.&quot;</span><span class="p">,</span>
+    <span class="p">},</span>
+    <span class="s2">&quot;Z05_T&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;scalar&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;lower_bound&quot;</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span>
+        <span class="s2">&quot;upper_bound&quot;</span><span class="p">:</span> <span class="mi">40</span><span class="p">,</span>
+        <span class="s2">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;Zone 5 temperature.&quot;</span><span class="p">,</span>
+    <span class="p">},</span>
+    <span class="s2">&quot;Z05_RH&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;scalar&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;lower_bound&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+        <span class="s2">&quot;upper_bound&quot;</span><span class="p">:</span> <span class="mi">100</span><span class="p">,</span>
+        <span class="s2">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;Zone 5 relative humidity.&quot;</span><span class="p">,</span>
+    <span class="p">},</span>
+    <span class="s2">&quot;Z06_T&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;scalar&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;lower_bound&quot;</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span>
+        <span class="s2">&quot;upper_bound&quot;</span><span class="p">:</span> <span class="mi">40</span><span class="p">,</span>
+        <span class="s2">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;Zone 6 temperature.&quot;</span><span class="p">,</span>
+    <span class="p">},</span>
+    <span class="s2">&quot;Z06_RH&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;scalar&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;lower_bound&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+        <span class="s2">&quot;upper_bound&quot;</span><span class="p">:</span> <span class="mi">100</span><span class="p">,</span>
+        <span class="s2">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;Zone 6 relative humidity.&quot;</span><span class="p">,</span>
+    <span class="p">},</span>
+    <span class="s2">&quot;Z07_T&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;scalar&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;lower_bound&quot;</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span>
+        <span class="s2">&quot;upper_bound&quot;</span><span class="p">:</span> <span class="mi">40</span><span class="p">,</span>
+        <span class="s2">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;Zone 7 temperature.&quot;</span><span class="p">,</span>
+    <span class="p">},</span>
+    <span class="s2">&quot;Z07_RH&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;scalar&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;lower_bound&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+        <span class="s2">&quot;upper_bound&quot;</span><span class="p">:</span> <span class="mi">100</span><span class="p">,</span>
+        <span class="s2">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;Zone 7 relative humidity.&quot;</span><span class="p">,</span>
+    <span class="p">},</span>
+    <span class="s2">&quot;Z08_T&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;scalar&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;lower_bound&quot;</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span>
+        <span class="s2">&quot;upper_bound&quot;</span><span class="p">:</span> <span class="mi">40</span><span class="p">,</span>
+        <span class="s2">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;Zone 8 temperature.&quot;</span><span class="p">,</span>
+    <span class="p">},</span>
+    <span class="s2">&quot;Z08_RH&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;scalar&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;lower_bound&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+        <span class="s2">&quot;upper_bound&quot;</span><span class="p">:</span> <span class="mi">100</span><span class="p">,</span>
+        <span class="s2">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;Zone 8 relative humidity.&quot;</span><span class="p">,</span>
+    <span class="p">},</span>
     <span class="s2">&quot;Fa_Stat_EV1&quot;</span><span class="p">:</span> <span class="p">{</span>
         <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;scalar&quot;</span><span class="p">,</span>
         <span class="s2">&quot;lower_bound&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
         <span class="s2">&quot;upper_bound&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+        <span class="s2">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;?&quot;</span><span class="p">,</span>
     <span class="p">},</span>
     <span class="s2">&quot;Fa_ECh_EV1Bat&quot;</span><span class="p">:</span> <span class="p">{</span>
         <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;scalar&quot;</span><span class="p">,</span>
         <span class="s2">&quot;lower_bound&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
         <span class="s2">&quot;upper_bound&quot;</span><span class="p">:</span> <span class="mf">4e3</span><span class="p">,</span>
+        <span class="s2">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;EV 1 battery charging energy.&quot;</span><span class="p">,</span>
     <span class="p">},</span>
     <span class="s2">&quot;Fa_EDCh_EV1Bat&quot;</span><span class="p">:</span> <span class="p">{</span>
         <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;scalar&quot;</span><span class="p">,</span>
         <span class="s2">&quot;lower_bound&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
         <span class="s2">&quot;upper_bound&quot;</span><span class="p">:</span> <span class="mf">4e3</span><span class="p">,</span>
+        <span class="s2">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;EV 1 battery discharging energy.&quot;</span><span class="p">,</span>
     <span class="p">},</span>
     <span class="s2">&quot;Fa_Stat_EV2&quot;</span><span class="p">:</span> <span class="p">{</span>
         <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;scalar&quot;</span><span class="p">,</span>
         <span class="s2">&quot;lower_bound&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
         <span class="s2">&quot;upper_bound&quot;</span><span class="p">:</span> <span class="mf">4e3</span><span class="p">,</span>
+        <span class="s2">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;?&quot;</span><span class="p">,</span>
     <span class="p">},</span>
     <span class="s2">&quot;Fa_ECh_EV2Bat&quot;</span><span class="p">:</span> <span class="p">{</span>
         <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;scalar&quot;</span><span class="p">,</span>
         <span class="s2">&quot;lower_bound&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
         <span class="s2">&quot;upper_bound&quot;</span><span class="p">:</span> <span class="mf">4e3</span><span class="p">,</span>
+        <span class="s2">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;EV 2 battery charging energy.&quot;</span><span class="p">,</span>
     <span class="p">},</span>
     <span class="s2">&quot;Fa_EDCh_EV2Bat&quot;</span><span class="p">:</span> <span class="p">{</span>
         <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;scalar&quot;</span><span class="p">,</span>
         <span class="s2">&quot;lower_bound&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
         <span class="s2">&quot;upper_bound&quot;</span><span class="p">:</span> <span class="mf">4e3</span><span class="p">,</span>
+        <span class="s2">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;EV 2 battery discharging energy.&quot;</span><span class="p">,</span>
     <span class="p">},</span>
     <span class="s2">&quot;Fa_ECh_Bat&quot;</span><span class="p">:</span> <span class="p">{</span>
         <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;scalar&quot;</span><span class="p">,</span>
         <span class="s2">&quot;lower_bound&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
         <span class="s2">&quot;upper_bound&quot;</span><span class="p">:</span> <span class="mf">4e3</span><span class="p">,</span>
+        <span class="s2">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;Battery charging energy.&quot;</span><span class="p">,</span>
     <span class="p">},</span>
     <span class="s2">&quot;Fa_EDCh_Bat&quot;</span><span class="p">:</span> <span class="p">{</span>
         <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;scalar&quot;</span><span class="p">,</span>
         <span class="s2">&quot;lower_bound&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
         <span class="s2">&quot;upper_bound&quot;</span><span class="p">:</span> <span class="mf">4e3</span><span class="p">,</span>
+        <span class="s2">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;Battery discharging energy.&quot;</span><span class="p">,</span>
     <span class="p">},</span>
     <span class="s2">&quot;Bd_FracCh_EV1Bat&quot;</span><span class="p">:</span> <span class="p">{</span>
         <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;scalar&quot;</span><span class="p">,</span>
         <span class="s2">&quot;lower_bound&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
         <span class="s2">&quot;upper_bound&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+        <span class="s2">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;EV 1 battery state of charge.&quot;</span><span class="p">,</span>
     <span class="p">},</span>
     <span class="s2">&quot;Bd_FracCh_EV2Bat&quot;</span><span class="p">:</span> <span class="p">{</span>
         <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;scalar&quot;</span><span class="p">,</span>
         <span class="s2">&quot;lower_bound&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
         <span class="s2">&quot;upper_bound&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+        <span class="s2">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;EV 2 battery state of charge.&quot;</span><span class="p">,</span>
     <span class="p">},</span>
     <span class="s2">&quot;Bd_FracCh_Bat&quot;</span><span class="p">:</span> <span class="p">{</span>
         <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;scalar&quot;</span><span class="p">,</span>
         <span class="s2">&quot;lower_bound&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
         <span class="s2">&quot;upper_bound&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+        <span class="s2">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;Battery state of charge.&quot;</span><span class="p">,</span>
     <span class="p">},</span>
     <span class="s2">&quot;P4_T_Tank&quot;</span><span class="p">:</span> <span class="p">{</span>
         <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;scalar&quot;</span><span class="p">,</span>
         <span class="s2">&quot;lower_bound&quot;</span><span class="p">:</span> <span class="mi">30</span><span class="p">,</span>
         <span class="s2">&quot;upper_bound&quot;</span><span class="p">:</span> <span class="mi">70</span><span class="p">,</span>
+        <span class="s2">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;Floor 4 tank temperature.&quot;</span><span class="p">,</span>
     <span class="p">},</span>
     <span class="s2">&quot;P2_T_Tank&quot;</span><span class="p">:</span> <span class="p">{</span>
         <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;scalar&quot;</span><span class="p">,</span>
         <span class="s2">&quot;lower_bound&quot;</span><span class="p">:</span> <span class="mi">30</span><span class="p">,</span>
         <span class="s2">&quot;upper_bound&quot;</span><span class="p">:</span> <span class="mi">70</span><span class="p">,</span>
+        <span class="s2">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;Floor 2 tank temperature.&quot;</span><span class="p">,</span>
     <span class="p">},</span>
     <span class="s2">&quot;P1_T_Tank&quot;</span><span class="p">:</span> <span class="p">{</span>
         <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;scalar&quot;</span><span class="p">,</span>
         <span class="s2">&quot;lower_bound&quot;</span><span class="p">:</span> <span class="mi">30</span><span class="p">,</span>
         <span class="s2">&quot;upper_bound&quot;</span><span class="p">:</span> <span class="mi">70</span><span class="p">,</span>
+        <span class="s2">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;Floor 1 tank temperature.&quot;</span><span class="p">,</span>
     <span class="p">},</span>
     <span class="s2">&quot;P3_T_Tank&quot;</span><span class="p">:</span> <span class="p">{</span>
         <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;scalar&quot;</span><span class="p">,</span>
         <span class="s2">&quot;lower_bound&quot;</span><span class="p">:</span> <span class="mi">30</span><span class="p">,</span>
         <span class="s2">&quot;upper_bound&quot;</span><span class="p">:</span> <span class="mi">70</span><span class="p">,</span>
+        <span class="s2">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;Floor 3 tank temperature.&quot;</span><span class="p">,</span>
     <span class="p">},</span>
     <span class="s2">&quot;P1_onoff_HP_sp_out&quot;</span><span class="p">:</span> <span class="p">{</span>
         <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;scalar&quot;</span><span class="p">,</span>
         <span class="s2">&quot;lower_bound&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
         <span class="s2">&quot;upper_bound&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+        <span class="s2">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;Floor 1 heat pump on/off setpoint.&quot;</span><span class="p">,</span>
     <span class="p">},</span>
     <span class="s2">&quot;P2_onoff_HP_sp_out&quot;</span><span class="p">:</span> <span class="p">{</span>
         <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;scalar&quot;</span><span class="p">,</span>
         <span class="s2">&quot;lower_bound&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
         <span class="s2">&quot;upper_bound&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+        <span class="s2">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;Floor 2 heat pump on/off setpoint.&quot;</span><span class="p">,</span>
     <span class="p">},</span>
     <span class="s2">&quot;P3_onoff_HP_sp_out&quot;</span><span class="p">:</span> <span class="p">{</span>
         <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;scalar&quot;</span><span class="p">,</span>
         <span class="s2">&quot;lower_bound&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
         <span class="s2">&quot;upper_bound&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+        <span class="s2">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;Floor 3 heat pump on/off setpoint.&quot;</span><span class="p">,</span>
     <span class="p">},</span>
     <span class="s2">&quot;P4_onoff_HP_sp_out&quot;</span><span class="p">:</span> <span class="p">{</span>
         <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;scalar&quot;</span><span class="p">,</span>
         <span class="s2">&quot;lower_bound&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
         <span class="s2">&quot;upper_bound&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+        <span class="s2">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;Floor 4 heat pump on/off setpoint.&quot;</span><span class="p">,</span>
     <span class="p">},</span>
     <span class="s2">&quot;Fa_Pw_All&quot;</span><span class="p">:</span> <span class="p">{</span>
         <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;scalar&quot;</span><span class="p">,</span>
         <span class="s2">&quot;lower_bound&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
         <span class="s2">&quot;upper_bound&quot;</span><span class="p">:</span> <span class="mf">3e4</span><span class="p">,</span>
+        <span class="s2">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;Total power consumption.&quot;</span><span class="p">,</span>
     <span class="p">},</span>
     <span class="s2">&quot;Fa_Pw_Prod&quot;</span><span class="p">:</span> <span class="p">{</span>
         <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;scalar&quot;</span><span class="p">,</span>
         <span class="s2">&quot;lower_bound&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
         <span class="s2">&quot;upper_bound&quot;</span><span class="p">:</span> <span class="mf">1e4</span><span class="p">,</span>
+        <span class="s2">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;PV power production.&quot;</span><span class="p">,</span>
     <span class="p">},</span>
     <span class="s2">&quot;Fa_E_self&quot;</span><span class="p">:</span> <span class="p">{</span>
         <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;scalar&quot;</span><span class="p">,</span>
         <span class="s2">&quot;lower_bound&quot;</span><span class="p">:</span> <span class="o">-</span><span class="mf">2e4</span><span class="p">,</span>
         <span class="s2">&quot;upper_bound&quot;</span><span class="p">:</span> <span class="mf">2e4</span><span class="p">,</span>
+        <span class="s2">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;Self consumption energy.&quot;</span><span class="p">,</span>
     <span class="p">},</span>
     <span class="s2">&quot;Fa_Pw_HVAC&quot;</span><span class="p">:</span> <span class="p">{</span>
         <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;scalar&quot;</span><span class="p">,</span>
         <span class="s2">&quot;lower_bound&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
         <span class="s2">&quot;upper_bound&quot;</span><span class="p">:</span> <span class="mf">3e4</span><span class="p">,</span>
+        <span class="s2">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;HVAC power consumption.&quot;</span><span class="p">,</span>
     <span class="p">},</span>
-    <span class="s2">&quot;Fa_E_All&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;scalar&quot;</span><span class="p">,</span> <span class="s2">&quot;lower_bound&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="s2">&quot;upper_bound&quot;</span><span class="p">:</span> <span class="mf">2e3</span><span class="p">},</span>
+    <span class="s2">&quot;Fa_E_All&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;scalar&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;lower_bound&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+        <span class="s2">&quot;upper_bound&quot;</span><span class="p">:</span> <span class="mf">2e3</span><span class="p">,</span>
+        <span class="s2">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;Total energy consumption.&quot;</span><span class="p">,</span>
+    <span class="p">},</span>
     <span class="s2">&quot;Fa_E_Light&quot;</span><span class="p">:</span> <span class="p">{</span>
         <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;scalar&quot;</span><span class="p">,</span>
         <span class="s2">&quot;lower_bound&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
         <span class="s2">&quot;upper_bound&quot;</span><span class="p">:</span> <span class="mi">100</span><span class="p">,</span>
+        <span class="s2">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;Lighting energy.&quot;</span><span class="p">,</span>
     <span class="p">},</span>
     <span class="s2">&quot;Fa_E_Appl&quot;</span><span class="p">:</span> <span class="p">{</span>
         <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;scalar&quot;</span><span class="p">,</span>
         <span class="s2">&quot;lower_bound&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
         <span class="s2">&quot;upper_bound&quot;</span><span class="p">:</span> <span class="mf">5e2</span><span class="p">,</span>
+        <span class="s2">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;Appliances energy.&quot;</span><span class="p">,</span>
     <span class="p">},</span>
 <span class="p">}</span>
 
@@ -549,9 +724,7 @@
         <span class="n">start_date</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">date</span><span class="p">(</span><span class="n">year</span><span class="p">,</span> <span class="n">start_month</span><span class="p">,</span> <span class="n">start_day</span><span class="p">)</span>
         <span class="n">delta</span> <span class="o">=</span> <span class="n">start_date</span> <span class="o">-</span> <span class="n">datetime</span><span class="o">.</span><span class="n">date</span><span class="p">(</span><span class="n">year</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
         <span class="n">start_time</span> <span class="o">=</span> <span class="n">delta</span><span class="o">.</span><span class="n">total_seconds</span><span class="p">()</span>
-        <span class="n">stop_time</span> <span class="o">=</span> <span class="p">(</span>
-            <span class="n">start_time</span> <span class="o">+</span> <span class="n">n_steps</span> <span class="o">*</span> <span class="mi">24</span> <span class="o">*</span> <span class="n">simulation_days</span> <span class="o">*</span> <span class="n">step_size</span>
-        <span class="p">)</span>
+        <span class="n">stop_time</span> <span class="o">=</span> <span class="n">start_time</span> <span class="o">+</span> <span class="n">n_steps</span> <span class="o">*</span> <span class="mi">24</span> <span class="o">*</span> <span class="n">simulation_days</span> <span class="o">*</span> <span class="n">step_size</span>
         <span class="k">if</span> <span class="n">kpi_options</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
             <span class="n">kpi_options</span> <span class="o">=</span> <span class="n">default_kpi_options</span>
 

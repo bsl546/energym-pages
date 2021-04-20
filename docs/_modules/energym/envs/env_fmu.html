@@ -259,17 +259,17 @@
 <span class="sd">    &quot;&quot;&quot;</span>
 
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
-            <span class="bp">self</span><span class="p">,</span>
-            <span class="n">model_path</span><span class="p">,</span>
-            <span class="n">start_time</span><span class="p">,</span>
-            <span class="n">stop_time</span><span class="p">,</span>
-            <span class="n">step_size</span><span class="p">,</span>
-            <span class="n">weather</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
-            <span class="n">input_specs</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
-            <span class="n">output_specs</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
-            <span class="n">kpi_options</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
-            <span class="n">default_path</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
-            <span class="n">weather_file_path</span> <span class="o">=</span><span class="kc">None</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="n">model_path</span><span class="p">,</span>
+        <span class="n">start_time</span><span class="p">,</span>
+        <span class="n">stop_time</span><span class="p">,</span>
+        <span class="n">step_size</span><span class="p">,</span>
+        <span class="n">weather</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+        <span class="n">input_specs</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+        <span class="n">output_specs</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+        <span class="n">kpi_options</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+        <span class="n">default_path</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+        <span class="n">weather_file_path</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
     <span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Parameters</span>
@@ -409,9 +409,7 @@
                         <span class="p">)</span>
                     <span class="p">]</span>
                 <span class="k">elif</span> <span class="n">act_specs</span><span class="p">[</span><span class="s2">&quot;type&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;discrete&quot;</span><span class="p">:</span>
-                    <span class="n">input_space_list</span> <span class="o">+=</span> <span class="p">[</span>
-                        <span class="p">(</span><span class="n">act_name</span><span class="p">,</span> <span class="n">Discrete</span><span class="p">(</span><span class="n">act_specs</span><span class="p">[</span><span class="s2">&quot;size&quot;</span><span class="p">]))</span>
-                    <span class="p">]</span>
+                    <span class="n">input_space_list</span> <span class="o">+=</span> <span class="p">[(</span><span class="n">act_name</span><span class="p">,</span> <span class="n">Discrete</span><span class="p">(</span><span class="n">act_specs</span><span class="p">[</span><span class="s2">&quot;size&quot;</span><span class="p">]))]</span>
                 <span class="k">else</span><span class="p">:</span>
                     <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s2">&quot;Wrong type in INPUT_SPECS.&quot;</span><span class="p">)</span>
 
@@ -449,18 +447,14 @@
                     <span class="p">)</span>
                 <span class="p">]</span>
             <span class="k">elif</span> <span class="n">obs_specs</span><span class="p">[</span><span class="s2">&quot;type&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;discrete&quot;</span><span class="p">:</span>
-                <span class="n">output_space_list</span> <span class="o">+=</span> <span class="p">[</span>
-                    <span class="p">(</span><span class="n">obs_name</span><span class="p">,</span> <span class="n">Discrete</span><span class="p">(</span><span class="n">obs_specs</span><span class="p">[</span><span class="s2">&quot;size&quot;</span><span class="p">]))</span>
-                <span class="p">]</span>
+                <span class="n">output_space_list</span> <span class="o">+=</span> <span class="p">[(</span><span class="n">obs_name</span><span class="p">,</span> <span class="n">Discrete</span><span class="p">(</span><span class="n">obs_specs</span><span class="p">[</span><span class="s2">&quot;size&quot;</span><span class="p">]))]</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">output_space</span> <span class="o">=</span> <span class="n">Dict</span><span class="p">(</span><span class="n">spaces</span><span class="o">=</span><span class="n">output_space_list</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">observation_history</span> <span class="o">=</span> <span class="p">[]</span>
 
     <span class="k">def</span> <span class="nf">__initialize_fmu</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Initializes the FMU after instantiation.&quot;&quot;&quot;</span>
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">fmi_version</span> <span class="o">==</span> <span class="s2">&quot;1.0&quot;</span><span class="p">:</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">fmu</span><span class="o">.</span><span class="n">initialize</span><span class="p">(</span>
-                <span class="n">tStart</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">start_time</span><span class="p">,</span> <span class="n">stopTime</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">stop_time</span>
-            <span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">fmu</span><span class="o">.</span><span class="n">initialize</span><span class="p">(</span><span class="n">tStart</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">start_time</span><span class="p">,</span> <span class="n">stopTime</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">stop_time</span><span class="p">)</span>
         <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">fmi_version</span> <span class="o">==</span> <span class="s2">&quot;2.0&quot;</span><span class="p">:</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">fmu</span><span class="o">.</span><span class="n">enterInitializationMode</span><span class="p">()</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">fmu</span><span class="o">.</span><span class="n">exitInitializationMode</span><span class="p">()</span>
@@ -474,19 +468,17 @@
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">init_time</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">())[</span><span class="mi">0</span><span class="p">:</span><span class="mi">10</span><span class="p">]</span>
         <span class="n">random_id</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">uuid</span><span class="o">.</span><span class="n">uuid4</span><span class="p">()</span><span class="o">.</span><span class="n">fields</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">])[:</span><span class="mi">7</span><span class="p">]</span>
-        <span class="n">fmu_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">runs_path</span><span class="p">,</span> <span class="n">init_time</span> <span class="o">+</span> <span class="s2">&quot;_&quot;</span> <span class="o">+</span> <span class="n">random_id</span>
-        <span class="p">)</span>
+        <span class="n">fmu_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">runs_path</span><span class="p">,</span> <span class="n">init_time</span> <span class="o">+</span> <span class="s2">&quot;_&quot;</span> <span class="o">+</span> <span class="n">random_id</span><span class="p">)</span>
         <span class="n">os</span><span class="o">.</span><span class="n">mkdir</span><span class="p">(</span><span class="n">fmu_path</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">unzipdir</span> <span class="o">=</span> <span class="n">extract</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">fmu_file</span><span class="p">,</span> <span class="n">unzipdir</span><span class="o">=</span><span class="n">fmu_path</span><span class="p">)</span>
         <span class="n">weather_folder</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">unzipdir</span><span class="p">)</span> <span class="o">/</span> <span class="s2">&quot;resources&quot;</span>
-        <span class="n">possible_weather_files</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span>
-                <span class="n">weather_folder</span><span class="o">.</span><span class="n">rglob</span><span class="p">(</span><span class="s2">&quot;*.mos&quot;</span><span class="p">)</span>
-            <span class="p">)</span> <span class="o">+</span> <span class="nb">list</span><span class="p">(</span><span class="n">weather_folder</span><span class="o">.</span><span class="n">rglob</span><span class="p">(</span><span class="s2">&quot;*.epw&quot;</span><span class="p">))</span>
+        <span class="n">possible_weather_files</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">weather_folder</span><span class="o">.</span><span class="n">rglob</span><span class="p">(</span><span class="s2">&quot;*.mos&quot;</span><span class="p">))</span> <span class="o">+</span> <span class="nb">list</span><span class="p">(</span>
+            <span class="n">weather_folder</span><span class="o">.</span><span class="n">rglob</span><span class="p">(</span><span class="s2">&quot;*.epw&quot;</span><span class="p">)</span>
+        <span class="p">)</span>
         <span class="n">weather_default_file_path</span> <span class="o">=</span> <span class="n">weather_folder</span> <span class="o">/</span> <span class="n">possible_weather_files</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
         <span class="k">try</span><span class="p">:</span>
             <span class="n">os</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">weather_default_file_path</span><span class="p">)</span>
-            <span class="n">shutil</span><span class="o">.</span><span class="n">copy</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">weather_file_path</span><span class="p">,</span><span class="n">weather_default_file_path</span><span class="p">)</span>
+            <span class="n">shutil</span><span class="o">.</span><span class="n">copy</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">weather_file_path</span><span class="p">,</span> <span class="n">weather_default_file_path</span><span class="p">)</span>
         <span class="k">except</span> <span class="ne">BaseException</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
             <span class="n">logging</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="n">e</span><span class="p">)</span>
             <span class="n">logging</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="s2">&quot;Problem with the weather file handling&quot;</span><span class="p">)</span>
@@ -495,9 +487,7 @@
 
         <span class="c1"># model identifier</span>
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">fmi_type</span> <span class="o">==</span> <span class="s2">&quot;modex&quot;</span><span class="p">:</span>
-            <span class="n">model_id</span> <span class="o">=</span> <span class="p">(</span>
-                <span class="bp">self</span><span class="o">.</span><span class="n">model_description</span><span class="o">.</span><span class="n">modelExchange</span><span class="o">.</span><span class="n">modelIdentifier</span>
-            <span class="p">)</span>
+            <span class="n">model_id</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">model_description</span><span class="o">.</span><span class="n">modelExchange</span><span class="o">.</span><span class="n">modelIdentifier</span>
         <span class="k">else</span><span class="p">:</span>
             <span class="n">model_id</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">model_description</span><span class="o">.</span><span class="n">coSimulation</span><span class="o">.</span><span class="n">modelIdentifier</span>
 
@@ -521,9 +511,7 @@
 
         <span class="bp">self</span><span class="o">.</span><span class="n">fmu</span><span class="o">.</span><span class="n">instantiate</span><span class="p">(</span><span class="n">loggingOn</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">fmi_version</span> <span class="o">==</span> <span class="s2">&quot;2.0&quot;</span><span class="p">:</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">fmu</span><span class="o">.</span><span class="n">setupExperiment</span><span class="p">(</span>
-                <span class="n">startTime</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">start_time</span><span class="p">,</span> <span class="n">stopTime</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">stop_time</span>
-            <span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">fmu</span><span class="o">.</span><span class="n">setupExperiment</span><span class="p">(</span><span class="n">startTime</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">start_time</span><span class="p">,</span> <span class="n">stopTime</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">stop_time</span><span class="p">)</span>
 
         <span class="c1"># Initialize time and the last_output values</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">time</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">start_time</span></div>
@@ -624,9 +612,7 @@
             <span class="p">)</span>
 
             <span class="c1"># get the values</span>
-            <span class="n">out_values</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">fmu</span><span class="o">.</span><span class="n">getReal</span><span class="p">(</span>
-                <span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">vrs</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">output_keys</span><span class="p">]</span>
-            <span class="p">)</span>
+            <span class="n">out_values</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">fmu</span><span class="o">.</span><span class="n">getReal</span><span class="p">([</span><span class="bp">self</span><span class="o">.</span><span class="n">vrs</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">output_keys</span><span class="p">])</span>
 
             <span class="c1"># advance the time</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">time</span> <span class="o">+=</span> <span class="bp">self</span><span class="o">.</span><span class="n">step_size</span>
@@ -723,26 +709,20 @@
         <span class="n">hourly_steps</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="mi">60</span> <span class="o">/</span> <span class="n">time_resolution</span><span class="p">)</span>
         <span class="n">tot_length</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">ceil</span><span class="p">(</span><span class="n">forecast_length</span> <span class="o">/</span> <span class="n">hourly_steps</span><span class="p">)</span> <span class="o">+</span> <span class="mi">2</span>
         <span class="n">start_index</span> <span class="o">=</span> <span class="mi">0</span>
-        <span class="n">forecast</span><span class="o">=</span><span class="p">{}</span>
+        <span class="n">forecast</span> <span class="o">=</span> <span class="p">{}</span>
 
         <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">weather</span><span class="p">,</span> <span class="n">EPW</span><span class="p">):</span>
             <span class="n">minute</span><span class="p">,</span> <span class="n">hour</span><span class="p">,</span> <span class="n">day</span><span class="p">,</span> <span class="n">month</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_date</span><span class="p">()</span>
             <span class="n">start_index</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">minute</span> <span class="o">/</span> <span class="n">time_resolution</span><span class="p">)</span>
-            <span class="n">forecast</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">weather</span><span class="o">.</span><span class="n">get_forecast</span><span class="p">(</span>
-                <span class="n">hour</span><span class="p">,</span> <span class="n">day</span><span class="p">,</span> <span class="n">month</span><span class="p">,</span> <span class="n">tot_length</span>
-            <span class="p">)</span>
+            <span class="n">forecast</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">weather</span><span class="o">.</span><span class="n">get_forecast</span><span class="p">(</span><span class="n">hour</span><span class="p">,</span> <span class="n">day</span><span class="p">,</span> <span class="n">month</span><span class="p">,</span> <span class="n">tot_length</span><span class="p">)</span>
 
         <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">weather</span><span class="p">,</span> <span class="n">MOS</span><span class="p">):</span>
             <span class="n">res</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">time</span> <span class="o">%</span> <span class="mi">3600</span>
-            <span class="n">start_index</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">res</span> <span class="o">/</span> <span class="n">time_resolution</span><span class="p">)</span>
-            <span class="n">forecast</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">weather</span><span class="o">.</span><span class="n">get_forecast</span><span class="p">(</span>
-                <span class="bp">self</span><span class="o">.</span><span class="n">time</span> <span class="o">-</span> <span class="n">res</span><span class="p">,</span> <span class="n">forecast_length</span>
-            <span class="p">)</span>
+            <span class="n">start_index</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">res</span> <span class="o">/</span> <span class="bp">self</span><span class="o">.</span><span class="n">step_size</span><span class="p">)</span>
+            <span class="n">forecast</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">weather</span><span class="o">.</span><span class="n">get_forecast</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">time</span> <span class="o">-</span> <span class="n">res</span><span class="p">,</span> <span class="n">forecast_length</span><span class="p">)</span>
         <span class="n">forecast</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_interpolate_forecast</span><span class="p">(</span><span class="n">forecast</span><span class="p">,</span> <span class="n">hourly_steps</span><span class="p">)</span>
         <span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">forecast</span><span class="p">:</span>
-            <span class="n">forecast</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">=</span> <span class="n">forecast</span><span class="p">[</span><span class="n">key</span><span class="p">][</span>
-                            <span class="n">start_index</span><span class="p">:</span> <span class="n">forecast_length</span> <span class="o">+</span> <span class="n">start_index</span>
-                            <span class="p">]</span>
+            <span class="n">forecast</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">=</span> <span class="n">forecast</span><span class="p">[</span><span class="n">key</span><span class="p">][</span><span class="n">start_index</span> <span class="p">:</span> <span class="n">forecast_length</span> <span class="o">+</span> <span class="n">start_index</span><span class="p">]</span>
         <span class="k">return</span> <span class="n">forecast</span></div>
 
     <span class="k">def</span> <span class="nf">_interpolate_forecast</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">forecast</span><span class="p">,</span> <span class="n">hourly_steps</span><span class="p">):</span>
@@ -753,15 +733,19 @@
                 <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">hourly_steps</span><span class="p">):</span>
                     <span class="n">weight</span> <span class="o">=</span> <span class="n">j</span> <span class="o">/</span> <span class="n">hourly_steps</span>
                     <span class="n">new_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>
-                        <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">weight</span><span class="p">)</span> <span class="o">*</span> <span class="n">mod_list</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
-                        <span class="o">+</span> <span class="n">weight</span> <span class="o">*</span> <span class="n">mod_list</span><span class="p">[</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]</span>
+                        <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">weight</span><span class="p">)</span> <span class="o">*</span> <span class="n">mod_list</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">+</span> <span class="n">weight</span> <span class="o">*</span> <span class="n">mod_list</span><span class="p">[</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]</span>
                     <span class="p">)</span>
             <span class="n">new_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">mod_list</span><span class="p">[</span><span class="nb">len</span><span class="p">(</span><span class="n">mod_list</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">])</span>
             <span class="n">forecast</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">=</span> <span class="n">new_list</span>
         <span class="k">return</span> <span class="n">forecast</span>
 
-<div class="viewcode-block" id="EnvFMU.look_for_weather_file"><a class="viewcode-back" href="../../../sources/apiref.html#energym.envs.env_fmu.EnvFMU.look_for_weather_file">[docs]</a>    <span class="k">def</span> <span class="nf">look_for_weather_file</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">generate_forecasts</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">generate_forecast_method</span><span class="o">=</span><span class="s1">&#39;perfect&#39;</span><span class="p">,</span>
-                              <span class="n">generate_forecast_keys</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<div class="viewcode-block" id="EnvFMU.look_for_weather_file"><a class="viewcode-back" href="../../../sources/apiref.html#energym.envs.env_fmu.EnvFMU.look_for_weather_file">[docs]</a>    <span class="k">def</span> <span class="nf">look_for_weather_file</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="n">name</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+        <span class="n">generate_forecasts</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+        <span class="n">generate_forecast_method</span><span class="o">=</span><span class="s2">&quot;perfect&quot;</span><span class="p">,</span>
+        <span class="n">generate_forecast_keys</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+    <span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Finds a weather file in the FMU.</span>
 
 <span class="sd">        Parameters</span>
@@ -776,9 +760,9 @@
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">weather_folder</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">unzipdir</span><span class="p">)</span> <span class="o">/</span> <span class="s2">&quot;resources&quot;</span>
         <span class="k">if</span> <span class="n">name</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
-            <span class="n">possible_weather_files</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span>
-                <span class="n">weather_folder</span><span class="o">.</span><span class="n">rglob</span><span class="p">(</span><span class="s2">&quot;*.mos&quot;</span><span class="p">)</span>
-            <span class="p">)</span> <span class="o">+</span> <span class="nb">list</span><span class="p">(</span><span class="n">weather_folder</span><span class="o">.</span><span class="n">rglob</span><span class="p">(</span><span class="s2">&quot;*.epw&quot;</span><span class="p">))</span>
+            <span class="n">possible_weather_files</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">weather_folder</span><span class="o">.</span><span class="n">rglob</span><span class="p">(</span><span class="s2">&quot;*.mos&quot;</span><span class="p">))</span> <span class="o">+</span> <span class="nb">list</span><span class="p">(</span>
+                <span class="n">weather_folder</span><span class="o">.</span><span class="n">rglob</span><span class="p">(</span><span class="s2">&quot;*.epw&quot;</span><span class="p">)</span>
+            <span class="p">)</span>
         <span class="k">else</span><span class="p">:</span>
             <span class="n">possible_weather_files</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">weather_folder</span><span class="o">.</span><span class="n">rglob</span><span class="p">(</span><span class="n">name</span><span class="p">))</span>
         <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">possible_weather_files</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
@@ -793,17 +777,23 @@
             <span class="n">wf</span> <span class="o">=</span> <span class="n">weather_folder</span> <span class="o">/</span> <span class="n">possible_weather_files</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
             <span class="k">if</span> <span class="n">wf</span><span class="o">.</span><span class="n">suffix</span> <span class="o">==</span> <span class="s2">&quot;.mos&quot;</span><span class="p">:</span>
                 <span class="bp">self</span><span class="o">.</span><span class="n">weather</span> <span class="o">=</span> <span class="n">MOS</span><span class="p">()</span>
-                <span class="bp">self</span><span class="o">.</span><span class="n">weather</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="n">wf</span><span class="p">,</span> <span class="n">generate_forecasts</span><span class="p">,</span> <span class="n">generate_forecast_method</span><span class="p">,</span>
-                                  <span class="n">generate_forecast_keys</span><span class="p">)</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">weather</span><span class="o">.</span><span class="n">read</span><span class="p">(</span>
+                    <span class="n">wf</span><span class="p">,</span>
+                    <span class="n">generate_forecasts</span><span class="p">,</span>
+                    <span class="n">generate_forecast_method</span><span class="p">,</span>
+                    <span class="n">generate_forecast_keys</span><span class="p">,</span>
+                <span class="p">)</span>
             <span class="k">elif</span> <span class="n">wf</span><span class="o">.</span><span class="n">suffix</span> <span class="o">==</span> <span class="s2">&quot;.epw&quot;</span><span class="p">:</span>
                 <span class="bp">self</span><span class="o">.</span><span class="n">weather</span> <span class="o">=</span> <span class="n">EPW</span><span class="p">()</span>
-                <span class="bp">self</span><span class="o">.</span><span class="n">weather</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="n">wf</span><span class="p">,</span> <span class="n">generate_forecasts</span><span class="p">,</span> <span class="n">generate_forecast_method</span><span class="p">,</span>
-                                  <span class="n">generate_forecast_keys</span><span class="p">)</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">weather</span><span class="o">.</span><span class="n">read</span><span class="p">(</span>
+                    <span class="n">wf</span><span class="p">,</span>
+                    <span class="n">generate_forecasts</span><span class="p">,</span>
+                    <span class="n">generate_forecast_method</span><span class="p">,</span>
+                    <span class="n">generate_forecast_keys</span><span class="p">,</span>
+                <span class="p">)</span>
             <span class="k">else</span><span class="p">:</span>
                 <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span>
-                    <span class="s2">&quot;File </span><span class="si">{}</span><span class="s2"> cannot be interpreted as a weather file&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
-                        <span class="n">wf</span>
-                    <span class="p">)</span>
+                    <span class="s2">&quot;File </span><span class="si">{}</span><span class="s2"> cannot be interpreted as a weather file&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">wf</span><span class="p">)</span>
                 <span class="p">)</span></div>
 
 <div class="viewcode-block" id="EnvFMU.post_process"><a class="viewcode-back" href="../../../sources/apiref.html#energym.envs.env_fmu.EnvFMU.post_process">[docs]</a>    <span class="k">def</span> <span class="nf">post_process</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">list_rel_out</span><span class="p">,</span> <span class="n">res</span><span class="p">,</span> <span class="n">arrays</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>

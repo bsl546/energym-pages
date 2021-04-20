@@ -244,6 +244,11 @@
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#weather-files">
+   Weather files
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#evaluation-scenario">
    Evaluation scenario
   </a>
@@ -311,11 +316,12 @@ Control variables for AHU2 are the air flow rate of the ventilation system,  and
 <p>For more detail, please check the documentation <a class="reference internal" href="apiref.html#mixeduse-doc"><span class="std std-ref">energym.envs.mixeduse.mixeduse</span></a> or the source code <a class="reference internal" href="apiref.html#energym.envs.mixeduse.mixeduse.MixedUse" title="energym.envs.mixeduse.mixeduse.MixedUse"><code class="xref py py-class docutils literal notranslate"><span class="pre">energym.envs.mixeduse.mixeduse.MixedUse</span></code></a>.</p>
 <table class="table">
 <colgroup>
-<col style="width: 20%" />
-<col style="width: 20%" />
-<col style="width: 20%" />
-<col style="width: 20%" />
-<col style="width: 20%" />
+<col style="width: 17%" />
+<col style="width: 17%" />
+<col style="width: 17%" />
+<col style="width: 17%" />
+<col style="width: 17%" />
+<col style="width: 17%" />
 </colgroup>
 <thead>
 <tr class="row-odd"><th class="head"><p>Variable Name</p></th>
@@ -323,6 +329,7 @@ Control variables for AHU2 are the air flow rate of the ventilation system,  and
 <th class="head"><p>Lower Bound</p></th>
 <th class="head"><p>Upper Bound</p></th>
 <th class="head"><p># States</p></th>
+<th class="head"><p>Description</p></th>
 </tr>
 </thead>
 <tbody>
@@ -331,72 +338,84 @@ Control variables for AHU2 are the air flow rate of the ventilation system,  and
 <td><p>16</p></td>
 <td><p>26</p></td>
 <td></td>
+<td><p>Zone 2 thermostat setpoint.</p></td>
 </tr>
 <tr class="row-odd"><td><p>Z03_T_Thermostat_sp</p></td>
 <td><p>scalar</p></td>
 <td><p>16</p></td>
 <td><p>26</p></td>
 <td></td>
+<td><p>Zone 3 thermostat setpoint.</p></td>
 </tr>
 <tr class="row-even"><td><p>Z04_T_Thermostat_sp</p></td>
 <td><p>scalar</p></td>
 <td><p>16</p></td>
 <td><p>26</p></td>
 <td></td>
+<td><p>Zone 4 thermostat setpoint.</p></td>
 </tr>
 <tr class="row-odd"><td><p>Z05_T_Thermostat_sp</p></td>
 <td><p>scalar</p></td>
 <td><p>16</p></td>
 <td><p>26</p></td>
 <td></td>
+<td><p>Zone 5 thermostat setpoint.</p></td>
 </tr>
 <tr class="row-even"><td><p>Z08_T_Thermostat_sp</p></td>
 <td><p>scalar</p></td>
 <td><p>16</p></td>
 <td><p>26</p></td>
 <td></td>
+<td><p>Zone 8 thermostat setpoint.</p></td>
 </tr>
 <tr class="row-odd"><td><p>Z09_T_Thermostat_sp</p></td>
 <td><p>scalar</p></td>
 <td><p>16</p></td>
 <td><p>26</p></td>
 <td></td>
+<td><p>Zone 9 thermostat setpoint.</p></td>
 </tr>
 <tr class="row-even"><td><p>Z10_T_Thermostat_sp</p></td>
 <td><p>scalar</p></td>
 <td><p>16</p></td>
 <td><p>26</p></td>
 <td></td>
+<td><p>Zone 10 thermostat setpoint.</p></td>
 </tr>
 <tr class="row-odd"><td><p>Z11_T_Thermostat_sp</p></td>
 <td><p>scalar</p></td>
 <td><p>16</p></td>
 <td><p>26</p></td>
 <td></td>
+<td><p>Zone 11 thermostat setpoint.</p></td>
 </tr>
 <tr class="row-even"><td><p>Bd_T_AHU2_sp</p></td>
 <td><p>scalar</p></td>
 <td><p>10</p></td>
 <td><p>30</p></td>
 <td></td>
+<td><p>AHU 2 temperature setpoint.</p></td>
 </tr>
 <tr class="row-odd"><td><p>Bd_Fl_AHU2_sp</p></td>
 <td><p>scalar</p></td>
 <td><p>0</p></td>
 <td><p>1</p></td>
 <td></td>
+<td><p>AHU 2 flow rate setpoint.</p></td>
 </tr>
 <tr class="row-even"><td><p>Bd_T_AHU1_sp</p></td>
 <td><p>scalar</p></td>
 <td><p>10</p></td>
 <td><p>30</p></td>
 <td></td>
+<td><p>AHU 1 temperature setpoint.</p></td>
 </tr>
 <tr class="row-odd"><td><p>Bd_Fl_AHU1_sp</p></td>
 <td><p>scalar</p></td>
 <td><p>0</p></td>
 <td><p>1</p></td>
 <td></td>
+<td><p>AHU1 flow rate setpoint.</p></td>
 </tr>
 </tbody>
 </table>
@@ -405,11 +424,12 @@ Control variables for AHU2 are the air flow rate of the ventilation system,  and
 <h2>Simulation outputs<a class="headerlink" href="#simulation-outputs" title="Permalink to this headline">¶</a></h2>
 <table class="table">
 <colgroup>
-<col style="width: 20%" />
-<col style="width: 20%" />
-<col style="width: 20%" />
-<col style="width: 20%" />
-<col style="width: 20%" />
+<col style="width: 17%" />
+<col style="width: 17%" />
+<col style="width: 17%" />
+<col style="width: 17%" />
+<col style="width: 17%" />
+<col style="width: 17%" />
 </colgroup>
 <thead>
 <tr class="row-odd"><th class="head"><p>Variable Name</p></th>
@@ -417,6 +437,7 @@ Control variables for AHU2 are the air flow rate of the ventilation system,  and
 <th class="head"><p>Lower Bound</p></th>
 <th class="head"><p>Upper Bound</p></th>
 <th class="head"><p># States</p></th>
+<th class="head"><p>Description</p></th>
 </tr>
 </thead>
 <tbody>
@@ -425,273 +446,335 @@ Control variables for AHU2 are the air flow rate of the ventilation system,  and
 <td><p>0</p></td>
 <td><p>10000.0</p></td>
 <td></td>
+<td><p>Building power consumption.</p></td>
 </tr>
 <tr class="row-odd"><td><p>Bd_Pw_chiller</p></td>
 <td><p>scalar</p></td>
 <td><p>0</p></td>
 <td><p>30000.0</p></td>
 <td></td>
+<td><p>Chiller power consumption.</p></td>
 </tr>
 <tr class="row-even"><td><p>Bd_Pw_coil</p></td>
 <td><p>scalar</p></td>
 <td><p>0</p></td>
 <td><p>15000.0</p></td>
 <td></td>
+<td><p>Coil power consumption?</p></td>
 </tr>
 <tr class="row-odd"><td><p>Bd_Pw_cooling_AHU2</p></td>
 <td><p>scalar</p></td>
 <td><p>0</p></td>
 <td><p>10000.0</p></td>
 <td></td>
+<td><p>AHU 2 cooling power.</p></td>
 </tr>
 <tr class="row-even"><td><p>Bd_Pw_cooling_HP</p></td>
 <td><p>scalar</p></td>
 <td><p>0</p></td>
 <td><p>30000.0</p></td>
 <td></td>
+<td><p>Heat pump cooling power.</p></td>
 </tr>
 <tr class="row-odd"><td><p>Bd_Pw_heating_HP</p></td>
 <td><p>scalar</p></td>
 <td><p>0</p></td>
 <td><p>30000.0</p></td>
 <td></td>
+<td><p>Heat pump heating power.</p></td>
 </tr>
 <tr class="row-even"><td><p>Bd_T_AHU1</p></td>
 <td><p>scalar</p></td>
 <td><p>10</p></td>
 <td><p>30</p></td>
 <td></td>
+<td><p>AHU 1 temperature.</p></td>
 </tr>
 <tr class="row-odd"><td><p>Bd_T_AHU2</p></td>
 <td><p>scalar</p></td>
 <td><p>10</p></td>
 <td><p>30</p></td>
 <td></td>
+<td><p>AHU 2 temperature.</p></td>
 </tr>
 <tr class="row-even"><td><p>Ext_Irr</p></td>
 <td><p>scalar</p></td>
 <td><p>0</p></td>
 <td><p>1000</p></td>
 <td></td>
+<td><p>Direct normal radiation.</p></td>
 </tr>
 <tr class="row-odd"><td><p>Ext_P</p></td>
 <td><p>scalar</p></td>
 <td><p>80000.0</p></td>
 <td><p>130000.0</p></td>
 <td></td>
+<td><p>Outdoor air pressure.</p></td>
 </tr>
 <tr class="row-even"><td><p>Ext_RH</p></td>
 <td><p>scalar</p></td>
 <td><p>0</p></td>
 <td><p>100</p></td>
 <td></td>
+<td><p>Outdoor realtive humidity.</p></td>
 </tr>
 <tr class="row-odd"><td><p>Ext_T</p></td>
 <td><p>scalar</p></td>
 <td><p>-10</p></td>
 <td><p>40</p></td>
 <td></td>
+<td><p>Outdoor temperature.</p></td>
 </tr>
 <tr class="row-even"><td><p>Fa_Pw_All</p></td>
 <td><p>scalar</p></td>
 <td><p>0</p></td>
 <td><p>50000.0</p></td>
 <td></td>
+<td><p>Total power consumtion.</p></td>
 </tr>
 <tr class="row-odd"><td><p>Fa_Pw_HVAC</p></td>
 <td><p>scalar</p></td>
 <td><p>0</p></td>
 <td><p>50000.0</p></td>
 <td></td>
+<td><p>HVAC power consumption.</p></td>
 </tr>
 <tr class="row-even"><td><p>Z02_Fl_Fan</p></td>
 <td><p>scalar</p></td>
 <td><p>0</p></td>
 <td><p>1</p></td>
 <td></td>
+<td><p>Zone 2 fan flow rate.</p></td>
 </tr>
 <tr class="row-odd"><td><p>Z02_RH</p></td>
 <td><p>scalar</p></td>
 <td><p>0</p></td>
 <td><p>100</p></td>
 <td></td>
+<td><p>Zone 2 relative humidity.</p></td>
 </tr>
 <tr class="row-even"><td><p>Z02_T</p></td>
 <td><p>scalar</p></td>
 <td><p>10</p></td>
 <td><p>40</p></td>
 <td></td>
+<td><p>Zone 2 temperature.</p></td>
 </tr>
 <tr class="row-odd"><td><p>Z02_T_Thermostat_sp_out</p></td>
 <td><p>scalar</p></td>
 <td><p>16</p></td>
 <td><p>26</p></td>
 <td></td>
+<td><p>Zone 2 thermostat setpoint.</p></td>
 </tr>
 <tr class="row-even"><td><p>Z03_Fl_Fan</p></td>
 <td><p>scalar</p></td>
 <td><p>0</p></td>
 <td><p>1</p></td>
 <td></td>
+<td><p>Zone 3 fan flow rate.</p></td>
 </tr>
 <tr class="row-odd"><td><p>Z03_RH</p></td>
 <td><p>scalar</p></td>
 <td><p>0</p></td>
 <td><p>100</p></td>
 <td></td>
+<td><p>Zone 3 relative humidity.</p></td>
 </tr>
 <tr class="row-even"><td><p>Z03_T</p></td>
 <td><p>scalar</p></td>
 <td><p>10</p></td>
 <td><p>40</p></td>
 <td></td>
+<td><p>Zone 3 temperature.</p></td>
 </tr>
 <tr class="row-odd"><td><p>Z03_T_Thermostat_sp_out</p></td>
 <td><p>scalar</p></td>
 <td><p>16</p></td>
 <td><p>26</p></td>
 <td></td>
+<td><p>Zone 3 thermostat setpoint.</p></td>
 </tr>
 <tr class="row-even"><td><p>Z04_Fl_Fan</p></td>
 <td><p>scalar</p></td>
 <td><p>0</p></td>
 <td><p>1</p></td>
 <td></td>
+<td><p>Zone 4 fan flow rate.</p></td>
 </tr>
 <tr class="row-odd"><td><p>Z04_RH</p></td>
 <td><p>scalar</p></td>
 <td><p>0</p></td>
 <td><p>100</p></td>
 <td></td>
+<td><p>Zone 4 relative humidity.</p></td>
 </tr>
 <tr class="row-even"><td><p>Z04_T</p></td>
 <td><p>scalar</p></td>
 <td><p>10</p></td>
 <td><p>40</p></td>
 <td></td>
+<td><p>Zone 4 temperature.</p></td>
 </tr>
 <tr class="row-odd"><td><p>Z04_T_Thermostat_sp_out</p></td>
 <td><p>scalar</p></td>
 <td><p>16</p></td>
 <td><p>26</p></td>
 <td></td>
+<td><p>Zone 4 thermostat setpoint.</p></td>
 </tr>
 <tr class="row-even"><td><p>Z05_RH</p></td>
 <td><p>scalar</p></td>
 <td><p>0</p></td>
 <td><p>100</p></td>
 <td></td>
+<td><p>Zone 5 relative humidity.</p></td>
 </tr>
 <tr class="row-odd"><td><p>Z05_T</p></td>
 <td><p>scalar</p></td>
 <td><p>10</p></td>
 <td><p>40</p></td>
 <td></td>
+<td><p>Zone 5 temperature.</p></td>
 </tr>
 <tr class="row-even"><td><p>Z05_T_Thermostat_sp_out</p></td>
 <td><p>scalar</p></td>
 <td><p>16</p></td>
 <td><p>26</p></td>
 <td></td>
+<td><p>Zone 5 thermostat setpoint.</p></td>
 </tr>
 <tr class="row-odd"><td><p>Z08_Fl_Fan</p></td>
 <td><p>scalar</p></td>
 <td><p>0</p></td>
 <td><p>1</p></td>
 <td></td>
+<td><p>Zone 8 fan flow rate.</p></td>
 </tr>
 <tr class="row-even"><td><p>Z08_RH</p></td>
 <td><p>scalar</p></td>
 <td><p>0</p></td>
 <td><p>100</p></td>
 <td></td>
+<td><p>Zone 8 relative humidity.</p></td>
 </tr>
 <tr class="row-odd"><td><p>Z08_T</p></td>
 <td><p>scalar</p></td>
 <td><p>10</p></td>
 <td><p>40</p></td>
 <td></td>
+<td><p>Zone 8 temperature.</p></td>
 </tr>
 <tr class="row-even"><td><p>Z08_T_Thermostat_sp_out</p></td>
 <td><p>scalar</p></td>
 <td><p>16</p></td>
 <td><p>26</p></td>
 <td></td>
+<td><p>Zone 8 thermostat setpoint.</p></td>
 </tr>
 <tr class="row-odd"><td><p>Z09_Fl_Fan</p></td>
 <td><p>scalar</p></td>
 <td><p>0</p></td>
 <td><p>1</p></td>
 <td></td>
+<td><p>Zone 9 fan flow rate.</p></td>
 </tr>
 <tr class="row-even"><td><p>Z09_RH</p></td>
 <td><p>scalar</p></td>
 <td><p>0</p></td>
 <td><p>100</p></td>
 <td></td>
+<td><p>Zone 9 relative humidity.</p></td>
 </tr>
 <tr class="row-odd"><td><p>Z09_T</p></td>
 <td><p>scalar</p></td>
 <td><p>10</p></td>
 <td><p>40</p></td>
 <td></td>
+<td><p>Zone 9 temperature.</p></td>
 </tr>
 <tr class="row-even"><td><p>Z09_T_Thermostat_sp_out</p></td>
 <td><p>scalar</p></td>
 <td><p>16</p></td>
 <td><p>26</p></td>
 <td></td>
+<td><p>Zone 9 thermostat setpoint.</p></td>
 </tr>
 <tr class="row-odd"><td><p>Z10_Fl_Fan</p></td>
 <td><p>scalar</p></td>
 <td><p>0</p></td>
 <td><p>1</p></td>
 <td></td>
+<td><p>Zone 10 fan flow rate.</p></td>
 </tr>
 <tr class="row-even"><td><p>Z10_RH</p></td>
 <td><p>scalar</p></td>
 <td><p>0</p></td>
 <td><p>100</p></td>
 <td></td>
+<td><p>Zone 10 relative humidity.</p></td>
 </tr>
 <tr class="row-odd"><td><p>Z10_T</p></td>
 <td><p>scalar</p></td>
 <td><p>10</p></td>
 <td><p>40</p></td>
 <td></td>
+<td><p>Zone 10 temperature.</p></td>
 </tr>
 <tr class="row-even"><td><p>Z10_T_Thermostat_sp_out</p></td>
 <td><p>scalar</p></td>
 <td><p>16</p></td>
 <td><p>26</p></td>
 <td></td>
+<td><p>Zone 10 thermostat setpoint.</p></td>
 </tr>
 <tr class="row-odd"><td><p>Z11_Fl_Fan</p></td>
 <td><p>scalar</p></td>
 <td><p>0</p></td>
 <td><p>1</p></td>
 <td></td>
+<td><p>Zone 11 fan flow rate.</p></td>
 </tr>
 <tr class="row-even"><td><p>Z11_RH</p></td>
 <td><p>scalar</p></td>
 <td><p>0</p></td>
 <td><p>100</p></td>
 <td></td>
+<td><p>Zone 11 relative humidity.</p></td>
 </tr>
 <tr class="row-odd"><td><p>Z11_T</p></td>
 <td><p>scalar</p></td>
 <td><p>10</p></td>
 <td><p>40</p></td>
 <td></td>
+<td><p>Zone 11 temperature.</p></td>
 </tr>
 <tr class="row-even"><td><p>Z11_T_Thermostat_sp_out</p></td>
 <td><p>scalar</p></td>
 <td><p>16</p></td>
 <td><p>26</p></td>
 <td></td>
+<td><p>Zone 11 thermostat setpoint.</p></td>
 </tr>
 </tbody>
 </table>
+</div>
+<div class="section" id="weather-files">
+<h2>Weather files<a class="headerlink" href="#weather-files" title="Permalink to this headline">¶</a></h2>
+<p>The available weather files for this model have the following specifiers:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">GRC_A_Athens</span></code> (Default)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">GRC_TC_Lamia1</span></code> (Evaluation file)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">GRC_TC_Lamia2</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">GRC_TC_LarisaAP1</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">GRC_TC_LarisaAP2</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">GRC_TC_NeaAnchialosAP1</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">GRC_TC_NeaAnchialosAP2</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">GRC_TC_SkiathosAP</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">GRC_TC_TanagraAP1</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">GRC_TC_TanagraAP2</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">GRC_TC_Trikala</span></code></p></li>
+</ul>
 </div>
 <div class="section" id="evaluation-scenario">
 <h2>Evaluation scenario<a class="headerlink" href="#evaluation-scenario" title="Permalink to this headline">¶</a></h2>
