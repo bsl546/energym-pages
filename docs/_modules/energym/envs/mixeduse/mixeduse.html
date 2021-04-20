@@ -1,0 +1,631 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>energym.envs.mixeduse.mixeduse &#8212; energym 2020.02.19 documentation</title>
+    
+  <link href="../../../../_static/css/theme.css" rel="stylesheet" />
+  <link href="../../../../_static/css/index.101715efdecc9b59cb6e1ddfa685c31f.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../../../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="../../../../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/graphviz.css" />
+    
+  <link rel="preload" as="script" href="../../../../_static/js/index.d8bbf5861d671d414e1a.js">
+
+    <script id="documentation_options" data-url_root="../../../../" src="../../../../_static/documentation_options.js"></script>
+    <script src="../../../../_static/jquery.js"></script>
+    <script src="../../../../_static/underscore.js"></script>
+    <script src="../../../../_static/doctools.js"></script>
+    <script src="../../../../_static/language_data.js"></script>
+    <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <link rel="index" title="Index" href="../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../search.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <nav class="navbar navbar-light navbar-expand-lg bg-light fixed-top bd-navbar" id="navbar-main"><div class="container-xl">
+
+
+    
+    <a class="navbar-brand" href="../../../../index.html">
+      <p class="title">energym</p>
+    </a>
+    
+
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-menu" aria-controls="navbar-menu" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    
+    <div id="navbar-menu" class="col-lg-9 collapse navbar-collapse">
+      <ul id="navbar-main-elements" class="navbar-nav mr-auto">
+        <li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../../../../sources/base.html">
+  Buildings
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../../../../sources/install_min.html">
+  Minimal Installation
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../../../../sources/start.html">
+  Getting Started
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../../../../sources/Examples.html">
+  Examples
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../../../../sources/install_full.html">
+  Full Installation
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../../../../sources/add_model.html">
+  Contributing
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../../../../sources/apiref.html">
+  API Reference
+ </a>
+</li>
+
+        
+      </ul>
+
+      <ul id="navbar-icon-links" class="navbar-nav" aria-label="Icon Links">
+      </ul>
+    </div>
+</div>
+    </nav>
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+            
+            <!-- Only show if we have sidebars configured, else just a small margin  -->
+            <div class="col-12 col-md-3 bd-sidebar"><form class="bd-search d-flex align-items-center" action="../../../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
+</form>
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+  <div class="bd-toc-item active">
+    
+  </div>
+</nav>
+            </div>
+            
+          
+
+          
+          <div class="d-none d-xl-block col-xl-2 bd-toc">
+              
+
+<nav id="bd-toc-nav">
+    
+</nav>
+
+
+              
+          </div>
+          
+
+          
+          
+            
+          
+          <main class="col-12 col-md-9 col-xl-7 py-md-5 pl-md-5 pr-md-4 bd-content" role="main">
+              
+              <div>
+                
+  <h1>Source code for energym.envs.mixeduse.mixeduse</h1><div class="highlight"><pre>
+<span></span><span class="kn">import</span> <span class="nn">datetime</span>
+
+<span class="kn">from</span> <span class="nn">energym.envs.env_fmu_eplus</span> <span class="kn">import</span> <span class="n">EnvEPlusFMU</span>
+
+
+<span class="n">INPUTS_SPECS</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;Z02_T_Thermostat_sp&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;scalar&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;lower_bound&quot;</span><span class="p">:</span> <span class="mi">16</span><span class="p">,</span>
+        <span class="s2">&quot;upper_bound&quot;</span><span class="p">:</span> <span class="mi">26</span><span class="p">,</span>
+        <span class="s2">&quot;default&quot;</span><span class="p">:</span> <span class="mi">20</span><span class="p">,</span>
+        <span class="s2">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;Zone 2 thermostat setpoint.&quot;</span><span class="p">,</span>
+    <span class="p">},</span>
+    <span class="s2">&quot;Z03_T_Thermostat_sp&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;scalar&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;lower_bound&quot;</span><span class="p">:</span> <span class="mi">16</span><span class="p">,</span>
+        <span class="s2">&quot;upper_bound&quot;</span><span class="p">:</span> <span class="mi">26</span><span class="p">,</span>
+        <span class="s2">&quot;default&quot;</span><span class="p">:</span> <span class="mi">20</span><span class="p">,</span>
+        <span class="s2">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;Zone 3 thermostat setpoint.&quot;</span><span class="p">,</span>
+    <span class="p">},</span>
+    <span class="s2">&quot;Z04_T_Thermostat_sp&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;scalar&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;lower_bound&quot;</span><span class="p">:</span> <span class="mi">16</span><span class="p">,</span>
+        <span class="s2">&quot;upper_bound&quot;</span><span class="p">:</span> <span class="mi">26</span><span class="p">,</span>
+        <span class="s2">&quot;default&quot;</span><span class="p">:</span> <span class="mi">20</span><span class="p">,</span>
+        <span class="s2">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;Zone 4 thermostat setpoint.&quot;</span><span class="p">,</span>
+    <span class="p">},</span>
+    <span class="s2">&quot;Z05_T_Thermostat_sp&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;scalar&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;lower_bound&quot;</span><span class="p">:</span> <span class="mi">16</span><span class="p">,</span>
+        <span class="s2">&quot;upper_bound&quot;</span><span class="p">:</span> <span class="mi">26</span><span class="p">,</span>
+        <span class="s2">&quot;default&quot;</span><span class="p">:</span> <span class="mi">20</span><span class="p">,</span>
+        <span class="s2">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;Zone 5 thermostat setpoint.&quot;</span><span class="p">,</span>
+    <span class="p">},</span>
+    <span class="s2">&quot;Z08_T_Thermostat_sp&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;scalar&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;lower_bound&quot;</span><span class="p">:</span> <span class="mi">16</span><span class="p">,</span>
+        <span class="s2">&quot;upper_bound&quot;</span><span class="p">:</span> <span class="mi">26</span><span class="p">,</span>
+        <span class="s2">&quot;default&quot;</span><span class="p">:</span> <span class="mi">20</span><span class="p">,</span>
+        <span class="s2">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;Zone 8 thermostat setpoint.&quot;</span><span class="p">,</span>
+    <span class="p">},</span>
+    <span class="s2">&quot;Z09_T_Thermostat_sp&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;scalar&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;lower_bound&quot;</span><span class="p">:</span> <span class="mi">16</span><span class="p">,</span>
+        <span class="s2">&quot;upper_bound&quot;</span><span class="p">:</span> <span class="mi">26</span><span class="p">,</span>
+        <span class="s2">&quot;default&quot;</span><span class="p">:</span> <span class="mi">20</span><span class="p">,</span>
+        <span class="s2">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;Zone 9 thermostat setpoint.&quot;</span><span class="p">,</span>
+    <span class="p">},</span>
+    <span class="s2">&quot;Z10_T_Thermostat_sp&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;scalar&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;lower_bound&quot;</span><span class="p">:</span> <span class="mi">16</span><span class="p">,</span>
+        <span class="s2">&quot;upper_bound&quot;</span><span class="p">:</span> <span class="mi">26</span><span class="p">,</span>
+        <span class="s2">&quot;default&quot;</span><span class="p">:</span> <span class="mi">20</span><span class="p">,</span>
+        <span class="s2">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;Zone 10 thermostat setpoint.&quot;</span><span class="p">,</span>
+    <span class="p">},</span>
+    <span class="s2">&quot;Z11_T_Thermostat_sp&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;scalar&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;lower_bound&quot;</span><span class="p">:</span> <span class="mi">16</span><span class="p">,</span>
+        <span class="s2">&quot;upper_bound&quot;</span><span class="p">:</span> <span class="mi">26</span><span class="p">,</span>
+        <span class="s2">&quot;default&quot;</span><span class="p">:</span> <span class="mi">20</span><span class="p">,</span>
+        <span class="s2">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;Zone 11 thermostat setpoint.&quot;</span><span class="p">,</span>
+    <span class="p">},</span>
+    <span class="s2">&quot;Bd_T_AHU2_sp&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;scalar&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;lower_bound&quot;</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span>
+        <span class="s2">&quot;upper_bound&quot;</span><span class="p">:</span> <span class="mi">30</span><span class="p">,</span>
+        <span class="s2">&quot;default&quot;</span><span class="p">:</span> <span class="mi">20</span><span class="p">,</span>
+        <span class="s2">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;AHU 2 temperature setpoint.&quot;</span><span class="p">,</span>
+    <span class="p">},</span>
+    <span class="s2">&quot;Bd_Fl_AHU2_sp&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;scalar&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;lower_bound&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+        <span class="s2">&quot;upper_bound&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+        <span class="s2">&quot;default&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+        <span class="s2">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;AHU 2 flow rate setpoint.&quot;</span><span class="p">,</span>
+    <span class="p">},</span>
+    <span class="s2">&quot;Bd_T_AHU1_sp&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;scalar&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;lower_bound&quot;</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span>
+        <span class="s2">&quot;upper_bound&quot;</span><span class="p">:</span> <span class="mi">30</span><span class="p">,</span>
+        <span class="s2">&quot;default&quot;</span><span class="p">:</span> <span class="mi">20</span><span class="p">,</span>
+        <span class="s2">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;AHU 1 temperature setpoint.&quot;</span><span class="p">,</span>
+    <span class="p">},</span>
+    <span class="s2">&quot;Bd_Fl_AHU1_sp&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;scalar&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;lower_bound&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+        <span class="s2">&quot;upper_bound&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+        <span class="s2">&quot;default&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+        <span class="s2">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;AHU1 flow rate setpoint.&quot;</span><span class="p">,</span>
+    <span class="p">},</span>
+<span class="p">}</span>
+
+<span class="n">OUTPUTS_SPECS</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;Bd_Pw_All&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;scalar&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;lower_bound&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+        <span class="s2">&quot;upper_bound&quot;</span><span class="p">:</span> <span class="mf">1e4</span><span class="p">,</span>
+        <span class="s2">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;Building power consumption.&quot;</span><span class="p">,</span>
+    <span class="p">},</span>
+    <span class="s2">&quot;Bd_Pw_chiller&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;scalar&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;lower_bound&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+        <span class="s2">&quot;upper_bound&quot;</span><span class="p">:</span> <span class="mf">3e4</span><span class="p">,</span>
+        <span class="s2">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;Chiller power consumption.&quot;</span><span class="p">,</span>
+    <span class="p">},</span>
+    <span class="s2">&quot;Bd_Pw_coil&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;scalar&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;lower_bound&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+        <span class="s2">&quot;upper_bound&quot;</span><span class="p">:</span> <span class="mf">1.5e4</span><span class="p">,</span>
+        <span class="s2">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;Coil power consumption?&quot;</span><span class="p">,</span>
+    <span class="p">},</span>
+    <span class="s2">&quot;Bd_Pw_cooling_AHU2&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;scalar&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;lower_bound&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+        <span class="s2">&quot;upper_bound&quot;</span><span class="p">:</span> <span class="mf">1e4</span><span class="p">,</span>
+        <span class="s2">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;AHU 2 cooling power.&quot;</span><span class="p">,</span>
+    <span class="p">},</span>
+    <span class="s2">&quot;Bd_Pw_cooling_HP&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;scalar&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;lower_bound&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+        <span class="s2">&quot;upper_bound&quot;</span><span class="p">:</span> <span class="mf">3e4</span><span class="p">,</span>
+        <span class="s2">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;Heat pump cooling power.&quot;</span><span class="p">,</span>
+    <span class="p">},</span>
+    <span class="s2">&quot;Bd_Pw_heating_HP&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;scalar&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;lower_bound&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+        <span class="s2">&quot;upper_bound&quot;</span><span class="p">:</span> <span class="mf">3e4</span><span class="p">,</span>
+        <span class="s2">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;Heat pump heating power.&quot;</span><span class="p">,</span>
+    <span class="p">},</span>
+    <span class="s2">&quot;Bd_T_AHU1&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;scalar&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;lower_bound&quot;</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span>
+        <span class="s2">&quot;upper_bound&quot;</span><span class="p">:</span> <span class="mi">30</span><span class="p">,</span>
+        <span class="s2">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;AHU 1 temperature.&quot;</span><span class="p">,</span>
+    <span class="p">},</span>
+    <span class="s2">&quot;Bd_T_AHU2&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;scalar&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;lower_bound&quot;</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span>
+        <span class="s2">&quot;upper_bound&quot;</span><span class="p">:</span> <span class="mi">30</span><span class="p">,</span>
+        <span class="s2">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;AHU 2 temperature.&quot;</span><span class="p">,</span>
+    <span class="p">},</span>
+    <span class="s2">&quot;Ext_Irr&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;scalar&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;lower_bound&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+        <span class="s2">&quot;upper_bound&quot;</span><span class="p">:</span> <span class="mi">1000</span><span class="p">,</span>
+        <span class="s2">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;Direct normal radiation.&quot;</span><span class="p">,</span>
+    <span class="p">},</span>
+    <span class="s2">&quot;Ext_P&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;scalar&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;lower_bound&quot;</span><span class="p">:</span> <span class="mf">8e4</span><span class="p">,</span>
+        <span class="s2">&quot;upper_bound&quot;</span><span class="p">:</span> <span class="mf">13e4</span><span class="p">,</span>
+        <span class="s2">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;Outdoor air pressure.&quot;</span><span class="p">,</span>
+    <span class="p">},</span>
+    <span class="s2">&quot;Ext_RH&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;scalar&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;lower_bound&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+        <span class="s2">&quot;upper_bound&quot;</span><span class="p">:</span> <span class="mi">100</span><span class="p">,</span>
+        <span class="s2">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;Outdoor realtive humidity.&quot;</span><span class="p">,</span>
+    <span class="p">},</span>
+    <span class="s2">&quot;Ext_T&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;scalar&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;lower_bound&quot;</span><span class="p">:</span> <span class="o">-</span><span class="mi">10</span><span class="p">,</span>
+        <span class="s2">&quot;upper_bound&quot;</span><span class="p">:</span> <span class="mi">40</span><span class="p">,</span>
+        <span class="s2">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;Outdoor temperature.&quot;</span><span class="p">,</span>
+    <span class="p">},</span>
+    <span class="s2">&quot;Fa_Pw_All&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;scalar&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;lower_bound&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+        <span class="s2">&quot;upper_bound&quot;</span><span class="p">:</span> <span class="mf">5e4</span><span class="p">,</span>
+        <span class="s2">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;Total power consumtion.&quot;</span><span class="p">,</span>
+    <span class="p">},</span>
+    <span class="s2">&quot;Fa_Pw_HVAC&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;scalar&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;lower_bound&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+        <span class="s2">&quot;upper_bound&quot;</span><span class="p">:</span> <span class="mf">5e4</span><span class="p">,</span>
+        <span class="s2">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;HVAC power consumption.&quot;</span><span class="p">,</span>
+    <span class="p">},</span>
+    <span class="s2">&quot;Z02_Fl_Fan&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;scalar&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;lower_bound&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+        <span class="s2">&quot;upper_bound&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+        <span class="s2">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;Zone 2 fan flow rate.&quot;</span><span class="p">,</span>
+    <span class="p">},</span>
+    <span class="s2">&quot;Z02_RH&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;scalar&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;lower_bound&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+        <span class="s2">&quot;upper_bound&quot;</span><span class="p">:</span> <span class="mi">100</span><span class="p">,</span>
+        <span class="s2">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;Zone 2 relative humidity.&quot;</span><span class="p">,</span>
+    <span class="p">},</span>
+    <span class="s2">&quot;Z02_T&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;scalar&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;lower_bound&quot;</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span>
+        <span class="s2">&quot;upper_bound&quot;</span><span class="p">:</span> <span class="mi">40</span><span class="p">,</span>
+        <span class="s2">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;Zone 2 temperature.&quot;</span><span class="p">,</span>
+    <span class="p">},</span>
+    <span class="s2">&quot;Z02_T_Thermostat_sp_out&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;scalar&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;lower_bound&quot;</span><span class="p">:</span> <span class="mi">16</span><span class="p">,</span>
+        <span class="s2">&quot;upper_bound&quot;</span><span class="p">:</span> <span class="mi">26</span><span class="p">,</span>
+        <span class="s2">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;Zone 2 thermostat setpoint.&quot;</span><span class="p">,</span>
+    <span class="p">},</span>
+    <span class="s2">&quot;Z03_Fl_Fan&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;scalar&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;lower_bound&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+        <span class="s2">&quot;upper_bound&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+        <span class="s2">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;Zone 3 fan flow rate.&quot;</span><span class="p">,</span>
+    <span class="p">},</span>
+    <span class="s2">&quot;Z03_RH&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;scalar&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;lower_bound&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+        <span class="s2">&quot;upper_bound&quot;</span><span class="p">:</span> <span class="mi">100</span><span class="p">,</span>
+        <span class="s2">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;Zone 3 relative humidity.&quot;</span><span class="p">,</span>
+    <span class="p">},</span>
+    <span class="s2">&quot;Z03_T&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;scalar&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;lower_bound&quot;</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span>
+        <span class="s2">&quot;upper_bound&quot;</span><span class="p">:</span> <span class="mi">40</span><span class="p">,</span>
+        <span class="s2">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;Zone 3 temperature.&quot;</span><span class="p">,</span>
+    <span class="p">},</span>
+    <span class="s2">&quot;Z03_T_Thermostat_sp_out&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;scalar&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;lower_bound&quot;</span><span class="p">:</span> <span class="mi">16</span><span class="p">,</span>
+        <span class="s2">&quot;upper_bound&quot;</span><span class="p">:</span> <span class="mi">26</span><span class="p">,</span>
+        <span class="s2">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;Zone 3 thermostat setpoint.&quot;</span><span class="p">,</span>
+    <span class="p">},</span>
+    <span class="s2">&quot;Z04_Fl_Fan&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;scalar&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;lower_bound&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+        <span class="s2">&quot;upper_bound&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+        <span class="s2">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;Zone 4 fan flow rate.&quot;</span><span class="p">,</span>
+    <span class="p">},</span>
+    <span class="s2">&quot;Z04_RH&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;scalar&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;lower_bound&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+        <span class="s2">&quot;upper_bound&quot;</span><span class="p">:</span> <span class="mi">100</span><span class="p">,</span>
+        <span class="s2">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;Zone 4 relative humidity.&quot;</span><span class="p">,</span>
+    <span class="p">},</span>
+    <span class="s2">&quot;Z04_T&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;scalar&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;lower_bound&quot;</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span>
+        <span class="s2">&quot;upper_bound&quot;</span><span class="p">:</span> <span class="mi">40</span><span class="p">,</span>
+        <span class="s2">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;Zone 4 temperature.&quot;</span><span class="p">,</span>
+    <span class="p">},</span>
+    <span class="s2">&quot;Z04_T_Thermostat_sp_out&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;scalar&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;lower_bound&quot;</span><span class="p">:</span> <span class="mi">16</span><span class="p">,</span>
+        <span class="s2">&quot;upper_bound&quot;</span><span class="p">:</span> <span class="mi">26</span><span class="p">,</span>
+        <span class="s2">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;Zone 4 thermostat setpoint.&quot;</span><span class="p">,</span>
+    <span class="p">},</span>
+    <span class="s2">&quot;Z05_RH&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;scalar&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;lower_bound&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+        <span class="s2">&quot;upper_bound&quot;</span><span class="p">:</span> <span class="mi">100</span><span class="p">,</span>
+        <span class="s2">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;Zone 5 relative humidity.&quot;</span><span class="p">,</span>
+    <span class="p">},</span>
+    <span class="s2">&quot;Z05_T&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;scalar&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;lower_bound&quot;</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span>
+        <span class="s2">&quot;upper_bound&quot;</span><span class="p">:</span> <span class="mi">40</span><span class="p">,</span>
+        <span class="s2">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;Zone 5 temperature.&quot;</span><span class="p">,</span>
+    <span class="p">},</span>
+    <span class="s2">&quot;Z05_T_Thermostat_sp_out&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;scalar&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;lower_bound&quot;</span><span class="p">:</span> <span class="mi">16</span><span class="p">,</span>
+        <span class="s2">&quot;upper_bound&quot;</span><span class="p">:</span> <span class="mi">26</span><span class="p">,</span>
+        <span class="s2">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;Zone 5 thermostat setpoint.&quot;</span><span class="p">,</span>
+    <span class="p">},</span>
+    <span class="s2">&quot;Z08_Fl_Fan&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;scalar&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;lower_bound&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+        <span class="s2">&quot;upper_bound&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+        <span class="s2">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;Zone 8 fan flow rate.&quot;</span><span class="p">,</span>
+    <span class="p">},</span>
+    <span class="s2">&quot;Z08_RH&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;scalar&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;lower_bound&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+        <span class="s2">&quot;upper_bound&quot;</span><span class="p">:</span> <span class="mi">100</span><span class="p">,</span>
+        <span class="s2">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;Zone 8 relative humidity.&quot;</span><span class="p">,</span>
+    <span class="p">},</span>
+    <span class="s2">&quot;Z08_T&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;scalar&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;lower_bound&quot;</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span>
+        <span class="s2">&quot;upper_bound&quot;</span><span class="p">:</span> <span class="mi">40</span><span class="p">,</span>
+        <span class="s2">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;Zone 8 temperature.&quot;</span><span class="p">,</span>
+    <span class="p">},</span>
+    <span class="s2">&quot;Z08_T_Thermostat_sp_out&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;scalar&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;lower_bound&quot;</span><span class="p">:</span> <span class="mi">16</span><span class="p">,</span>
+        <span class="s2">&quot;upper_bound&quot;</span><span class="p">:</span> <span class="mi">26</span><span class="p">,</span>
+        <span class="s2">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;Zone 8 thermostat setpoint.&quot;</span><span class="p">,</span>
+    <span class="p">},</span>
+    <span class="s2">&quot;Z09_Fl_Fan&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;scalar&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;lower_bound&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+        <span class="s2">&quot;upper_bound&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+        <span class="s2">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;Zone 9 fan flow rate.&quot;</span><span class="p">,</span>
+    <span class="p">},</span>
+    <span class="s2">&quot;Z09_RH&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;scalar&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;lower_bound&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+        <span class="s2">&quot;upper_bound&quot;</span><span class="p">:</span> <span class="mi">100</span><span class="p">,</span>
+        <span class="s2">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;Zone 9 relative humidity.&quot;</span><span class="p">,</span>
+    <span class="p">},</span>
+    <span class="s2">&quot;Z09_T&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;scalar&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;lower_bound&quot;</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span>
+        <span class="s2">&quot;upper_bound&quot;</span><span class="p">:</span> <span class="mi">40</span><span class="p">,</span>
+        <span class="s2">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;Zone 9 temperature.&quot;</span><span class="p">,</span>
+    <span class="p">},</span>
+    <span class="s2">&quot;Z09_T_Thermostat_sp_out&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;scalar&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;lower_bound&quot;</span><span class="p">:</span> <span class="mi">16</span><span class="p">,</span>
+        <span class="s2">&quot;upper_bound&quot;</span><span class="p">:</span> <span class="mi">26</span><span class="p">,</span>
+        <span class="s2">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;Zone 9 thermostat setpoint.&quot;</span><span class="p">,</span>
+    <span class="p">},</span>
+    <span class="s2">&quot;Z10_Fl_Fan&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;scalar&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;lower_bound&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+        <span class="s2">&quot;upper_bound&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+        <span class="s2">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;Zone 10 fan flow rate.&quot;</span><span class="p">,</span>
+    <span class="p">},</span>
+    <span class="s2">&quot;Z10_RH&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;scalar&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;lower_bound&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+        <span class="s2">&quot;upper_bound&quot;</span><span class="p">:</span> <span class="mi">100</span><span class="p">,</span>
+        <span class="s2">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;Zone 10 relative humidity.&quot;</span><span class="p">,</span>
+    <span class="p">},</span>
+    <span class="s2">&quot;Z10_T&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;scalar&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;lower_bound&quot;</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span>
+        <span class="s2">&quot;upper_bound&quot;</span><span class="p">:</span> <span class="mi">40</span><span class="p">,</span>
+        <span class="s2">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;Zone 10 temperature.&quot;</span><span class="p">,</span>
+    <span class="p">},</span>
+    <span class="s2">&quot;Z10_T_Thermostat_sp_out&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;scalar&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;lower_bound&quot;</span><span class="p">:</span> <span class="mi">16</span><span class="p">,</span>
+        <span class="s2">&quot;upper_bound&quot;</span><span class="p">:</span> <span class="mi">26</span><span class="p">,</span>
+        <span class="s2">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;Zone 10 thermostat setpoint.&quot;</span><span class="p">,</span>
+    <span class="p">},</span>
+    <span class="s2">&quot;Z11_Fl_Fan&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;scalar&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;lower_bound&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+        <span class="s2">&quot;upper_bound&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+        <span class="s2">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;Zone 11 fan flow rate.&quot;</span><span class="p">,</span>
+    <span class="p">},</span>
+    <span class="s2">&quot;Z11_RH&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;scalar&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;lower_bound&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+        <span class="s2">&quot;upper_bound&quot;</span><span class="p">:</span> <span class="mi">100</span><span class="p">,</span>
+        <span class="s2">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;Zone 11 relative humidity.&quot;</span><span class="p">,</span>
+    <span class="p">},</span>
+    <span class="s2">&quot;Z11_T&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;scalar&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;lower_bound&quot;</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span>
+        <span class="s2">&quot;upper_bound&quot;</span><span class="p">:</span> <span class="mi">40</span><span class="p">,</span>
+        <span class="s2">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;Zone 11 temperature.&quot;</span><span class="p">,</span>
+    <span class="p">},</span>
+    <span class="s2">&quot;Z11_T_Thermostat_sp_out&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;scalar&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;lower_bound&quot;</span><span class="p">:</span> <span class="mi">16</span><span class="p">,</span>
+        <span class="s2">&quot;upper_bound&quot;</span><span class="p">:</span> <span class="mi">26</span><span class="p">,</span>
+        <span class="s2">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;Zone 11 thermostat setpoint.&quot;</span><span class="p">,</span>
+    <span class="p">},</span>
+<span class="p">}</span>
+
+<span class="n">default_kpi_options</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;kpi1&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;Fa_Pw_All&quot;</span><span class="p">,</span> <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;avg&quot;</span><span class="p">},</span>
+    <span class="s2">&quot;kpi2&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;Z02_T&quot;</span><span class="p">,</span> <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;avg_dev&quot;</span><span class="p">,</span> <span class="s2">&quot;target&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mi">19</span><span class="p">,</span> <span class="mi">24</span><span class="p">]},</span>
+    <span class="s2">&quot;kpi3&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;Z03_T&quot;</span><span class="p">,</span> <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;avg_dev&quot;</span><span class="p">,</span> <span class="s2">&quot;target&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mi">19</span><span class="p">,</span> <span class="mi">24</span><span class="p">]},</span>
+    <span class="s2">&quot;kpi4&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;Z04_T&quot;</span><span class="p">,</span> <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;avg_dev&quot;</span><span class="p">,</span> <span class="s2">&quot;target&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mi">19</span><span class="p">,</span> <span class="mi">24</span><span class="p">]},</span>
+    <span class="s2">&quot;kpi5&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;Z05_T&quot;</span><span class="p">,</span> <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;avg_dev&quot;</span><span class="p">,</span> <span class="s2">&quot;target&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mi">19</span><span class="p">,</span> <span class="mi">24</span><span class="p">]},</span>
+    <span class="s2">&quot;kpi6&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;Z08_T&quot;</span><span class="p">,</span> <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;avg_dev&quot;</span><span class="p">,</span> <span class="s2">&quot;target&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mi">19</span><span class="p">,</span> <span class="mi">24</span><span class="p">]},</span>
+    <span class="s2">&quot;kpi7&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;Z09_T&quot;</span><span class="p">,</span> <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;avg_dev&quot;</span><span class="p">,</span> <span class="s2">&quot;target&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mi">19</span><span class="p">,</span> <span class="mi">24</span><span class="p">]},</span>
+    <span class="s2">&quot;kpi8&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;Z10_T&quot;</span><span class="p">,</span> <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;avg_dev&quot;</span><span class="p">,</span> <span class="s2">&quot;target&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mi">19</span><span class="p">,</span> <span class="mi">24</span><span class="p">]},</span>
+    <span class="s2">&quot;kpi9&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;Z11_T&quot;</span><span class="p">,</span> <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;avg_dev&quot;</span><span class="p">,</span> <span class="s2">&quot;target&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mi">19</span><span class="p">,</span> <span class="mi">24</span><span class="p">]},</span>
+    <span class="s2">&quot;kpi10&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;Z02_T&quot;</span><span class="p">,</span> <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;tot_viol&quot;</span><span class="p">,</span> <span class="s2">&quot;target&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mi">19</span><span class="p">,</span> <span class="mi">24</span><span class="p">]},</span>
+    <span class="s2">&quot;kpi11&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;Z03_T&quot;</span><span class="p">,</span> <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;tot_viol&quot;</span><span class="p">,</span> <span class="s2">&quot;target&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mi">19</span><span class="p">,</span> <span class="mi">24</span><span class="p">]},</span>
+    <span class="s2">&quot;kpi12&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;Z04_T&quot;</span><span class="p">,</span> <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;tot_viol&quot;</span><span class="p">,</span> <span class="s2">&quot;target&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mi">19</span><span class="p">,</span> <span class="mi">24</span><span class="p">]},</span>
+    <span class="s2">&quot;kpi13&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;Z05_T&quot;</span><span class="p">,</span> <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;tot_viol&quot;</span><span class="p">,</span> <span class="s2">&quot;target&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mi">19</span><span class="p">,</span> <span class="mi">24</span><span class="p">]},</span>
+    <span class="s2">&quot;kpi14&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;Z08_T&quot;</span><span class="p">,</span> <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;tot_viol&quot;</span><span class="p">,</span> <span class="s2">&quot;target&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mi">19</span><span class="p">,</span> <span class="mi">24</span><span class="p">]},</span>
+    <span class="s2">&quot;kpi15&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;Z09_T&quot;</span><span class="p">,</span> <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;tot_viol&quot;</span><span class="p">,</span> <span class="s2">&quot;target&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mi">19</span><span class="p">,</span> <span class="mi">24</span><span class="p">]},</span>
+    <span class="s2">&quot;kpi16&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;Z10_T&quot;</span><span class="p">,</span> <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;tot_viol&quot;</span><span class="p">,</span> <span class="s2">&quot;target&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mi">19</span><span class="p">,</span> <span class="mi">24</span><span class="p">]},</span>
+    <span class="s2">&quot;kpi17&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;Z11_T&quot;</span><span class="p">,</span> <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;tot_viol&quot;</span><span class="p">,</span> <span class="s2">&quot;target&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mi">19</span><span class="p">,</span> <span class="mi">24</span><span class="p">]},</span>
+<span class="p">}</span>
+
+
+<div class="viewcode-block" id="MixedUse"><a class="viewcode-back" href="../../../../sources/apiref.html#energym.envs.mixeduse.mixeduse.MixedUse">[docs]</a><span class="k">class</span> <span class="nc">MixedUse</span><span class="p">(</span><span class="n">EnvEPlusFMU</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Containing information for the model MixedUseFanFCU-v0.</span>
+
+<span class="sd">    Subclasses EnvEPlusFMU and inherits its behavior. Simulation based details are</span>
+<span class="sd">    specified in this class and passed to the constructor of EnvEPlusFMU.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="n">model_path</span><span class="p">,</span>
+        <span class="n">start_day</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
+        <span class="n">start_month</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
+        <span class="n">year</span><span class="o">=</span><span class="mi">2019</span><span class="p">,</span>
+        <span class="n">simulation_days</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span>
+        <span class="n">weather</span><span class="o">=</span><span class="s2">&quot;GRC_A_Athens&quot;</span><span class="p">,</span>
+        <span class="n">kpi_options</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+        <span class="n">default_path</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+        <span class="n">generate_forecasts</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+        <span class="n">generate_forecast_method</span><span class="o">=</span><span class="s2">&quot;perfect&quot;</span><span class="p">,</span>
+        <span class="n">generate_forecast_keys</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+    <span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        model_path : str</span>
+<span class="sd">            Specifies the path to the FMU</span>
+<span class="sd">        start_day : int, optional</span>
+<span class="sd">            Day of the month to start the simulation, by default 1</span>
+<span class="sd">        start_month : int, optional</span>
+<span class="sd">            Month of the year to start the simulation, by default 1</span>
+<span class="sd">        year : int, optional</span>
+<span class="sd">            Year to start the simulation, by default 2019</span>
+<span class="sd">        simulation_days : int, optional</span>
+<span class="sd">            Number of days the simulation can run for, by default 10</span>
+<span class="sd">        weather : str, optional</span>
+<span class="sd">            Specific weather file to run the simulation, by default</span>
+<span class="sd">            &quot;GRC_A_Athens&quot;</span>
+<span class="sd">        kpi_options : dict, optional</span>
+<span class="sd">            Dict to specify the tracked KPIs, by default None.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="n">n_steps</span> <span class="o">=</span> <span class="mi">4</span>
+        <span class="n">step_size</span> <span class="o">=</span> <span class="mi">15</span> <span class="o">*</span> <span class="mi">60</span>
+        <span class="n">start_date</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">date</span><span class="p">(</span><span class="n">year</span><span class="p">,</span> <span class="n">start_month</span><span class="p">,</span> <span class="n">start_day</span><span class="p">)</span>
+        <span class="n">delta</span> <span class="o">=</span> <span class="n">start_date</span> <span class="o">-</span> <span class="n">datetime</span><span class="o">.</span><span class="n">date</span><span class="p">(</span><span class="n">year</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+        <span class="n">start_time</span> <span class="o">=</span> <span class="n">delta</span><span class="o">.</span><span class="n">total_seconds</span><span class="p">()</span>
+        <span class="n">stop_time</span> <span class="o">=</span> <span class="n">start_time</span> <span class="o">+</span> <span class="n">n_steps</span> <span class="o">*</span> <span class="mi">24</span> <span class="o">*</span> <span class="n">simulation_days</span> <span class="o">*</span> <span class="n">step_size</span>
+        <span class="k">if</span> <span class="n">kpi_options</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">kpi_options</span> <span class="o">=</span> <span class="n">default_kpi_options</span>
+
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span>
+            <span class="n">model_path</span><span class="p">,</span>
+            <span class="n">start_time</span><span class="p">,</span>
+            <span class="n">stop_time</span><span class="p">,</span>
+            <span class="n">step_size</span><span class="p">,</span>
+            <span class="n">weather</span><span class="p">,</span>
+            <span class="n">INPUTS_SPECS</span><span class="p">,</span>
+            <span class="n">OUTPUTS_SPECS</span><span class="p">,</span>
+            <span class="n">kpi_options</span><span class="p">,</span>
+            <span class="n">default_path</span><span class="p">,</span>
+            <span class="n">generate_forecasts</span><span class="p">,</span>
+            <span class="n">generate_forecast_method</span><span class="p">,</span>
+            <span class="n">generate_forecast_keys</span><span class="p">,</span>
+        <span class="p">)</span></div>
+</pre></div>
+
+              </div>
+              
+              
+              <div class='prev-next-bottom'>
+                
+
+              </div>
+              
+          </main>
+          
+
+      </div>
+    </div>
+
+    
+  <script src="../../../../_static/js/index.d8bbf5861d671d414e1a.js"></script>
+
+
+    <footer class="footer mt-5 mt-md-0">
+  <div class="container">
+    <p>
+          &copy; Copyright 2020, psh, bsl, tgi.<br/>
+        Created using <a href="http://sphinx-doc.org/">Sphinx</a> 3.2.1.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>
