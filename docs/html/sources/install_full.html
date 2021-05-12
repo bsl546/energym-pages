@@ -1,0 +1,301 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Full Installation &#8212; energym 2020.02.19 documentation</title>
+    
+  <link href="../_static/css/theme.css" rel="stylesheet" />
+  <link href="../_static/css/index.101715efdecc9b59cb6e1ddfa685c31f.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/graphviz.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.d8bbf5861d671d414e1a.js">
+
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Contributing" href="add_model.html" />
+    <link rel="prev" title="KPI Example" href="notebooks/KPI%20Example.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <nav class="navbar navbar-light navbar-expand-lg bg-light fixed-top bd-navbar" id="navbar-main"><div class="container-xl">
+
+
+    
+    <a class="navbar-brand" href="../index.html">
+      <p class="title">energym</p>
+    </a>
+    
+
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-menu" aria-controls="navbar-menu" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    
+    <div id="navbar-menu" class="col-lg-9 collapse navbar-collapse">
+      <ul id="navbar-main-elements" class="navbar-nav mr-auto">
+        <li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="base.html">
+  Buildings
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="install_min.html">
+  Minimal Installation
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="start.html">
+  Getting Started
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="Examples.html">
+  Examples
+ </a>
+</li>
+
+<li class="toctree-l1 current active nav-item">
+ <a class="current reference internal nav-link" href="#">
+  Full Installation
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="add_model.html">
+  Contributing
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="apiref.html">
+  API Reference
+ </a>
+</li>
+
+        
+      </ul>
+
+      <ul id="navbar-icon-links" class="navbar-nav" aria-label="Icon Links">
+      </ul>
+    </div>
+</div>
+    </nav>
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+            
+            <!-- Only show if we have sidebars configured, else just a small margin  -->
+            <div class="col-12 col-md-3 bd-sidebar"><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
+</form>
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+  <div class="bd-toc-item active">
+    
+  </div>
+</nav>
+            </div>
+            
+          
+
+          
+          <div class="d-none d-xl-block col-xl-2 bd-toc">
+              
+<div class="tocsection onthispage pt-5 pb-3">
+    <i class="fas fa-list"></i> On this page
+</div>
+
+<nav id="bd-toc-nav">
+    <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#windows-10">
+   Windows 10
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#linux-ubuntu">
+   Linux (Ubuntu)
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#docker">
+   Docker
+  </a>
+ </li>
+</ul>
+
+</nav>
+
+
+              
+          </div>
+          
+
+          
+          
+            
+          
+          <main class="col-12 col-md-9 col-xl-7 py-md-5 pl-md-5 pr-md-4 bd-content" role="main">
+              
+              <div>
+                
+  <div class="section" id="full-installation">
+<span id="install-full"></span><h1>Full Installation<a class="headerlink" href="#full-installation" title="Permalink to this headline">¶</a></h1>
+<p>The full installation should be used only by contributors willing to add and develop new buildings models.</p>
+<p>A docker image with the latest opensource version of JModelica (2.14) is stored on dockerhub for users willing to compile with dockers.</p>
+<div class="section" id="windows-10">
+<h2>Windows 10<a class="headerlink" href="#windows-10" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic">
+<li><p>Download and install JModelica <a class="reference external" href="https://disq.us/url?url=https%3A%2F%2Fdownloads.modelon.com%2Fdownload%2F%3Fa%3DJMODELICA%3A_xx_BYR7Ndv4fd3-M3M3XSHiyjY&amp;cuid=2163236/">binaries</a>.</p></li>
+<li><p>Install Energyplus 9.5; see <a class="reference internal" href="install_min.html#install-min"><span class="std std-ref">Minimal Installation</span></a>.</p></li>
+<li><p>Install a  C/C++ compiler (e.g. Visual Studio)</p></li>
+<li><p>Clone the following libraries to your favorite folder:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">clone</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">lbl</span><span class="o">-</span><span class="n">srg</span><span class="o">/</span><span class="n">modelica</span><span class="o">-</span><span class="n">buildings</span><span class="o">.</span><span class="n">git</span>
+<span class="n">git</span> <span class="n">clone</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">ibpsa</span><span class="o">/</span><span class="n">modelica</span><span class="o">-</span><span class="n">ibpsa</span><span class="o">.</span><span class="n">git</span>
+<span class="n">git</span> <span class="n">clone</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">lbl</span><span class="o">-</span><span class="n">srg</span><span class="o">/</span><span class="n">EnergyPlusToFMU</span>
+</pre></div>
+</div>
+</li>
+<li><p>Clone Energym:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">clone</span> <span class="o">&lt;</span><span class="n">energym</span> <span class="n">adress</span><span class="o">&gt;</span>
+<span class="n">cd</span> <span class="o">&lt;</span><span class="n">energym</span> <span class="n">main</span> <span class="n">folder</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</li>
+</ol>
+<p>Then go to the section  <a class="reference internal" href="add_model.html#add-model"><span class="std std-ref">Contributing</span></a>.</p>
+</div>
+<div class="section" id="linux-ubuntu">
+<h2>Linux (Ubuntu)<a class="headerlink" href="#linux-ubuntu" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic">
+<li><p>Download and install the latest free JModelica version (requires python 2.7)</p></li>
+<li><p>Install Energyplus 9.5; see <a class="reference internal" href="install_min.html#install-min"><span class="std std-ref">Minimal Installation</span></a>.</p></li>
+<li><p>Install the following librairies:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">update</span> <span class="o">&amp;&amp;</span> <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">upgrade</span> <span class="o">-</span><span class="n">y</span> \
+<span class="n">apt</span><span class="o">-</span><span class="n">utils</span> \
+<span class="n">openjdk</span><span class="o">-</span><span class="mi">11</span><span class="o">-</span><span class="n">jre</span>\
+<span class="n">git</span> \
+<span class="n">libc6</span>\
+<span class="o">-</span><span class="n">y</span> <span class="n">wget</span> <span class="n">gnupg2</span> <span class="n">lsb</span><span class="o">-</span><span class="n">release</span> <span class="n">curl</span> <span class="n">vim</span>
+</pre></div>
+</div>
+</li>
+<li><p>Clone the following libraries to your favorite folder:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">clone</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">lbl</span><span class="o">-</span><span class="n">srg</span><span class="o">/</span><span class="n">modelica</span><span class="o">-</span><span class="n">buildings</span><span class="o">.</span><span class="n">git</span>
+<span class="n">git</span> <span class="n">clone</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">ibpsa</span><span class="o">/</span><span class="n">modelica</span><span class="o">-</span><span class="n">ibpsa</span><span class="o">.</span><span class="n">git</span>
+<span class="n">git</span> <span class="n">clone</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">lbl</span><span class="o">-</span><span class="n">srg</span><span class="o">/</span><span class="n">EnergyPlusToFMU</span>
+</pre></div>
+</div>
+</li>
+<li><p>Clone Energym:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">clone</span> <span class="o">&lt;</span><span class="n">energym</span> <span class="n">adress</span><span class="o">&gt;</span>
+<span class="n">cd</span> <span class="o">&lt;</span><span class="n">energym</span> <span class="n">main</span> <span class="n">folder</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</li>
+</ol>
+<p>Then go to the section  <a class="reference internal" href="add_model.html#add-model"><span class="std std-ref">Contributing</span></a>.</p>
+</div>
+<div class="section" id="docker">
+<h2>Docker<a class="headerlink" href="#docker" title="Permalink to this headline">¶</a></h2>
+<p>We strongly advise to use the provided dockerfiles to build models for linux/darwin platforms.</p>
+<ol class="arabic">
+<li><p>Prior to using docker, install it following the instructions:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>On <a class="reference external" href="https://docs.docker.com/docker-for-windows/install/">Windows</a>.</p></li>
+<li><p>On <a class="reference external" href="https://docs.docker.com/engine/install/ubuntu/">Linux (Ubuntu)</a>.</p></li>
+<li><p>On <a class="reference external" href="https://docs.docker.com/docker-for-mac/install/">Mac</a>.</p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p>Clone the repository using git:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">clone</span> <span class="o">&lt;</span><span class="n">energym</span> <span class="n">adress</span><span class="o">&gt;</span>
+<span class="n">cd</span> <span class="o">&lt;</span><span class="n">energym</span> <span class="n">main</span> <span class="n">folder</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</li>
+<li><p>Build and run the container.</p>
+<blockquote>
+<div><ul>
+<li><p>On Windows:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">docker</span> <span class="n">build</span> <span class="o">--</span><span class="n">pull</span> <span class="o">--</span><span class="n">rm</span> <span class="o">-</span><span class="n">f</span> <span class="s2">&quot;JModelica.dockerfile&quot;</span> <span class="o">-</span><span class="n">t</span> <span class="n">energym</span><span class="p">:</span><span class="n">latest</span> <span class="s2">&quot;.&quot;</span>
+<span class="n">docker</span> <span class="n">run</span> <span class="o">-</span><span class="n">d</span> <span class="o">-</span><span class="n">p</span> <span class="mi">80</span><span class="p">:</span><span class="mi">80</span> <span class="n">energym</span><span class="p">:</span><span class="n">latest</span>
+</pre></div>
+</div>
+</li>
+<li><p>On Linux. Use the launcherJmod in the main repository:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">./</span><span class="n">launcherJmod</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</div></blockquote>
+</li>
+</ol>
+<p>Then go to the section  <a class="reference internal" href="add_model.html#add-model"><span class="std std-ref">Contributing</span></a>.</p>
+</div>
+</div>
+
+
+              </div>
+              
+              
+              <div class='prev-next-bottom'>
+                
+    <a class='left-prev' id="prev-link" href="notebooks/KPI%20Example.html" title="previous page">KPI Example</a>
+    <a class='right-next' id="next-link" href="add_model.html" title="next page">Contributing</a>
+
+              </div>
+              
+          </main>
+          
+
+      </div>
+    </div>
+
+    
+  <script src="../_static/js/index.d8bbf5861d671d414e1a.js"></script>
+
+
+    <footer class="footer mt-5 mt-md-0">
+  <div class="container">
+    <p>
+          &copy; Copyright 2020, psh, bsl, tgi.<br/>
+        Created using <a href="http://sphinx-doc.org/">Sphinx</a> 3.2.1.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>
