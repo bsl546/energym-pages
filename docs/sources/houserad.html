@@ -177,12 +177,17 @@
  </li>
  <li class="toctree-l2">
   <a class="reference internal" href="houseslab.html">
-   SimpleHouseSlab
+   SimpleHouseRSla
   </a>
  </li>
  <li class="toctree-l2">
-  <a class="reference internal" href="suurr.html">
-   SwissHouseRad
+  <a class="reference internal" href="swiss.html">
+   SwissHouseRSla
+  </a>
+ </li>
+ <li class="toctree-l2">
+  <a class="reference internal" href="swiss2.html">
+   SwissHouseRSlaTank
   </a>
  </li>
 </ul>
@@ -272,15 +277,16 @@
                 
   <div class="section" id="simplehouserad">
 <span id="id1"></span><h1>SimpleHouseRad<a class="headerlink" href="#simplehouserad" title="Permalink to this headline">¶</a></h1>
-<p>The simple house is a one-zone residential buildings located in Zurich Canton, Switzerland</p>
+<p>The simple house is a one-zone residential building.</p>
 <div class="section" id="building-and-thermal-zones">
 <h2>Building and thermal zones<a class="headerlink" href="#building-and-thermal-zones" title="Permalink to this headline">¶</a></h2>
-<p>The entire house is modeled with a single thermal zone.</p>
+<p>The entire house is modeled with a single thermal zone. The parameters of the envelope are typical from a not-very well insulated american house and are taken from the modelica buildings library.
+The building has no cooling system.</p>
 </div>
 <div class="section" id="thermal-systems">
 <h2>Thermal systems<a class="headerlink" href="#thermal-systems" title="Permalink to this headline">¶</a></h2>
-<p>A Heat pump with Carnot HX connected to a simple room model with radiator. A schematic picture of the equipment is given in the following image:</p>
-<a class="reference internal image-reference" href="../_images/HP_u_Rad_1_RC_Sun.png"><img alt="../_images/HP_u_Rad_1_RC_Sun.png" class="align-center" src="../_images/HP_u_Rad_1_RC_Sun.png" style="width: 600px;" /></a>
+<p>A water to water heat pump is connected to a simple room model with radiator. A schematic picture of the equipment is given in the following image:</p>
+<a class="reference internal image-reference" href="../_images/SimpleHouse_HP_u_Rad_1RC_Sun.png"><img alt="../_images/SimpleHouse_HP_u_Rad_1RC_Sun.png" class="align-center" src="../_images/SimpleHouse_HP_u_Rad_1RC_Sun.png" style="width: 600px;" /></a>
 </div>
 <div class="section" id="electrical-systems">
 <h2>Electrical systems<a class="headerlink" href="#electrical-systems" title="Permalink to this headline">¶</a></h2>
@@ -463,14 +469,14 @@
 <td><p>273.15</p></td>
 <td><p>353.15</p></td>
 <td></td>
-<td><p>Return temperature (K).</p></td>
+<td><p>Heat pump return temperature (K).</p></td>
 </tr>
 <tr class="row-odd"><td><p>temSup.T</p></td>
 <td><p>scalar</p></td>
 <td><p>273.15</p></td>
 <td><p>353.15</p></td>
 <td></td>
-<td><p>Supply temperature (K).</p></td>
+<td><p>Heat pump supply temperature (K).</p></td>
 </tr>
 <tr class="row-even"><td><p>TOut.T</p></td>
 <td><p>scalar</p></td>

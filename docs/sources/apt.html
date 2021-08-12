@@ -177,12 +177,17 @@
  </li>
  <li class="toctree-l2">
   <a class="reference internal" href="houseslab.html">
-   SimpleHouseSlab
+   SimpleHouseRSla
   </a>
  </li>
  <li class="toctree-l2">
-  <a class="reference internal" href="suurr.html">
-   SwissHouseRad
+  <a class="reference internal" href="swiss.html">
+   SwissHouseRSla
+  </a>
+ </li>
+ <li class="toctree-l2">
+  <a class="reference internal" href="swiss2.html">
+   SwissHouseRSlaTank
   </a>
  </li>
 </ul>
@@ -439,11 +444,510 @@ Summer season in Spain can reach high temperature such as 35°C. This strategy a
 </div>
 <div class="section" id="simulation-outputs">
 <h2>Simulation outputs<a class="headerlink" href="#simulation-outputs" title="Permalink to this headline">¶</a></h2>
-<div class="admonition error">
-<p class="admonition-title">Error</p>
-<p>Unable to execute python code at apt.rst:144:</p>
-<p>‘Fa_Pw_HVAC’</p>
-</div>
+<table class="table">
+<colgroup>
+<col style="width: 17%" />
+<col style="width: 17%" />
+<col style="width: 17%" />
+<col style="width: 17%" />
+<col style="width: 17%" />
+<col style="width: 17%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Variable Name</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Lower Bound</p></th>
+<th class="head"><p>Upper Bound</p></th>
+<th class="head"><p># States</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Ext_T</p></td>
+<td><p>scalar</p></td>
+<td><p>-10</p></td>
+<td><p>40</p></td>
+<td></td>
+<td><p>Outdoor temperature (°C).</p></td>
+</tr>
+<tr class="row-odd"><td><p>Ext_RH</p></td>
+<td><p>scalar</p></td>
+<td><p>0</p></td>
+<td><p>100</p></td>
+<td></td>
+<td><p>Outdoor relative humidity (%RH).</p></td>
+</tr>
+<tr class="row-even"><td><p>Ext_Irr</p></td>
+<td><p>scalar</p></td>
+<td><p>0</p></td>
+<td><p>1000</p></td>
+<td></td>
+<td><p>Direct normal radiation (W/m2).</p></td>
+</tr>
+<tr class="row-odd"><td><p>Ext_P</p></td>
+<td><p>scalar</p></td>
+<td><p>80000</p></td>
+<td><p>130000</p></td>
+<td></td>
+<td><p>Outdoor air pressure (Pa).</p></td>
+</tr>
+<tr class="row-even"><td><p>Bd_Fl_HP</p></td>
+<td><p>scalar</p></td>
+<td><p>0</p></td>
+<td><p>2</p></td>
+<td></td>
+<td><p>Heat pump flow rate (kg/s).</p></td>
+</tr>
+<tr class="row-odd"><td><p>Bd_T_HP_supply</p></td>
+<td><p>scalar</p></td>
+<td><p>35</p></td>
+<td><p>55</p></td>
+<td></td>
+<td><p>Heat pump supply temperature (°C).</p></td>
+</tr>
+<tr class="row-even"><td><p>Bd_T_HP_return</p></td>
+<td><p>scalar</p></td>
+<td><p>35</p></td>
+<td><p>55</p></td>
+<td></td>
+<td><p>Heat pump return temperature (°C).</p></td>
+</tr>
+<tr class="row-odd"><td><p>Bd_T_HP_sp_out</p></td>
+<td><p>scalar</p></td>
+<td><p>35</p></td>
+<td><p>55</p></td>
+<td></td>
+<td><p>Heat pump temperature setpoint (°C).</p></td>
+</tr>
+<tr class="row-even"><td><p>P3_T_Thermostat_sp_out</p></td>
+<td><p>scalar</p></td>
+<td><p>16</p></td>
+<td><p>26</p></td>
+<td></td>
+<td><p>Floor 3 thermostat setpoint (°C).</p></td>
+</tr>
+<tr class="row-odd"><td><p>P4_T_Thermostat_sp_out</p></td>
+<td><p>scalar</p></td>
+<td><p>16</p></td>
+<td><p>26</p></td>
+<td></td>
+<td><p>Floor 4 thermostat setpoint (°C).</p></td>
+</tr>
+<tr class="row-even"><td><p>P2_T_Thermostat_sp_out</p></td>
+<td><p>scalar</p></td>
+<td><p>16</p></td>
+<td><p>26</p></td>
+<td></td>
+<td><p>Floor 2 thermostat setpoint (°C).</p></td>
+</tr>
+<tr class="row-odd"><td><p>P1_T_Thermostat_sp_out</p></td>
+<td><p>scalar</p></td>
+<td><p>16</p></td>
+<td><p>26</p></td>
+<td></td>
+<td><p>Floor 1 thermostat setpoint (°C).</p></td>
+</tr>
+<tr class="row-even"><td><p>P1_T_Tank_sp_out</p></td>
+<td><p>scalar</p></td>
+<td><p>30</p></td>
+<td><p>70</p></td>
+<td></td>
+<td><p>Floor 1 temperature setpoint (°C).</p></td>
+</tr>
+<tr class="row-odd"><td><p>P2_T_Tank_sp_out</p></td>
+<td><p>scalar</p></td>
+<td><p>30</p></td>
+<td><p>70</p></td>
+<td></td>
+<td><p>Floor 2 temperature setpoint (°C).</p></td>
+</tr>
+<tr class="row-even"><td><p>P3_T_Tank_sp_out</p></td>
+<td><p>scalar</p></td>
+<td><p>30</p></td>
+<td><p>70</p></td>
+<td></td>
+<td><p>Floor 3 temperature setpoint (°C).</p></td>
+</tr>
+<tr class="row-odd"><td><p>P4_T_Tank_sp_out</p></td>
+<td><p>scalar</p></td>
+<td><p>30</p></td>
+<td><p>70</p></td>
+<td></td>
+<td><p>Floor 4 temperature setpoint (°C).</p></td>
+</tr>
+<tr class="row-even"><td><p>Bd_Pw_Bat_sp_out</p></td>
+<td><p>scalar</p></td>
+<td><p>-1</p></td>
+<td><p>1</p></td>
+<td></td>
+<td><p>Battery charging/discharging rate setpoint.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Bd_Ch_EVBat_sp_out</p></td>
+<td><p>scalar</p></td>
+<td><p>0</p></td>
+<td><p>1</p></td>
+<td></td>
+<td><p>EV battery charging rate setpoint .</p></td>
+</tr>
+<tr class="row-even"><td><p>Bd_DisCh_EVBat</p></td>
+<td><p>scalar</p></td>
+<td><p>0</p></td>
+<td><p>1</p></td>
+<td></td>
+<td><p>EV battery discharging rate.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Bd_Frac_Vent_sp_out</p></td>
+<td><p>scalar</p></td>
+<td><p>0</p></td>
+<td><p>1</p></td>
+<td></td>
+<td><p>Ventilation power fraction.</p></td>
+</tr>
+<tr class="row-even"><td><p>Z01_E_Appl</p></td>
+<td><p>scalar</p></td>
+<td><p>0</p></td>
+<td><p>1000</p></td>
+<td></td>
+<td><p>Zone 1 appliance energy (Wh).</p></td>
+</tr>
+<tr class="row-odd"><td><p>Z02_E_Appl</p></td>
+<td><p>scalar</p></td>
+<td><p>0</p></td>
+<td><p>1000</p></td>
+<td></td>
+<td><p>Zone 2 appliance energy (Wh).</p></td>
+</tr>
+<tr class="row-even"><td><p>Z03_E_Appl</p></td>
+<td><p>scalar</p></td>
+<td><p>0</p></td>
+<td><p>1000</p></td>
+<td></td>
+<td><p>Zone 3 appliance energy (Wh).</p></td>
+</tr>
+<tr class="row-odd"><td><p>Z04_E_Appl</p></td>
+<td><p>scalar</p></td>
+<td><p>0</p></td>
+<td><p>1000</p></td>
+<td></td>
+<td><p>Zone 4 appliance energy (Wh).</p></td>
+</tr>
+<tr class="row-even"><td><p>Z05_E_Appl</p></td>
+<td><p>scalar</p></td>
+<td><p>0</p></td>
+<td><p>1000</p></td>
+<td></td>
+<td><p>Zone 5 appliance energy (Wh).</p></td>
+</tr>
+<tr class="row-odd"><td><p>Z06_E_Appl</p></td>
+<td><p>scalar</p></td>
+<td><p>0</p></td>
+<td><p>1000</p></td>
+<td></td>
+<td><p>Zone 6 appliance energy (Wh).</p></td>
+</tr>
+<tr class="row-even"><td><p>Z07_E_Appl</p></td>
+<td><p>scalar</p></td>
+<td><p>0</p></td>
+<td><p>1000</p></td>
+<td></td>
+<td><p>Zone 7 appliance energy (Wh).</p></td>
+</tr>
+<tr class="row-odd"><td><p>Z08_E_Appl</p></td>
+<td><p>scalar</p></td>
+<td><p>0</p></td>
+<td><p>1000</p></td>
+<td></td>
+<td><p>Zone 8 appliance energy (Wh).</p></td>
+</tr>
+<tr class="row-even"><td><p>P1_FlFrac_HW</p></td>
+<td><p>scalar</p></td>
+<td><p>0</p></td>
+<td><p>1</p></td>
+<td></td>
+<td><p>Floor 1 hot water flow rate fraction.</p></td>
+</tr>
+<tr class="row-odd"><td><p>P2_FlFrac_HW</p></td>
+<td><p>scalar</p></td>
+<td><p>0</p></td>
+<td><p>1</p></td>
+<td></td>
+<td><p>Floor 2 hot water flow rate fraction.</p></td>
+</tr>
+<tr class="row-even"><td><p>P3_FlFrac_HW</p></td>
+<td><p>scalar</p></td>
+<td><p>0</p></td>
+<td><p>1</p></td>
+<td></td>
+<td><p>Floor 3 hot water flow rate fraction.</p></td>
+</tr>
+<tr class="row-odd"><td><p>P4_FlFrac_HW</p></td>
+<td><p>scalar</p></td>
+<td><p>0</p></td>
+<td><p>1</p></td>
+<td></td>
+<td><p>Floor 4 hot water flow rate fraction.</p></td>
+</tr>
+<tr class="row-even"><td><p>Z01_T</p></td>
+<td><p>scalar</p></td>
+<td><p>10</p></td>
+<td><p>40</p></td>
+<td></td>
+<td><p>Zone 1 temperature (°C).</p></td>
+</tr>
+<tr class="row-odd"><td><p>Z01_RH</p></td>
+<td><p>scalar</p></td>
+<td><p>0</p></td>
+<td><p>100</p></td>
+<td></td>
+<td><p>Zone 1 relative humidity (%RH).</p></td>
+</tr>
+<tr class="row-even"><td><p>Z02_T</p></td>
+<td><p>scalar</p></td>
+<td><p>10</p></td>
+<td><p>40</p></td>
+<td></td>
+<td><p>Zone 2 temperature (°C).</p></td>
+</tr>
+<tr class="row-odd"><td><p>Z02_RH</p></td>
+<td><p>scalar</p></td>
+<td><p>0</p></td>
+<td><p>100</p></td>
+<td></td>
+<td><p>Zone 2 relative humidity (%RH).</p></td>
+</tr>
+<tr class="row-even"><td><p>Z03_T</p></td>
+<td><p>scalar</p></td>
+<td><p>10</p></td>
+<td><p>40</p></td>
+<td></td>
+<td><p>Zone 3 temperature (°C).</p></td>
+</tr>
+<tr class="row-odd"><td><p>Z03_RH</p></td>
+<td><p>scalar</p></td>
+<td><p>0</p></td>
+<td><p>100</p></td>
+<td></td>
+<td><p>Zone 3 relative humidity (%RH).</p></td>
+</tr>
+<tr class="row-even"><td><p>Z04_T</p></td>
+<td><p>scalar</p></td>
+<td><p>10</p></td>
+<td><p>40</p></td>
+<td></td>
+<td><p>Zone 4 temperature (°C).</p></td>
+</tr>
+<tr class="row-odd"><td><p>Z04_RH</p></td>
+<td><p>scalar</p></td>
+<td><p>0</p></td>
+<td><p>100</p></td>
+<td></td>
+<td><p>Zone 4 relative humidity (%RH).</p></td>
+</tr>
+<tr class="row-even"><td><p>Z05_T</p></td>
+<td><p>scalar</p></td>
+<td><p>10</p></td>
+<td><p>40</p></td>
+<td></td>
+<td><p>Zone 5 temperature (°C).</p></td>
+</tr>
+<tr class="row-odd"><td><p>Z05_RH</p></td>
+<td><p>scalar</p></td>
+<td><p>0</p></td>
+<td><p>100</p></td>
+<td></td>
+<td><p>Zone 5 relative humidity (%RH).</p></td>
+</tr>
+<tr class="row-even"><td><p>Z06_T</p></td>
+<td><p>scalar</p></td>
+<td><p>10</p></td>
+<td><p>40</p></td>
+<td></td>
+<td><p>Zone 6 temperature (°C).</p></td>
+</tr>
+<tr class="row-odd"><td><p>Z06_RH</p></td>
+<td><p>scalar</p></td>
+<td><p>0</p></td>
+<td><p>100</p></td>
+<td></td>
+<td><p>Zone 6 relative humidity (%RH).</p></td>
+</tr>
+<tr class="row-even"><td><p>Z07_T</p></td>
+<td><p>scalar</p></td>
+<td><p>10</p></td>
+<td><p>40</p></td>
+<td></td>
+<td><p>Zone 7 temperature (°C).</p></td>
+</tr>
+<tr class="row-odd"><td><p>Z07_RH</p></td>
+<td><p>scalar</p></td>
+<td><p>0</p></td>
+<td><p>100</p></td>
+<td></td>
+<td><p>Zone 7 relative humidity (%RH).</p></td>
+</tr>
+<tr class="row-even"><td><p>Z08_T</p></td>
+<td><p>scalar</p></td>
+<td><p>10</p></td>
+<td><p>40</p></td>
+<td></td>
+<td><p>Zone 8 temperature (°C).</p></td>
+</tr>
+<tr class="row-odd"><td><p>Z08_RH</p></td>
+<td><p>scalar</p></td>
+<td><p>0</p></td>
+<td><p>100</p></td>
+<td></td>
+<td><p>Zone 8 relative humidity (%RH).</p></td>
+</tr>
+<tr class="row-even"><td><p>Fa_Stat_EV</p></td>
+<td><p>scalar</p></td>
+<td><p>0</p></td>
+<td><p>1</p></td>
+<td></td>
+<td><p>EV status (availability)</p></td>
+</tr>
+<tr class="row-odd"><td><p>Fa_ECh_EVBat</p></td>
+<td><p>scalar</p></td>
+<td><p>0</p></td>
+<td><p>4000.0</p></td>
+<td></td>
+<td><p>EV battery charging energy (Wh).</p></td>
+</tr>
+<tr class="row-even"><td><p>Fa_EDCh_EVBat</p></td>
+<td><p>scalar</p></td>
+<td><p>0</p></td>
+<td><p>4000.0</p></td>
+<td></td>
+<td><p>EV battery discharging energy (Wh).</p></td>
+</tr>
+<tr class="row-odd"><td><p>Fa_ECh_Bat</p></td>
+<td><p>scalar</p></td>
+<td><p>0</p></td>
+<td><p>4000.0</p></td>
+<td></td>
+<td><p>Battery charging energy (Wh).</p></td>
+</tr>
+<tr class="row-even"><td><p>Fa_EDCh_Bat</p></td>
+<td><p>scalar</p></td>
+<td><p>0</p></td>
+<td><p>4000.0</p></td>
+<td></td>
+<td><p>Battery discharging energy (Wh).</p></td>
+</tr>
+<tr class="row-odd"><td><p>Bd_FracCh_EVBat</p></td>
+<td><p>scalar</p></td>
+<td><p>0</p></td>
+<td><p>1</p></td>
+<td></td>
+<td><p>EV battery state of charge.</p></td>
+</tr>
+<tr class="row-even"><td><p>Bd_FracCh_Bat</p></td>
+<td><p>scalar</p></td>
+<td><p>0</p></td>
+<td><p>1</p></td>
+<td></td>
+<td><p>Battery state of charge.</p></td>
+</tr>
+<tr class="row-odd"><td><p>P4_T_Tank</p></td>
+<td><p>scalar</p></td>
+<td><p>30</p></td>
+<td><p>70</p></td>
+<td></td>
+<td><p>Floor 4 tank temperature (°C).</p></td>
+</tr>
+<tr class="row-even"><td><p>P2_T_Tank</p></td>
+<td><p>scalar</p></td>
+<td><p>30</p></td>
+<td><p>70</p></td>
+<td></td>
+<td><p>Floor 2 tank temperature (°C).</p></td>
+</tr>
+<tr class="row-odd"><td><p>P1_T_Tank</p></td>
+<td><p>scalar</p></td>
+<td><p>30</p></td>
+<td><p>70</p></td>
+<td></td>
+<td><p>Floor 1 tank temperature (°C).</p></td>
+</tr>
+<tr class="row-even"><td><p>P3_T_Tank</p></td>
+<td><p>scalar</p></td>
+<td><p>30</p></td>
+<td><p>70</p></td>
+<td></td>
+<td><p>Floor 3 tank temperature (°C).</p></td>
+</tr>
+<tr class="row-odd"><td><p>HVAC_Pw_HP</p></td>
+<td><p>scalar</p></td>
+<td><p>0</p></td>
+<td><p>120000.0</p></td>
+<td></td>
+<td><p>Heat pump power (W)</p></td>
+</tr>
+<tr class="row-even"><td><p>HVAC_onoff_HP_sp_out</p></td>
+<td><p>scalar</p></td>
+<td><p>0</p></td>
+<td><p>1</p></td>
+<td></td>
+<td><p>Heat pump on/off setpoint.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Bd_E_HW</p></td>
+<td><p>scalar</p></td>
+<td><p>-3000.0</p></td>
+<td><p>3000.0</p></td>
+<td></td>
+<td><p>Hot water energy (Wh).</p></td>
+</tr>
+<tr class="row-even"><td><p>Fa_Pw_All</p></td>
+<td><p>scalar</p></td>
+<td><p>0</p></td>
+<td><p>30000.0</p></td>
+<td></td>
+<td><p>Total power consumption (W).</p></td>
+</tr>
+<tr class="row-odd"><td><p>Fa_Pw_Prod</p></td>
+<td><p>scalar</p></td>
+<td><p>0</p></td>
+<td><p>10000.0</p></td>
+<td></td>
+<td><p>PV power production (W).</p></td>
+</tr>
+<tr class="row-even"><td><p>Fa_E_self</p></td>
+<td><p>scalar</p></td>
+<td><p>-2000.0</p></td>
+<td><p>2000.0</p></td>
+<td></td>
+<td><p>Self consumption energy (Wh).</p></td>
+</tr>
+<tr class="row-odd"><td><p>Fa_E_HVAC</p></td>
+<td><p>scalar</p></td>
+<td><p>0</p></td>
+<td><p>2000.0</p></td>
+<td></td>
+<td><p>HVAC energy consumption (Wh).</p></td>
+</tr>
+<tr class="row-even"><td><p>Fa_E_All</p></td>
+<td><p>scalar</p></td>
+<td><p>0</p></td>
+<td><p>2000.0</p></td>
+<td></td>
+<td><p>Total energy consumption (Wh).</p></td>
+</tr>
+<tr class="row-odd"><td><p>Fa_E_Light</p></td>
+<td><p>scalar</p></td>
+<td><p>0</p></td>
+<td><p>100</p></td>
+<td></td>
+<td><p>Lighting energy (Wh).</p></td>
+</tr>
+<tr class="row-even"><td><p>Fa_E_Appl</p></td>
+<td><p>scalar</p></td>
+<td><p>0</p></td>
+<td><p>500.0</p></td>
+<td></td>
+<td><p>Appliances energy (Wh).</p></td>
+</tr>
+</tbody>
+</table>
 </div>
 <div class="section" id="weather-files">
 <h2>Weather files<a class="headerlink" href="#weather-files" title="Permalink to this headline">¶</a></h2>

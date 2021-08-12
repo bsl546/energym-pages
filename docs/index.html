@@ -217,7 +217,7 @@
 <h1>Energym<a class="headerlink" href="#energym" title="Permalink to this headline">¶</a></h1>
 <p>Energym is an open source building simulation library designed for the control community to test  climate control and energy mangement strategies on buildings in a systematic and reproducible way. Energym includes a number of building models that are calibrated on site data and defines standard metrics, quantifying the objective to be reached and allowing a standardized comparison between different controllers and publications.</p>
 <p>The  library offers an intuitive interface to a variety of building models, similar to the one popularized by the <a class="reference external" href="https://gym.openai.com/">Gym</a> used in the robotic control community. Energym relies on the <a class="reference external" href="https://fmi-standard.org/">functional mockup interface (FMI)</a> standard in order to support models generated in multiple modelling languages easily. It incorporates models developed in  <a class="reference external" href="https://www.modelica.org/">Modelica</a> and <a class="reference external" href="https://energyplus.net/">EnergyPlus</a>  as well as specific classes for simulating weather forecasts and appliances consumption figures.</p>
-<p>Energym has to date 11 models integrated and  offers the possibility to benchmark controllers on buildings models that are representative of real-world HVAC systems. They cover different buildings typologies (institutional building, office building, etc.) and configuration of the HVAC where control can be performed at different levels (control of energy generation, control of final demand through setpoints, etc.).</p>
+<p>Energym has to date 14 models integrated and  offers the possibility to benchmark controllers on buildings models that are representative of real-world HVAC systems. They cover different buildings typologies (institutional building, office building, etc.) and configuration of the HVAC where control can be performed at different levels (control of energy generation, control of final demand through setpoints, etc.).</p>
 <p>New models and new control capabilities are under development und will be added to the library in due course.</p>
 <p>The library is compatible both for windows 10 and linux os and provides precompiled fmu files for both operating systems.
 Two docker files (one for running current models, one for compiling new models) that download dockerhub pre-built images are also at user disposal to speed up use and testing.</p>
@@ -340,7 +340,7 @@ Buildings</p></th>
 <td><p><span class="yel">uncon</span></p></td>
 <td><p>Mod</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="sources/houseslab.html#simplehouseslab"><span class="std std-ref">SimpleHouseSlab-v0</span></a></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="sources/houseslab.html#simplehouseslab"><span class="std std-ref">SimpleHouseRSla-v0</span></a></p></td>
 <td><p><span class="red">abs</span></p></td>
 <td><p><span class="gre">con</span></p></td>
 <td><p><span class="red">abs</span></p></td>
@@ -349,7 +349,34 @@ Buildings</p></th>
 <td><p><span class="yel">uncon</span></p></td>
 <td><p>Mod</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="sources/suurr.html#swisshouserad"><span class="std std-ref">SwissHouseRad-v0</span></a></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="sources/swiss.html#swisshousesla"><span class="std std-ref">SwissHouseRSlaW2W-v0</span></a></p></td>
+<td><p><span class="red">abs</span></p></td>
+<td><p><span class="gre">con</span></p></td>
+<td><p><span class="red">abs</span></p></td>
+<td><p><span class="red">abs</span></p></td>
+<td><p><span class="red">abs</span></p></td>
+<td><p><span class="yel">uncon</span></p></td>
+<td><p>Mod</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="sources/swiss.html#swisshousesla"><span class="std std-ref">SwissHouseRSlaA2W-v0</span></a></p></td>
+<td><p><span class="red">abs</span></p></td>
+<td><p><span class="gre">con</span></p></td>
+<td><p><span class="red">abs</span></p></td>
+<td><p><span class="red">abs</span></p></td>
+<td><p><span class="red">abs</span></p></td>
+<td><p><span class="yel">uncon</span></p></td>
+<td><p>Mod</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="sources/swiss2.html#swisshouseslatank"><span class="std std-ref">SwissHouseRSlaTank-v0</span></a></p></td>
+<td><p><span class="red">abs</span></p></td>
+<td><p><span class="gre">con</span></p></td>
+<td><p><span class="red">abs</span></p></td>
+<td><p><span class="red">abs</span></p></td>
+<td><p><span class="red">abs</span></p></td>
+<td><p><span class="yel">uncon</span></p></td>
+<td><p>Mod</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="sources/swiss2.html#swisshouseslatank"><span class="std std-ref">SwissHouseRSlaTankDhw-v0</span></a></p></td>
 <td><p><span class="red">abs</span></p></td>
 <td><p><span class="gre">con</span></p></td>
 <td><p><span class="red">abs</span></p></td>
