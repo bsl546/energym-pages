@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>SimpleHouseSlab &#8212; energym 2020.02.19 documentation</title>
+    <title>SimpleHouseRSla &#8212; energym 2020.02.19 documentation</title>
     
   <link href="../_static/css/theme.css" rel="stylesheet" />
   <link href="../_static/css/index.f6b7ca918bee2f46fd9abac01cfb07d5.css" rel="stylesheet" />
@@ -36,7 +36,7 @@
     <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="SimpleHouseSlab notebook example" href="notebooks/SimpleHouseSlab.html" />
+    <link rel="next" title="SimpleHouseRSla notebook example" href="notebooks/SimpleHouseRSla.html" />
     <link rel="prev" title="SimpleHouseRad notebook example" href="notebooks/SimpleHouseRad.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
@@ -170,19 +170,24 @@
  </li>
  <li class="toctree-l2 current active">
   <a class="current reference internal" href="#">
-   SimpleHouseSlab
+   SimpleHouseRSla
   </a>
   <ul>
    <li class="toctree-l3">
-    <a class="reference internal" href="notebooks/SimpleHouseSlab.html">
-     SimpleHouseSlab notebook example
+    <a class="reference internal" href="notebooks/SimpleHouseRSla.html">
+     SimpleHouseRSla notebook example
     </a>
    </li>
   </ul>
  </li>
  <li class="toctree-l2">
-  <a class="reference internal" href="suurr.html">
-   SwissHouseRad
+  <a class="reference internal" href="swiss.html">
+   SwissHouseRSla
+  </a>
+ </li>
+ <li class="toctree-l2">
+  <a class="reference internal" href="swiss2.html">
+   SwissHouseRSlaTank
   </a>
  </li>
 </ul>
@@ -270,17 +275,18 @@
               
               <div>
                 
-  <div class="section" id="simplehouseslab">
-<span id="id1"></span><h1>SimpleHouseSlab<a class="headerlink" href="#simplehouseslab" title="Permalink to this headline">¶</a></h1>
-<p>The simple house is a one-zone residential buildings located in Zurich Canton, Switzerland</p>
+  <div class="section" id="simplehousersla">
+<span id="simplehouseslab"></span><h1>SimpleHouseRSla<a class="headerlink" href="#simplehousersla" title="Permalink to this headline">¶</a></h1>
+<p>The simple house is a one-zone residential building.</p>
 <div class="section" id="building-and-thermal-zones">
 <h2>Building and thermal zones<a class="headerlink" href="#building-and-thermal-zones" title="Permalink to this headline">¶</a></h2>
-<p>The entire house is modeled with a single thermal zone.</p>
+<p>The entire house is modeled with a single thermal zone. The parameters of the envelope are typical from a not-very well insulated american house and are taken from the modelica buildings library.
+The building has no cooling system.</p>
 </div>
 <div class="section" id="thermal-systems">
 <h2>Thermal systems<a class="headerlink" href="#thermal-systems" title="Permalink to this headline">¶</a></h2>
-<p>A Heat pump with Carnot HX connected to a simple room model with radiator. A schematic picture of the equipment is given in the following image:</p>
-<a class="reference internal image-reference" href="../_images/HP_u_Slab_1_RC_Sun.png"><img alt="../_images/HP_u_Slab_1_RC_Sun.png" class="align-center" src="../_images/HP_u_Slab_1_RC_Sun.png" style="width: 600px;" /></a>
+<p>A water to water heat pump is connected to a simple room model with hydronic underfloor heating. A schematic picture of the equipment is given in the following image:</p>
+<a class="reference internal image-reference" href="../_images/SimpleHouse_HP_u_RSla_1RC_Sun.png"><img alt="../_images/SimpleHouse_HP_u_RSla_1RC_Sun.png" class="align-center" src="../_images/SimpleHouse_HP_u_RSla_1RC_Sun.png" style="width: 600px;" /></a>
 </div>
 <div class="section" id="electrical-systems">
 <h2>Electrical systems<a class="headerlink" href="#electrical-systems" title="Permalink to this headline">¶</a></h2>
@@ -539,7 +545,7 @@ For this goal, the tracked KPIs are the average power demand, and the average te
 <div class="toctree-wrapper compound">
 <p class="caption"><span class="caption-text">Here is a notebook example:</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="notebooks/SimpleHouseSlab.html">SimpleHouseSlab notebook example</a></li>
+<li class="toctree-l1"><a class="reference internal" href="notebooks/SimpleHouseRSla.html">SimpleHouseRSla notebook example</a></li>
 </ul>
 </div>
 </div>
@@ -552,7 +558,7 @@ For this goal, the tracked KPIs are the average power demand, and the average te
               <div class='prev-next-bottom'>
                 
     <a class='left-prev' id="prev-link" href="notebooks/SimpleHouseRad.html" title="previous page">SimpleHouseRad notebook example</a>
-    <a class='right-next' id="next-link" href="notebooks/SimpleHouseSlab.html" title="next page">SimpleHouseSlab notebook example</a>
+    <a class='right-next' id="next-link" href="notebooks/SimpleHouseRSla.html" title="next page">SimpleHouseRSla notebook example</a>
 
               </div>
               

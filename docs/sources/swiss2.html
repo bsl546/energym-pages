@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>SimpleHouseRad &#8212; energym 2020.02.19 documentation</title>
+    <title>SwissHouseRSlaTank &#8212; energym 2020.02.19 documentation</title>
     
   <link href="../_static/css/theme.css" rel="stylesheet" />
   <link href="../_static/css/index.f6b7ca918bee2f46fd9abac01cfb07d5.css" rel="stylesheet" />
@@ -36,8 +36,8 @@
     <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="SimpleHouseRad notebook example" href="notebooks/SimpleHouseRad.html" />
-    <link rel="prev" title="SeminarcenterFull notebook example" href="notebooks/SeminarcenterFull.html" />
+    <link rel="next" title="SwissHouseRSlaTank notebook example" href="notebooks/SwissHouseRSlaTank.html" />
+    <link rel="prev" title="SwissHouseRSla notebook example" href="notebooks/SwissHouseRSla.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
   </head>
@@ -163,17 +163,10 @@
    SeminarcenterFull
   </a>
  </li>
- <li class="toctree-l2 current active">
-  <a class="current reference internal" href="#">
+ <li class="toctree-l2">
+  <a class="reference internal" href="houserad.html">
    SimpleHouseRad
   </a>
-  <ul>
-   <li class="toctree-l3">
-    <a class="reference internal" href="notebooks/SimpleHouseRad.html">
-     SimpleHouseRad notebook example
-    </a>
-   </li>
-  </ul>
  </li>
  <li class="toctree-l2">
   <a class="reference internal" href="houseslab.html">
@@ -185,10 +178,17 @@
    SwissHouseRSla
   </a>
  </li>
- <li class="toctree-l2">
-  <a class="reference internal" href="swiss2.html">
+ <li class="toctree-l2 current active">
+  <a class="current reference internal" href="#">
    SwissHouseRSlaTank
   </a>
+  <ul>
+   <li class="toctree-l3">
+    <a class="reference internal" href="notebooks/SwissHouseRSlaTank.html">
+     SwissHouseRSlaTank notebook example
+    </a>
+   </li>
+  </ul>
  </li>
 </ul>
   </div>
@@ -229,6 +229,16 @@
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#hp-control">
      HP control
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#tank-control">
+     Tank control
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#valve-control">
+     Valve control
     </a>
    </li>
   </ul>
@@ -275,18 +285,23 @@
               
               <div>
                 
-  <div class="section" id="simplehouserad">
-<span id="id1"></span><h1>SimpleHouseRad<a class="headerlink" href="#simplehouserad" title="Permalink to this headline">¶</a></h1>
-<p>The simple house is a one-zone residential building.</p>
+  <div class="section" id="swisshouserslatank">
+<span id="swisshouseslatank"></span><h1>SwissHouseRSlaTank<a class="headerlink" href="#swisshouserslatank" title="Permalink to this headline">¶</a></h1>
+<p>The SwissHouse building is a one-zone residential building located in Zurich Canton, Switzerland.</p>
 <div class="section" id="building-and-thermal-zones">
 <h2>Building and thermal zones<a class="headerlink" href="#building-and-thermal-zones" title="Permalink to this headline">¶</a></h2>
-<p>The entire house is modeled with a single thermal zone. The parameters of the envelope are typical from a not-very well insulated american house and are taken from the modelica buildings library.
-The building has no cooling system.</p>
+<p>The entire house is modeled with a single thermal zone. Its envelop is a simple RC model with R, C parameters
+fitted to a real swiss Minergie house (low energy consumption building standard).</p>
 </div>
 <div class="section" id="thermal-systems">
 <h2>Thermal systems<a class="headerlink" href="#thermal-systems" title="Permalink to this headline">¶</a></h2>
-<p>A water to water heat pump is connected to a simple room model with radiator. A schematic picture of the equipment is given in the following image:</p>
-<a class="reference internal image-reference" href="../_images/SimpleHouse_HP_u_Rad_1RC_Sun.png"><img alt="../_images/SimpleHouse_HP_u_Rad_1RC_Sun.png" class="align-center" src="../_images/SimpleHouse_HP_u_Rad_1RC_Sun.png" style="width: 600px;" /></a>
+<p>Heat is provided by a water to water heat pump, connected to a tank. The tanks serves as a supply to the hydronic underfloor heating.
+In the version SwissHouseRSlaTankDhw-v0, a hot water tank for hot water consumption is added and connected to the pump as well.
+The building has no cooling system.</p>
+<p>The picture below displays the SwissHouseRSlaTank systems.</p>
+<a class="reference internal image-reference" href="../_images/SwissHouse_HP_u_Tank_u_RSla_1RC_Sun.png"><img alt="../_images/SwissHouse_HP_u_Tank_u_RSla_1RC_Sun.png" class="align-center" src="../_images/SwissHouse_HP_u_Tank_u_RSla_1RC_Sun.png" style="width: 600px;" /></a>
+<p>The picture below displays the SwissHouseRSlaTankDhw systems.</p>
+<a class="reference internal image-reference" href="../_images/SwissHouse_HP_u_Tank_u_DHW_u_RSla_1RC_Sun.png"><img alt="../_images/SwissHouse_HP_u_Tank_u_DHW_u_RSla_1RC_Sun.png" class="align-center" src="../_images/SwissHouse_HP_u_Tank_u_DHW_u_RSla_1RC_Sun.png" style="width: 600px;" /></a>
 </div>
 <div class="section" id="electrical-systems">
 <h2>Electrical systems<a class="headerlink" href="#electrical-systems" title="Permalink to this headline">¶</a></h2>
@@ -298,10 +313,18 @@ The building has no cooling system.</p>
 <h3>HP control<a class="headerlink" href="#hp-control" title="Permalink to this headline">¶</a></h3>
 <p>The heat pump normalized power is controllable.</p>
 </div>
+<div class="section" id="tank-control">
+<h3>Tank control<a class="headerlink" href="#tank-control" title="Permalink to this headline">¶</a></h3>
+<p>The normalized flow from the tank to the room is controllable.</p>
+</div>
+<div class="section" id="valve-control">
+<h3>Valve control<a class="headerlink" href="#valve-control" title="Permalink to this headline">¶</a></h3>
+<p>The valve opening (water flow to the hot water tank) is controllable. This is only the case for the moder with hot water tank.</p>
+</div>
 </div>
 <div class="section" id="simulation-inputs">
 <h2>Simulation inputs<a class="headerlink" href="#simulation-inputs" title="Permalink to this headline">¶</a></h2>
-<p>For more detail, please check the documentation <a class="reference internal" href="apiref.html#simplehouse-doc"><span class="std std-ref">The SimpleHouse environment</span></a> or the source code in <a class="reference internal" href="apiref.html#energym.envs.simple_house.simple_house.SimpleHouse" title="energym.envs.simple_house.simple_house.SimpleHouse"><code class="xref py py-class docutils literal notranslate"><span class="pre">energym.envs.simple_house.simple_house.SimpleHouse</span></code></a>.</p>
+<p>For more detail, please check the documentation <a class="reference internal" href="apiref.html#swisshouse-doc"><span class="std std-ref">The SwissHouse environment</span></a> or the source code in <a class="reference internal" href="apiref.html#energym.envs.swiss_house.swiss_house.SwissHouse" title="energym.envs.swiss_house.swiss_house.SwissHouse"><code class="xref py py-class docutils literal notranslate"><span class="pre">energym.envs.swiss_house.swiss_house.SwissHouse</span></code></a>.</p>
 <table class="table">
 <colgroup>
 <col style="width: 17%" />
@@ -321,12 +344,33 @@ The building has no cooling system.</p>
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td><p>u</p></td>
+<tr class="row-even"><td><p>uHP</p></td>
 <td><p>scalar</p></td>
 <td><p>0</p></td>
 <td><p>1</p></td>
 <td></td>
 <td><p>Heat pump power fraction setpoint.</p></td>
+</tr>
+<tr class="row-odd"><td><p>uRSla</p></td>
+<td><p>scalar</p></td>
+<td><p>0</p></td>
+<td><p>1</p></td>
+<td></td>
+<td><p>Hot water emitter flow fraction setpoint.</p></td>
+</tr>
+<tr class="row-even"><td><p>uValveDHW</p></td>
+<td><p>scalar</p></td>
+<td><p>0</p></td>
+<td><p>1</p></td>
+<td></td>
+<td><p>Hot water valve opening fraction.</p></td>
+</tr>
+<tr class="row-odd"><td><p>uFlowDHW</p></td>
+<td><p>scalar</p></td>
+<td><p>0</p></td>
+<td><p>1</p></td>
+<td></td>
+<td><p>Hot water flow demand fraction.</p></td>
 </tr>
 </tbody>
 </table>
@@ -434,7 +478,7 @@ The building has no cooling system.</p>
 <td><p>0</p></td>
 <td><p>20</p></td>
 <td></td>
-<td><p>Heat pump carnot efficiency.</p></td>
+<td><p>Heat pump Carnot efficiency.</p></td>
 </tr>
 <tr class="row-even"><td><p>heaPum.TConAct</p></td>
 <td><p>scalar</p></td>
@@ -450,19 +494,33 @@ The building has no cooling system.</p>
 <td></td>
 <td><p>Evaporator temperature used to compute efficiency (K).</p></td>
 </tr>
-<tr class="row-even"><td><p>rad.Q_flow</p></td>
+<tr class="row-even"><td><p>tanSH.heaPorSid.T</p></td>
+<td><p>scalar</p></td>
+<td><p>273.15</p></td>
+<td><p>353.15</p></td>
+<td></td>
+<td><p>Tank temperature (K).</p></td>
+</tr>
+<tr class="row-odd"><td><p>sla.QTot</p></td>
 <td><p>scalar</p></td>
 <td><p>0</p></td>
 <td><p>100</p></td>
 <td></td>
-<td><p>Radiator heat flow rate (W).</p></td>
+<td><p>Slab heat flow rate (W).</p></td>
 </tr>
-<tr class="row-odd"><td><p>rad.m_flow</p></td>
+<tr class="row-even"><td><p>sla.m_flow</p></td>
 <td><p>scalar</p></td>
 <td><p>0</p></td>
 <td><p>10</p></td>
 <td></td>
-<td><p>Radiator mass flow rate (kg/s).</p></td>
+<td><p>Slab mass flow rate (kg/s).</p></td>
+</tr>
+<tr class="row-odd"><td><p>sla.heatPortEmb[1].T</p></td>
+<td><p>scalar</p></td>
+<td><p>273.15</p></td>
+<td><p>343.15</p></td>
+<td></td>
+<td><p>Slab temperature (K).</p></td>
 </tr>
 <tr class="row-even"><td><p>temRet.T</p></td>
 <td><p>scalar</p></td>
@@ -516,15 +574,16 @@ The building has no cooling system.</p>
 </div>
 <div class="section" id="evaluation-scenario">
 <h2>Evaluation scenario<a class="headerlink" href="#evaluation-scenario" title="Permalink to this headline">¶</a></h2>
-<p>The evaluation scenario for the <cite>SimpleHouseRad-v0</cite> model consists of a control from January to April with the objective of minimizing the power demand, while keeping the zone temperatures between 19 and 24°C.
-For this goal, the tracked KPIs are the average power demand, and the average temperature deviation and total temperature violations with respect to the interval [19, 24].</p>
+<p>The evaluation scenario for the <cite>SwissHouseRSlaTank-v0</cite> model consists of a control from January to April with the objective of minimizing the power demand, while keeping the zone temperatures between 19 and 24°C.
+For this goal, the tracked KPIs are the average power demand, and the average temperature deviation and total temperature violations with respect to the interval [19, 24]. For the model with hot water consumption,
+there is no prescribed consumption flow fraction rate yet, and the user can choose/ implement typical hot water consumption patterns.</p>
 </div>
 <div class="section" id="notebook-example">
 <h2>Notebook example<a class="headerlink" href="#notebook-example" title="Permalink to this headline">¶</a></h2>
 <div class="toctree-wrapper compound">
 <p class="caption"><span class="caption-text">Here is a notebook example:</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="notebooks/SimpleHouseRad.html">SimpleHouseRad notebook example</a></li>
+<li class="toctree-l1"><a class="reference internal" href="notebooks/SwissHouseRSlaTank.html">SwissHouseRSlaTank notebook example</a></li>
 </ul>
 </div>
 </div>
@@ -536,8 +595,8 @@ For this goal, the tracked KPIs are the average power demand, and the average te
               
               <div class='prev-next-bottom'>
                 
-    <a class='left-prev' id="prev-link" href="notebooks/SeminarcenterFull.html" title="previous page">SeminarcenterFull notebook example</a>
-    <a class='right-next' id="next-link" href="notebooks/SimpleHouseRad.html" title="next page">SimpleHouseRad notebook example</a>
+    <a class='left-prev' id="prev-link" href="notebooks/SwissHouseRSla.html" title="previous page">SwissHouseRSla notebook example</a>
+    <a class='right-next' id="next-link" href="notebooks/SwissHouseRSlaTank.html" title="next page">SwissHouseRSlaTank notebook example</a>
 
               </div>
               

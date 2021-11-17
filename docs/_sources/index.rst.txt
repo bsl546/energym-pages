@@ -24,15 +24,16 @@
 
 
 
-Energym
-================================
+.. figure:: sources/images/energym_logo_long_light.png
+   :height: 100
+   :target: https://github.com/bsl546/energym
 
 
 Energym is an open source building simulation library designed for the control community to test  climate control and energy mangement strategies on buildings in a systematic and reproducible way. Energym includes a number of building models that are calibrated on site data and defines standard metrics, quantifying the objective to be reached and allowing a standardized comparison between different controllers and publications.
  
 The  library offers an intuitive interface to a variety of building models, similar to the one popularized by the `Gym <https://gym.openai.com/>`_ used in the robotic control community. Energym relies on the `functional mockup interface (FMI) <https://fmi-standard.org/>`_ standard in order to support models generated in multiple modelling languages easily. It incorporates models developed in  `Modelica <https://www.modelica.org/>`_ and `EnergyPlus <https://energyplus.net/>`_  as well as specific classes for simulating weather forecasts and appliances consumption figures.
  
-Energym has to date 11 models integrated and  offers the possibility to benchmark controllers on buildings models that are representative of real-world HVAC systems. They cover different buildings typologies (institutional building, office building, etc.) and configuration of the HVAC where control can be performed at different levels (control of energy generation, control of final demand through setpoints, etc.). 
+Energym has to date 14 models integrated and  offers the possibility to benchmark controllers on buildings models that are representative of real-world HVAC systems. They cover different buildings typologies (institutional building, office building, etc.) and configuration of the HVAC where control can be performed at different levels (control of energy generation, control of final demand through setpoints, etc.). 
 
 New models and new control capabilities are under development und will be added to the library in due course.
 
@@ -99,9 +100,15 @@ of the buildings, their inputs and outputs.
 +---------------------------------------------------------------------+-----------+------------+------------+----------+----------+------------+---+
 | :ref:`SimpleHouseRad-v0 <SimpleHouserad>`                           |:red:`abs` |:gre:`con`  |:red:`abs`  |:red:`abs`|:red:`abs`|:yel:`uncon`|Mod|
 +---------------------------------------------------------------------+-----------+------------+------------+----------+----------+------------+---+
-| :ref:`SimpleHouseSlab-v0 <SimpleHouseslab>`                         |:red:`abs` |:gre:`con`  |:red:`abs`  |:red:`abs`|:red:`abs`|:yel:`uncon`|Mod|
+| :ref:`SimpleHouseRSla-v0 <SimpleHouseslab>`                         |:red:`abs` |:gre:`con`  |:red:`abs`  |:red:`abs`|:red:`abs`|:yel:`uncon`|Mod|
 +---------------------------------------------------------------------+-----------+------------+------------+----------+----------+------------+---+
-| :ref:`SwissHouseRad-v0 <SwissHouserad>`                             |:red:`abs` |:gre:`con`  |:red:`abs`  |:red:`abs`|:red:`abs`|:yel:`uncon`|Mod|
+| :ref:`SwissHouseRSlaW2W-v0 <SwissHousesla>`                         |:red:`abs` |:gre:`con`  |:red:`abs`  |:red:`abs`|:red:`abs`|:yel:`uncon`|Mod|
++---------------------------------------------------------------------+-----------+------------+------------+----------+----------+------------+---+
+| :ref:`SwissHouseRSlaA2W-v0 <SwissHousesla>`                         |:red:`abs` |:gre:`con`  |:red:`abs`  |:red:`abs`|:red:`abs`|:yel:`uncon`|Mod|
++---------------------------------------------------------------------+-----------+------------+------------+----------+----------+------------+---+
+| :ref:`SwissHouseRSlaTank-v0 <SwissHouseslatank>`                    |:red:`abs` |:gre:`con`  |:red:`abs`  |:red:`abs`|:red:`abs`|:yel:`uncon`|Mod|
++---------------------------------------------------------------------+-----------+------------+------------+----------+----------+------------+---+
+| :ref:`SwissHouseRSlaTankDhw-v0 <SwissHouseslatank>`                 |:red:`abs` |:gre:`con`  |:red:`abs`  |:red:`abs`|:red:`abs`|:yel:`uncon`|Mod|
 +---------------------------------------------------------------------+-----------+------------+------------+----------+----------+------------+---+
 
 :gre:`con` : present and controllable, :yel:`uncon` : present but uncontrollable, :red:`abs` : absent.
@@ -132,6 +139,9 @@ of the buildings, their inputs and outputs.
 
    sources/houseslab
 
+   sources/swiss
+
+   sources/swiss2
 
 Example
 ----------
@@ -166,6 +176,14 @@ When a controller/model has been trained, it can be finally evaluated on the pre
 Furthermore, models can be launched in parallels, making Energym models also usable for flexibility control strategies at multi-building level.
 
 
+Explanations
+-------------
+
+The first part of a video series on explanations and help around Energym can be found here:
+
+.. raw:: html
+
+   <iframe width="560" height="315" src="https://www.youtube.com/embed/9KYLtzTq4Y8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 
 

@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Energym &#8212; energym 2020.02.19 documentation</title>
+    <title>Features &#8212; energym 2020.02.19 documentation</title>
     
   <link href="_static/css/theme.css" rel="stylesheet" />
   <link href="_static/css/index.f6b7ca918bee2f46fd9abac01cfb07d5.css" rel="stylesheet" />
@@ -139,60 +139,60 @@
     <ul class="visible nav section-nav flex-column">
  <li class="toc-h1 nav-item toc-entry">
   <a class="reference internal nav-link" href="#">
-   Energym
+   Features
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#available-environments">
+   Available environments
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#example">
+   Example
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#philosophy">
+   Philosophy
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#explanations">
+   Explanations
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#contribute">
+   Contribute
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#cite">
+   Cite
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#support">
+   Support
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#license">
+   License
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#thanks">
+   Thanks
   </a>
   <ul class="visible nav section-nav flex-column">
    <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#features">
-     Features
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#available-environments">
-     Available environments
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#example">
-     Example
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#philosophy">
-     Philosophy
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#contribute">
-     Contribute
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#cite">
-     Cite
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#support">
-     Support
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#license">
-     License
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#thanks">
-     Thanks
+    <a class="reference internal nav-link" href="#indices-and-tables">
+     Indices and tables
     </a>
    </li>
   </ul>
- </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#indices-and-tables">
-   Indices and tables
-  </a>
  </li>
 </ul>
 
@@ -213,18 +213,19 @@
                 
   <div class="toctree-wrapper compound">
 </div>
-<div class="section" id="energym">
-<h1>Energym<a class="headerlink" href="#energym" title="Permalink to this headline">¶</a></h1>
+<div class="figure align-default">
+<a class="reference external image-reference" href="https://github.com/bsl546/energym"><img alt="_images/energym_logo_long_light.png" src="_images/energym_logo_long_light.png" style="height: 100px;" /></a>
+</div>
 <p>Energym is an open source building simulation library designed for the control community to test  climate control and energy mangement strategies on buildings in a systematic and reproducible way. Energym includes a number of building models that are calibrated on site data and defines standard metrics, quantifying the objective to be reached and allowing a standardized comparison between different controllers and publications.</p>
 <p>The  library offers an intuitive interface to a variety of building models, similar to the one popularized by the <a class="reference external" href="https://gym.openai.com/">Gym</a> used in the robotic control community. Energym relies on the <a class="reference external" href="https://fmi-standard.org/">functional mockup interface (FMI)</a> standard in order to support models generated in multiple modelling languages easily. It incorporates models developed in  <a class="reference external" href="https://www.modelica.org/">Modelica</a> and <a class="reference external" href="https://energyplus.net/">EnergyPlus</a>  as well as specific classes for simulating weather forecasts and appliances consumption figures.</p>
-<p>Energym has to date 11 models integrated and  offers the possibility to benchmark controllers on buildings models that are representative of real-world HVAC systems. They cover different buildings typologies (institutional building, office building, etc.) and configuration of the HVAC where control can be performed at different levels (control of energy generation, control of final demand through setpoints, etc.).</p>
+<p>Energym has to date 14 models integrated and  offers the possibility to benchmark controllers on buildings models that are representative of real-world HVAC systems. They cover different buildings typologies (institutional building, office building, etc.) and configuration of the HVAC where control can be performed at different levels (control of energy generation, control of final demand through setpoints, etc.).</p>
 <p>New models and new control capabilities are under development und will be added to the library in due course.</p>
 <p>The library is compatible both for windows 10 and linux os and provides precompiled fmu files for both operating systems.
 Two docker files (one for running current models, one for compiling new models) that download dockerhub pre-built images are also at user disposal to speed up use and testing.</p>
 <style> .red {color:#DC143C; font-weight:bold; font-size:16px} </style>
 <style> .gre {color:#32cd32; font-weight:bold; font-size:16px} </style>
 <style> .yel {color:#E6E6FA; font-weight:bold; font-size:16px} </style><div class="section" id="features">
-<h2>Features<a class="headerlink" href="#features" title="Permalink to this headline">¶</a></h2>
+<h1>Features<a class="headerlink" href="#features" title="Permalink to this headline">¶</a></h1>
 <ul class="simple">
 <li><p>Works directly on Windows and Linux (pre-compiled buildings .fmu files)</p></li>
 <li><p>Works with E+ and Modelica</p></li>
@@ -232,7 +233,7 @@ Two docker files (one for running current models, one for compiling new models) 
 </ul>
 </div>
 <div class="section" id="available-environments">
-<span id="envs"></span><h2>Available environments<a class="headerlink" href="#available-environments" title="Permalink to this headline">¶</a></h2>
+<span id="envs"></span><h1>Available environments<a class="headerlink" href="#available-environments" title="Permalink to this headline">¶</a></h1>
 <p>Following environments are available. Click on the buildings hyperlink to get complete descriptions
 of the buildings, their inputs and outputs.</p>
 <table class="table">
@@ -340,7 +341,7 @@ Buildings</p></th>
 <td><p><span class="yel">uncon</span></p></td>
 <td><p>Mod</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="sources/houseslab.html#simplehouseslab"><span class="std std-ref">SimpleHouseSlab-v0</span></a></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="sources/houseslab.html#simplehouseslab"><span class="std std-ref">SimpleHouseRSla-v0</span></a></p></td>
 <td><p><span class="red">abs</span></p></td>
 <td><p><span class="gre">con</span></p></td>
 <td><p><span class="red">abs</span></p></td>
@@ -349,7 +350,34 @@ Buildings</p></th>
 <td><p><span class="yel">uncon</span></p></td>
 <td><p>Mod</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="sources/suurr.html#swisshouserad"><span class="std std-ref">SwissHouseRad-v0</span></a></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="sources/swiss.html#swisshousesla"><span class="std std-ref">SwissHouseRSlaW2W-v0</span></a></p></td>
+<td><p><span class="red">abs</span></p></td>
+<td><p><span class="gre">con</span></p></td>
+<td><p><span class="red">abs</span></p></td>
+<td><p><span class="red">abs</span></p></td>
+<td><p><span class="red">abs</span></p></td>
+<td><p><span class="yel">uncon</span></p></td>
+<td><p>Mod</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="sources/swiss.html#swisshousesla"><span class="std std-ref">SwissHouseRSlaA2W-v0</span></a></p></td>
+<td><p><span class="red">abs</span></p></td>
+<td><p><span class="gre">con</span></p></td>
+<td><p><span class="red">abs</span></p></td>
+<td><p><span class="red">abs</span></p></td>
+<td><p><span class="red">abs</span></p></td>
+<td><p><span class="yel">uncon</span></p></td>
+<td><p>Mod</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="sources/swiss2.html#swisshouseslatank"><span class="std std-ref">SwissHouseRSlaTank-v0</span></a></p></td>
+<td><p><span class="red">abs</span></p></td>
+<td><p><span class="gre">con</span></p></td>
+<td><p><span class="red">abs</span></p></td>
+<td><p><span class="red">abs</span></p></td>
+<td><p><span class="red">abs</span></p></td>
+<td><p><span class="yel">uncon</span></p></td>
+<td><p>Mod</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="sources/swiss2.html#swisshouseslatank"><span class="std std-ref">SwissHouseRSlaTankDhw-v0</span></a></p></td>
 <td><p><span class="red">abs</span></p></td>
 <td><p><span class="gre">con</span></p></td>
 <td><p><span class="red">abs</span></p></td>
@@ -363,7 +391,7 @@ Buildings</p></th>
 <p><span class="gre">con</span> : present and controllable, <span class="yel">uncon</span> : present but uncontrollable, <span class="red">abs</span> : absent.</p>
 </div>
 <div class="section" id="example">
-<h2>Example<a class="headerlink" href="#example" title="Permalink to this headline">¶</a></h2>
+<h1>Example<a class="headerlink" href="#example" title="Permalink to this headline">¶</a></h1>
 <p>The usage of Energym is straight forward, as in this simplified code example, assuming the implementation of a <code class="docutils literal notranslate"><span class="pre">get_input()</span></code> function made by the user:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">energym</span>
 
@@ -380,33 +408,37 @@ Buildings</p></th>
 <p>For an introduction to Energym see <a class="reference internal" href="sources/start.html#start"><span class="std std-ref">Getting Started</span></a> and for more in depth control examples see <a class="reference internal" href="sources/Examples.html#examples"><span class="std std-ref">Examples</span></a>.</p>
 </div>
 <div class="section" id="philosophy">
-<h2>Philosophy<a class="headerlink" href="#philosophy" title="Permalink to this headline">¶</a></h2>
+<h1>Philosophy<a class="headerlink" href="#philosophy" title="Permalink to this headline">¶</a></h1>
 <p>Energym  has been designed such that you are entirely free in your controller strategy and design.</p>
 <p>In particular, if you use Model Predictive Control or Reinforcement Learning strategies, a set of weather files at different locations close to the real location is provided to carry out system identification/ RL training.</p>
 <p>When a controller/model has been trained, it can be finally evaluated on the predefined period of time under the predefined meto condition and KPIs.</p>
 <p>Furthermore, models can be launched in parallels, making Energym models also usable for flexibility control strategies at multi-building level.</p>
 </div>
+<div class="section" id="explanations">
+<h1>Explanations<a class="headerlink" href="#explanations" title="Permalink to this headline">¶</a></h1>
+<p>The first part of a video series on explanations and help around Energym can be found here:</p>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/9KYLtzTq4Y8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
 <div class="section" id="contribute">
-<h2>Contribute<a class="headerlink" href="#contribute" title="Permalink to this headline">¶</a></h2>
+<h1>Contribute<a class="headerlink" href="#contribute" title="Permalink to this headline">¶</a></h1>
 <p>Users are encouraged to upload new environments that present an interest for building or energy system control.</p>
 <p>To do so, follow the full installation steps described  in <a class="reference internal" href="sources/install_full.html#install-full"><span class="std std-ref">Full Installation</span></a>.</p>
 <p>To create a new model, please  follow the steps described in <a class="reference internal" href="sources/add_model.html#add-model"><span class="std std-ref">Contributing</span></a>. Then contact the authors (see Support) if you want your model to be incorporated in Energym.</p>
 </div>
 <div class="section" id="cite">
-<h2>Cite<a class="headerlink" href="#cite" title="Permalink to this headline">¶</a></h2>
+<h1>Cite<a class="headerlink" href="#cite" title="Permalink to this headline">¶</a></h1>
 <p>If you use our library for your work, please cite our paper:</p>
 <p>Scharnhorst, P.; Schubnel, B.; Fernández Bandera, C.; Salom, J.; Taddeo, P.; Boegli, M.; Gorecki, T.; Stauffer, Y.; Peppas, A.; Politi, C. Energym: A Building Model Library for Controller Benchmarking. Appl. Sci. 2021, 11, 3518. <a class="reference external" href="https://doi.org/10.3390/app11083518">https://doi.org/10.3390/app11083518</a></p>
 </div>
 <div class="section" id="support">
-<h2>Support<a class="headerlink" href="#support" title="Permalink to this headline">¶</a></h2>
+<h1>Support<a class="headerlink" href="#support" title="Permalink to this headline">¶</a></h1>
 <p>If you are having issues, please let us know and open an issue on github. We are happy to let Energym grow and help you in a reasonable amount of time.</p>
 </div>
 <div class="section" id="license">
-<h2>License<a class="headerlink" href="#license" title="Permalink to this headline">¶</a></h2>
+<h1>License<a class="headerlink" href="#license" title="Permalink to this headline">¶</a></h1>
 <p>The project  is licensed under the BSD license.</p>
 </div>
 <div class="section" id="thanks">
-<h2>Thanks<a class="headerlink" href="#thanks" title="Permalink to this headline">¶</a></h2>
+<h1>Thanks<a class="headerlink" href="#thanks" title="Permalink to this headline">¶</a></h1>
 <p>Part of this work has been carried out under European Project Sabina. Research institutes and partners involved are <a class="reference external" href="https://www.csem.ch/Home">CSEM</a>, <a class="reference external" href="https://www.irec.cat/">IREC</a>, <a class="reference external" href="https://www.unav.edu/en/home">UNAV</a>, <a class="reference external" href="https://www.ntua.gr/en/">NTUA</a> and <a class="reference external" href="https://inserohorsens.dk/">INSERO</a>.</p>
 <div class="figure align-default">
 <a class="reference external image-reference" href="https://www.csem.ch/Home"><img alt="_images/logo_csem.svg" height="40" src="_images/logo_csem.svg" /></a>
@@ -423,15 +455,14 @@ Buildings</p></th>
 <div class="figure align-default">
 <a class="reference external image-reference" href="https://inserohorsens.dk/"><img alt="_images/inserohorsens_wide.png" src="_images/inserohorsens_wide.png" style="height: 40px;" /></a>
 </div>
-</div>
-</div>
 <div class="section" id="indices-and-tables">
-<h1>Indices and tables<a class="headerlink" href="#indices-and-tables" title="Permalink to this headline">¶</a></h1>
+<h2>Indices and tables<a class="headerlink" href="#indices-and-tables" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><p><a class="reference internal" href="genindex.html"><span class="std std-ref">Index</span></a></p></li>
 <li><p><a class="reference internal" href="py-modindex.html"><span class="std std-ref">Module Index</span></a></p></li>
 <li><p><a class="reference internal" href="search.html"><span class="std std-ref">Search Page</span></a></p></li>
 </ul>
+</div>
 </div>
 
 

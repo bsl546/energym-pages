@@ -159,10 +159,38 @@
         <span class="s2">&quot;upper_bound&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
         <span class="s2">&quot;default&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
         <span class="s2">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;Heat pump power fraction setpoint.&quot;</span><span class="p">,</span>
-    <span class="p">}</span>
+    <span class="p">},</span>
+    <span class="s2">&quot;uHP&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;scalar&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;lower_bound&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+        <span class="s2">&quot;upper_bound&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+        <span class="s2">&quot;default&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+        <span class="s2">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;Heat pump power fraction setpoint.&quot;</span><span class="p">,</span>
+    <span class="p">},</span>
+    <span class="s2">&quot;uRSla&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;scalar&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;lower_bound&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+        <span class="s2">&quot;upper_bound&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+        <span class="s2">&quot;default&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+        <span class="s2">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;Hot water emitter flow fraction setpoint.&quot;</span><span class="p">,</span>
+    <span class="p">},</span>
+    <span class="s2">&quot;uValveDHW&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;scalar&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;lower_bound&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+        <span class="s2">&quot;upper_bound&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+        <span class="s2">&quot;default&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+        <span class="s2">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;Hot water valve opening fraction.&quot;</span><span class="p">,</span>
+    <span class="p">},</span>
+    <span class="s2">&quot;uFlowDHW&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;scalar&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;lower_bound&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+        <span class="s2">&quot;upper_bound&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+        <span class="s2">&quot;default&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+        <span class="s2">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;Hot water flow demand fraction.&quot;</span><span class="p">,</span>
+    <span class="p">},</span>
 <span class="p">}</span>
 
-<span class="n">OUTPUTS_SPECS_RAD</span> <span class="o">=</span> <span class="p">{</span>
+<span class="n">OUTPUTS_SPECS_RSLA</span> <span class="o">=</span> <span class="p">{</span>
     <span class="s2">&quot;weaBus.HDifHor&quot;</span><span class="p">:</span> <span class="p">{</span>
         <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;scalar&quot;</span><span class="p">,</span>
         <span class="s2">&quot;lower_bound&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
@@ -233,7 +261,7 @@
         <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;scalar&quot;</span><span class="p">,</span>
         <span class="s2">&quot;lower_bound&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
         <span class="s2">&quot;upper_bound&quot;</span><span class="p">:</span> <span class="mi">20</span><span class="p">,</span>
-        <span class="s2">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;Heat pump carnot efficiency.&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;Heat pump Carnot efficiency.&quot;</span><span class="p">,</span>
     <span class="p">},</span>
     <span class="s2">&quot;heaPum.TConAct&quot;</span><span class="p">:</span> <span class="p">{</span>
         <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;scalar&quot;</span><span class="p">,</span>
@@ -247,142 +275,13 @@
         <span class="s2">&quot;upper_bound&quot;</span><span class="p">:</span> <span class="mf">343.15</span><span class="p">,</span>
         <span class="s2">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;Evaporator temperature used to compute efficiency (K).&quot;</span><span class="p">,</span>
     <span class="p">},</span>
-    <span class="s2">&quot;rad.Q_flow&quot;</span><span class="p">:</span> <span class="p">{</span>
-        <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;scalar&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;lower_bound&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
-        <span class="s2">&quot;upper_bound&quot;</span><span class="p">:</span> <span class="mi">100</span><span class="p">,</span>
-        <span class="s2">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;Radiator heat flow rate (W).&quot;</span><span class="p">,</span>
-    <span class="p">},</span>
-    <span class="s2">&quot;rad.m_flow&quot;</span><span class="p">:</span> <span class="p">{</span>
-        <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;scalar&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;lower_bound&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
-        <span class="s2">&quot;upper_bound&quot;</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span>
-        <span class="s2">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;Radiator mass flow rate (kg/s).&quot;</span><span class="p">,</span>
-    <span class="p">},</span>
-    <span class="s2">&quot;temRet.T&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="s2">&quot;tanSH.heaPorSid.T&quot;</span><span class="p">:</span> <span class="p">{</span>
         <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;scalar&quot;</span><span class="p">,</span>
         <span class="s2">&quot;lower_bound&quot;</span><span class="p">:</span> <span class="mf">273.15</span><span class="p">,</span>
         <span class="s2">&quot;upper_bound&quot;</span><span class="p">:</span> <span class="mf">353.15</span><span class="p">,</span>
-        <span class="s2">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;Heat pump return temperature (K).&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;Tank temperature (K).&quot;</span><span class="p">,</span>
     <span class="p">},</span>
-    <span class="s2">&quot;temSup.T&quot;</span><span class="p">:</span> <span class="p">{</span>
-        <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;scalar&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;lower_bound&quot;</span><span class="p">:</span> <span class="mf">273.15</span><span class="p">,</span>
-        <span class="s2">&quot;upper_bound&quot;</span><span class="p">:</span> <span class="mf">353.15</span><span class="p">,</span>
-        <span class="s2">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;Heat pump supply temperature (K).&quot;</span><span class="p">,</span>
-    <span class="p">},</span>
-    <span class="s2">&quot;TOut.T&quot;</span><span class="p">:</span> <span class="p">{</span>
-        <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;scalar&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;lower_bound&quot;</span><span class="p">:</span> <span class="mf">253.15</span><span class="p">,</span>
-        <span class="s2">&quot;upper_bound&quot;</span><span class="p">:</span> <span class="mf">343.15</span><span class="p">,</span>
-        <span class="s2">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;Outdoor temperature (K).&quot;</span><span class="p">,</span>
-    <span class="p">},</span>
-    <span class="s2">&quot;temRoo.T&quot;</span><span class="p">:</span> <span class="p">{</span>
-        <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;scalar&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;lower_bound&quot;</span><span class="p">:</span> <span class="mf">263.15</span><span class="p">,</span>
-        <span class="s2">&quot;upper_bound&quot;</span><span class="p">:</span> <span class="mf">343.15</span><span class="p">,</span>
-        <span class="s2">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;Indoor temperature (K).&quot;</span><span class="p">,</span>
-    <span class="p">},</span>
-    <span class="s2">&quot;y&quot;</span><span class="p">:</span> <span class="p">{</span>
-        <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;scalar&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;lower_bound&quot;</span><span class="p">:</span> <span class="mf">263.15</span><span class="p">,</span>
-        <span class="s2">&quot;upper_bound&quot;</span><span class="p">:</span> <span class="mf">343.15</span><span class="p">,</span>
-        <span class="s2">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;Indoor temperature (K).&quot;</span><span class="p">,</span>
-    <span class="p">},</span>
-<span class="p">}</span>
-
-<span class="n">OUTPUTS_SPECS_SLAB</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="s2">&quot;weaBus.HDifHor&quot;</span><span class="p">:</span> <span class="p">{</span>
-        <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;scalar&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;lower_bound&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
-        <span class="s2">&quot;upper_bound&quot;</span><span class="p">:</span> <span class="mi">1000</span><span class="p">,</span>
-        <span class="s2">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;Horizontal diffuse solar radiation (W/m2).&quot;</span><span class="p">,</span>
-    <span class="p">},</span>
-    <span class="s2">&quot;weaBus.HDirNor&quot;</span><span class="p">:</span> <span class="p">{</span>
-        <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;scalar&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;lower_bound&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
-        <span class="s2">&quot;upper_bound&quot;</span><span class="p">:</span> <span class="mi">1000</span><span class="p">,</span>
-        <span class="s2">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;Direct normal radiation (W/m2).&quot;</span><span class="p">,</span>
-    <span class="p">},</span>
-    <span class="s2">&quot;weaBus.HGloHor&quot;</span><span class="p">:</span> <span class="p">{</span>
-        <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;scalar&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;lower_bound&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
-        <span class="s2">&quot;upper_bound&quot;</span><span class="p">:</span> <span class="mi">1000</span><span class="p">,</span>
-        <span class="s2">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;Horizontal global radiation (W/m2).&quot;</span><span class="p">,</span>
-    <span class="p">},</span>
-    <span class="s2">&quot;weaBus.HHorIR&quot;</span><span class="p">:</span> <span class="p">{</span>
-        <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;scalar&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;lower_bound&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
-        <span class="s2">&quot;upper_bound&quot;</span><span class="p">:</span> <span class="mi">1000</span><span class="p">,</span>
-        <span class="s2">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;Horizontal infrared radiation (W/m2).&quot;</span><span class="p">,</span>
-    <span class="p">},</span>
-    <span class="s2">&quot;sunRad.y&quot;</span><span class="p">:</span> <span class="p">{</span>
-        <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;scalar&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;lower_bound&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
-        <span class="s2">&quot;upper_bound&quot;</span><span class="p">:</span> <span class="mi">1000</span><span class="p">,</span>
-        <span class="s2">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;Direct normal radiation (W/m2).&quot;</span><span class="p">,</span>
-    <span class="p">},</span>
-    <span class="s2">&quot;sunHea.Q_flow&quot;</span><span class="p">:</span> <span class="p">{</span>
-        <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;scalar&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;lower_bound&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
-        <span class="s2">&quot;upper_bound&quot;</span><span class="p">:</span> <span class="mi">100</span><span class="p">,</span>
-        <span class="s2">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;Solar heat flow rate (W).&quot;</span><span class="p">,</span>
-    <span class="p">},</span>
-    <span class="s2">&quot;preHea.Q_flow&quot;</span><span class="p">:</span> <span class="p">{</span>
-        <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;scalar&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;lower_bound&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
-        <span class="s2">&quot;upper_bound&quot;</span><span class="p">:</span> <span class="mi">100</span><span class="p">,</span>
-        <span class="s2">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;Prescribed heat flow rate (W).&quot;</span><span class="p">,</span>
-    <span class="p">},</span>
-    <span class="s2">&quot;heaPum.P&quot;</span><span class="p">:</span> <span class="p">{</span>
-        <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;scalar&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;lower_bound&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
-        <span class="s2">&quot;upper_bound&quot;</span><span class="p">:</span> <span class="mi">100</span><span class="p">,</span>
-        <span class="s2">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;Heat pump consumed power (W).&quot;</span><span class="p">,</span>
-    <span class="p">},</span>
-    <span class="s2">&quot;heaPum.QCon_flow&quot;</span><span class="p">:</span> <span class="p">{</span>
-        <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;scalar&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;lower_bound&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
-        <span class="s2">&quot;upper_bound&quot;</span><span class="p">:</span> <span class="mi">100</span><span class="p">,</span>
-        <span class="s2">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;Actual heating heat flow rate added to fluid (W).&quot;</span><span class="p">,</span>
-    <span class="p">},</span>
-    <span class="s2">&quot;heaPum.QEva_flow&quot;</span><span class="p">:</span> <span class="p">{</span>
-        <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;scalar&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;lower_bound&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
-        <span class="s2">&quot;upper_bound&quot;</span><span class="p">:</span> <span class="mi">100</span><span class="p">,</span>
-        <span class="s2">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;Actual cooling heat flow rate removed from fluid (W).&quot;</span><span class="p">,</span>
-    <span class="p">},</span>
-    <span class="s2">&quot;heaPum.COP&quot;</span><span class="p">:</span> <span class="p">{</span>
-        <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;scalar&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;lower_bound&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
-        <span class="s2">&quot;upper_bound&quot;</span><span class="p">:</span> <span class="mi">20</span><span class="p">,</span>
-        <span class="s2">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;Heat pump coefficient of performance.&quot;</span><span class="p">,</span>
-    <span class="p">},</span>
-    <span class="s2">&quot;heaPum.COPCar&quot;</span><span class="p">:</span> <span class="p">{</span>
-        <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;scalar&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;lower_bound&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
-        <span class="s2">&quot;upper_bound&quot;</span><span class="p">:</span> <span class="mi">20</span><span class="p">,</span>
-        <span class="s2">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;Carnot efficiency.&quot;</span><span class="p">,</span>
-    <span class="p">},</span>
-    <span class="s2">&quot;heaPum.TConAct&quot;</span><span class="p">:</span> <span class="p">{</span>
-        <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;scalar&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;lower_bound&quot;</span><span class="p">:</span> <span class="mf">273.15</span><span class="p">,</span>
-        <span class="s2">&quot;upper_bound&quot;</span><span class="p">:</span> <span class="mf">343.15</span><span class="p">,</span>
-        <span class="s2">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;Condenser temperature used to compute efficiency (K).&quot;</span><span class="p">,</span>
-    <span class="p">},</span>
-    <span class="s2">&quot;heaPum.TEvaAct&quot;</span><span class="p">:</span> <span class="p">{</span>
-        <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;scalar&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;lower_bound&quot;</span><span class="p">:</span> <span class="mf">273.15</span><span class="p">,</span>
-        <span class="s2">&quot;upper_bound&quot;</span><span class="p">:</span> <span class="mf">343.15</span><span class="p">,</span>
-        <span class="s2">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;Evaporator temperature used to compute efficiency (K).&quot;</span><span class="p">,</span>
-    <span class="p">},</span>
-    <span class="s2">&quot;sla.surf_a.Q_flow&quot;</span><span class="p">:</span> <span class="p">{</span>
-        <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;scalar&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;lower_bound&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
-        <span class="s2">&quot;upper_bound&quot;</span><span class="p">:</span> <span class="mi">100</span><span class="p">,</span>
-        <span class="s2">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;Slab heat flow rate (W).&quot;</span><span class="p">,</span>
-    <span class="p">},</span>
-    <span class="s2">&quot;sla.surf_b.Q_flow&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="s2">&quot;sla.QTot&quot;</span><span class="p">:</span> <span class="p">{</span>
         <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;scalar&quot;</span><span class="p">,</span>
         <span class="s2">&quot;lower_bound&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
         <span class="s2">&quot;upper_bound&quot;</span><span class="p">:</span> <span class="mi">100</span><span class="p">,</span>
@@ -394,13 +293,7 @@
         <span class="s2">&quot;upper_bound&quot;</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span>
         <span class="s2">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;Slab mass flow rate (kg/s).&quot;</span><span class="p">,</span>
     <span class="p">},</span>
-    <span class="s2">&quot;sla.surf_a.T&quot;</span><span class="p">:</span> <span class="p">{</span>
-        <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;scalar&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;lower_bound&quot;</span><span class="p">:</span> <span class="mf">273.15</span><span class="p">,</span>
-        <span class="s2">&quot;upper_bound&quot;</span><span class="p">:</span> <span class="mf">343.15</span><span class="p">,</span>
-        <span class="s2">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;Slab temperature (K).&quot;</span><span class="p">,</span>
-    <span class="p">},</span>
-    <span class="s2">&quot;sla.surf_b.T&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="s2">&quot;sla.heatPortEmb[1].T&quot;</span><span class="p">:</span> <span class="p">{</span>
         <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;scalar&quot;</span><span class="p">,</span>
         <span class="s2">&quot;lower_bound&quot;</span><span class="p">:</span> <span class="mf">273.15</span><span class="p">,</span>
         <span class="s2">&quot;upper_bound&quot;</span><span class="p">:</span> <span class="mf">343.15</span><span class="p">,</span>
@@ -466,7 +359,7 @@
         <span class="n">start_day</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
         <span class="n">start_month</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
         <span class="n">year</span><span class="o">=</span><span class="mi">2019</span><span class="p">,</span>
-        <span class="n">simulation_days</span><span class="o">=</span><span class="mi">3</span> <span class="o">*</span> <span class="mi">21</span><span class="p">,</span>
+        <span class="n">simulation_days</span><span class="o">=</span><span class="mi">21</span><span class="p">,</span>
         <span class="n">weather</span><span class="o">=</span><span class="s2">&quot;CH_BS_Basel&quot;</span><span class="p">,</span>
         <span class="n">kpi_options</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
         <span class="n">default_path</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
@@ -500,21 +393,21 @@
         <span class="n">start_time</span> <span class="o">=</span> <span class="n">delta</span><span class="o">.</span><span class="n">total_seconds</span><span class="p">()</span>
         <span class="n">stop_time</span> <span class="o">=</span> <span class="n">start_time</span> <span class="o">+</span> <span class="n">n_steps</span> <span class="o">*</span> <span class="mi">24</span> <span class="o">*</span> <span class="n">simulation_days</span> <span class="o">*</span> <span class="n">step_size</span>
         <span class="n">params</span> <span class="o">=</span> <span class="p">{</span>
-            <span class="c1"># &quot;P_nominal&quot;: 5e3,</span>
-            <span class="c1"># &quot;COP_nominal&quot;: 5.0,</span>
-            <span class="c1"># &quot;therm_cond_G&quot;: 500.0,</span>
-            <span class="c1"># &quot;heat_capa_C&quot;: 1e7,</span>
+            <span class="c1"># &quot;P_nominal&quot;: 1e3,</span>
+            <span class="c1"># &quot;COP_nominal&quot;: 3.0,</span>
+            <span class="c1"># &quot;therm_cond_G&quot;: 100.0,</span>
+            <span class="c1"># &quot;heat_capa_C&quot;: 40e6,</span>
             <span class="c1"># &quot;QRooInt_flow&quot;: 700.0,</span>
         <span class="p">}</span>
-        <span class="n">init_vals</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;u&quot;</span><span class="p">:</span> <span class="mf">0.0</span><span class="p">}</span>
+        <span class="n">init_vals</span> <span class="o">=</span> <span class="p">{</span><span class="n">key</span><span class="p">:</span> <span class="n">INPUTS_SPECS</span><span class="p">[</span><span class="n">key</span><span class="p">][</span><span class="s2">&quot;default&quot;</span><span class="p">]</span> <span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">INPUTS_SPECS</span><span class="p">}</span>
 
         <span class="k">if</span> <span class="n">kpi_options</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
             <span class="n">kpi_options</span> <span class="o">=</span> <span class="n">default_kpi_options</span>
 
-        <span class="k">if</span> <span class="s2">&quot;Rad&quot;</span> <span class="ow">in</span> <span class="n">model_path</span><span class="p">:</span>
-            <span class="n">outputs_specs</span> <span class="o">=</span> <span class="n">OUTPUTS_SPECS_RAD</span>
+        <span class="k">if</span> <span class="s2">&quot;RSla&quot;</span> <span class="ow">in</span> <span class="n">model_path</span><span class="p">:</span>
+            <span class="n">outputs_specs</span> <span class="o">=</span> <span class="n">OUTPUTS_SPECS_RSLA</span>
         <span class="k">else</span><span class="p">:</span>
-            <span class="n">outputs_specs</span> <span class="o">=</span> <span class="n">OUTPUTS_SPECS_SLAB</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Add other output specs&quot;</span><span class="p">)</span>
 
         <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span>
             <span class="n">model_path</span><span class="p">,</span>

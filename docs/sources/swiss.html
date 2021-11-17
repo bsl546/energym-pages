@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>SwissHouseRad &#8212; energym 2020.02.19 documentation</title>
+    <title>SwissHouseRSla &#8212; energym 2020.02.19 documentation</title>
     
   <link href="../_static/css/theme.css" rel="stylesheet" />
   <link href="../_static/css/index.f6b7ca918bee2f46fd9abac01cfb07d5.css" rel="stylesheet" />
@@ -36,8 +36,8 @@
     <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="SwissHouseRad notebook example" href="notebooks/SwissHouseRad.html" />
-    <link rel="prev" title="SimpleHouseSlab notebook example" href="notebooks/SimpleHouseSlab.html" />
+    <link rel="next" title="SwissHouseRSla notebook example" href="notebooks/SwissHouseRSla.html" />
+    <link rel="prev" title="SimpleHouseRSla notebook example" href="notebooks/SimpleHouseRSla.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
   </head>
@@ -170,20 +170,25 @@
  </li>
  <li class="toctree-l2">
   <a class="reference internal" href="houseslab.html">
-   SimpleHouseSlab
+   SimpleHouseRSla
   </a>
  </li>
  <li class="toctree-l2 current active">
   <a class="current reference internal" href="#">
-   SwissHouseRad
+   SwissHouseRSla
   </a>
   <ul>
    <li class="toctree-l3">
-    <a class="reference internal" href="notebooks/SwissHouseRad.html">
-     SwissHouseRad notebook example
+    <a class="reference internal" href="notebooks/SwissHouseRSla.html">
+     SwissHouseRSla notebook example
     </a>
    </li>
   </ul>
+ </li>
+ <li class="toctree-l2">
+  <a class="reference internal" href="swiss2.html">
+   SwissHouseRSlaTank
+  </a>
  </li>
 </ul>
   </div>
@@ -270,16 +275,23 @@
               
               <div>
                 
-  <div class="section" id="swisshouserad">
-<span id="id1"></span><h1>SwissHouseRad<a class="headerlink" href="#swisshouserad" title="Permalink to this headline">¶</a></h1>
-<p>The SwissHouse building is a one-zone residential buildings located in Zurich Canton, Switzerland.</p>
+  <div class="section" id="swisshousersla">
+<span id="swisshousesla"></span><h1>SwissHouseRSla<a class="headerlink" href="#swisshousersla" title="Permalink to this headline">¶</a></h1>
+<p>The SwissHouse building is a one-zone residential building located in Zurich Canton, Switzerland.</p>
 <div class="section" id="building-and-thermal-zones">
 <h2>Building and thermal zones<a class="headerlink" href="#building-and-thermal-zones" title="Permalink to this headline">¶</a></h2>
-<p>The entire house is modeled with a single thermal zone.</p>
+<p>The entire house is modeled with a single thermal zone. Its envelop is a simple RC model with R, C parameters
+fitted to a real swiss Minergie house (low energy consumption building standard).</p>
 </div>
 <div class="section" id="thermal-systems">
 <h2>Thermal systems<a class="headerlink" href="#thermal-systems" title="Permalink to this headline">¶</a></h2>
-<p>A Heat pump with Carnot HX connected to a simple room model with radiator.</p>
+<p>Two  heat pump versions are implemented: SwissHouseRSlaW2W-v0 and SwissHouseRSlaA2W-v0.
+SwissHouseRSlaW2W-v0 has a water to water heat pump, and SwissHouseRSlaA2W-v0 a air to water heat pump. Both emit heat to the zone via  hydronic underfloor heating.
+The building has no cooling system.</p>
+<p>The picture below displays the Air-to-Water systems.</p>
+<a class="reference internal image-reference" href="../_images/SwissHouse_HP_u_RSla_1RC_Sun_A2W.png"><img alt="../_images/SwissHouse_HP_u_RSla_1RC_Sun_A2W.png" class="align-center" src="../_images/SwissHouse_HP_u_RSla_1RC_Sun_A2W.png" style="width: 600px;" /></a>
+<p>The picture below displays the Water-to-Water systems.</p>
+<a class="reference internal image-reference" href="../_images/SwissHouse_HP_u_RSla_1RC_Sun_W2W.png"><img alt="../_images/SwissHouse_HP_u_RSla_1RC_Sun_W2W.png" class="align-center" src="../_images/SwissHouse_HP_u_RSla_1RC_Sun_W2W.png" style="width: 600px;" /></a>
 </div>
 <div class="section" id="electrical-systems">
 <h2>Electrical systems<a class="headerlink" href="#electrical-systems" title="Permalink to this headline">¶</a></h2>
@@ -289,7 +301,7 @@
 <h2>Controllable components<a class="headerlink" href="#controllable-components" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="hp-control">
 <h3>HP control<a class="headerlink" href="#hp-control" title="Permalink to this headline">¶</a></h3>
-<p>The heat pump normalized supply flow and supply temperature are controllable.</p>
+<p>The heat pump normalized power is controllable.</p>
 </div>
 </div>
 <div class="section" id="simulation-inputs">
@@ -427,7 +439,7 @@
 <td><p>0</p></td>
 <td><p>20</p></td>
 <td></td>
-<td><p>Heat pump carnot efficiency.</p></td>
+<td><p>Heat pump Carnot efficiency.</p></td>
 </tr>
 <tr class="row-even"><td><p>heaPum.TConAct</p></td>
 <td><p>scalar</p></td>
@@ -443,19 +455,33 @@
 <td></td>
 <td><p>Evaporator temperature used to compute efficiency (K).</p></td>
 </tr>
-<tr class="row-even"><td><p>rad.Q_flow</p></td>
+<tr class="row-even"><td><p>tanSH.heaPorSid.T</p></td>
+<td><p>scalar</p></td>
+<td><p>273.15</p></td>
+<td><p>353.15</p></td>
+<td></td>
+<td><p>Tank temperature (K).</p></td>
+</tr>
+<tr class="row-odd"><td><p>sla.QTot</p></td>
 <td><p>scalar</p></td>
 <td><p>0</p></td>
 <td><p>100</p></td>
 <td></td>
-<td><p>Radiator heat flow rate (W).</p></td>
+<td><p>Slab heat flow rate (W).</p></td>
 </tr>
-<tr class="row-odd"><td><p>rad.m_flow</p></td>
+<tr class="row-even"><td><p>sla.m_flow</p></td>
 <td><p>scalar</p></td>
 <td><p>0</p></td>
 <td><p>10</p></td>
 <td></td>
-<td><p>Radiator mass flow rate (kg/s).</p></td>
+<td><p>Slab mass flow rate (kg/s).</p></td>
+</tr>
+<tr class="row-odd"><td><p>sla.heatPortEmb[1].T</p></td>
+<td><p>scalar</p></td>
+<td><p>273.15</p></td>
+<td><p>343.15</p></td>
+<td></td>
+<td><p>Slab temperature (K).</p></td>
 </tr>
 <tr class="row-even"><td><p>temRet.T</p></td>
 <td><p>scalar</p></td>
@@ -509,7 +535,7 @@
 </div>
 <div class="section" id="evaluation-scenario">
 <h2>Evaluation scenario<a class="headerlink" href="#evaluation-scenario" title="Permalink to this headline">¶</a></h2>
-<p>The evaluation scenario for the <cite>SwissHouseRad-v0</cite> model consists of a control from January to April with the objective of minimizing the power demand, while keeping the zone temperatures between 19 and 24°C.
+<p>The evaluation scenario for the <cite>SwissHouseRSlaW2W-v0</cite> model consists of a control from January to April with the objective of minimizing the power demand, while keeping the zone temperatures between 19 and 24°C.
 For this goal, the tracked KPIs are the average power demand, and the average temperature deviation and total temperature violations with respect to the interval [19, 24].</p>
 </div>
 <div class="section" id="notebook-example">
@@ -517,7 +543,7 @@ For this goal, the tracked KPIs are the average power demand, and the average te
 <div class="toctree-wrapper compound">
 <p class="caption"><span class="caption-text">Here is a notebook example:</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="notebooks/SwissHouseRad.html">SwissHouseRad notebook example</a></li>
+<li class="toctree-l1"><a class="reference internal" href="notebooks/SwissHouseRSla.html">SwissHouseRSla notebook example</a></li>
 </ul>
 </div>
 </div>
@@ -529,8 +555,8 @@ For this goal, the tracked KPIs are the average power demand, and the average te
               
               <div class='prev-next-bottom'>
                 
-    <a class='left-prev' id="prev-link" href="notebooks/SimpleHouseSlab.html" title="previous page">SimpleHouseSlab notebook example</a>
-    <a class='right-next' id="next-link" href="notebooks/SwissHouseRad.html" title="next page">SwissHouseRad notebook example</a>
+    <a class='left-prev' id="prev-link" href="notebooks/SimpleHouseRSla.html" title="previous page">SimpleHouseRSla notebook example</a>
+    <a class='right-next' id="next-link" href="notebooks/SwissHouseRSla.html" title="next page">SwissHouseRSla notebook example</a>
 
               </div>
               
